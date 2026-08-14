@@ -1,0 +1,13 @@
+{
+    "vertebrates": {
+        "mitochondrial": [
+            "COX1",
+            "ND1",
+            "ND2"
+        ],
+        "nuclear": [
+            "RAG1",
+            "RAG2"
+        ]
+    }
+}

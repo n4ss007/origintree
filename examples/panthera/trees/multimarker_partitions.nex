@@ -1,0 +1,9 @@
+#nexus
+
+begin sets;
+    charset COX1 = 1-1554;
+    charset ND2 = 1555-2604;
+    charset ND1 = 2605-3560;
+    charset RAG2 = 3561-6753;
+    charset RAG1 = 6754-11464;
+end;

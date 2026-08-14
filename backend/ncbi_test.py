@@ -1,9 +1,11 @@
 from Bio import Entrez, SeqIO
 
-Entrez.email = "shiforrandom@gmail.com"
+Entrez.email = "YOUR_EMAIL@example.com"
 Entrez.tool = "EvolutionProject"
+
+
 def find_species(search_term: str):
-    """Search NCBI Taxonomy for an organism entered by the user."""
+    """Search NCBI Taxonomy for the animal entered by the user."""
 
     handle = Entrez.esearch(
         db="taxonomy",
@@ -56,8 +58,13 @@ def summarize_species(taxid: str) -> dict:
     }
 
 
-def fetch_sequences(taxid: str, scientific_name:str, gene: str = "COX1", max_sequences: int = 5):
-    """Retrieve nucleotide sequences and save them as a fasta file."""
+def fetch_sequences(
+    taxid: str,
+    scientific_name: str,
+    gene: str = "COX1",
+    max_sequences: int = 20
+):
+    """Retrieve COX1 sequences from NCBI."""
 
     search_term = f"txid{taxid}[Organism:exp] AND {gene}[Gene]"
 
@@ -72,10 +79,10 @@ def fetch_sequences(taxid: str, scientific_name:str, gene: str = "COX1", max_seq
 
     sequence_ids = result["IdList"]
 
-    print(f"\nFound {len(sequence_ids)} sequences.")
+    print(f"\nCandidate sequences found: {len(sequence_ids)}")
 
     if not sequence_ids:
-        print("No sequences found.")
+        print("No candidate sequences found.")
         return None
 
     handle = Entrez.efetch(
@@ -84,6 +91,7 @@ def fetch_sequences(taxid: str, scientific_name:str, gene: str = "COX1", max_seq
         rettype="gb",
         retmode="text"
     )
+
     records = list(SeqIO.parse(handle, "genbank"))
     handle.close()
 
@@ -91,25 +99,55 @@ def fetch_sequences(taxid: str, scientific_name:str, gene: str = "COX1", max_seq
 
     for record in records:
 
-        description = record.description.lower()
-
-        if "partial" in description:
-
-            print(f"REJECTED: {record.id} — partial sequence")
+        if "partial" in record.description.lower():
+            print(
+                f"REJECTED: {record.id} — partial sequence"
+            )
             continue
 
-        if "cox1" not in description and "cytochrome c oxidase subunit i" not in description:
-            print(f"REJECTED: {record.id} — COX1 not confirmed")
-            continue
+        cox1_found = False
 
-        print(f"ACCEPTED: {record.id} — {record.description}")
+        for feature in record.features:
 
-        accepted.append(record)
+            if feature.type not in ["CDS", "gene"]:
+                continue
 
-    print(f"\nAccepted sequences: {len(accepted)}")
+            gene_name = ""
+
+            if "gene" in feature.qualifiers:
+                gene_name = feature.qualifiers["gene"][0].upper()
+
+            if gene_name == gene.upper():
+
+                sequence = feature.extract(record.seq)
+
+                accepted.append(
+                    {
+                        "id": record.id,
+                        "description": record.description,
+                        "sequence": sequence
+                    }
+                )
+
+                print(
+                    f"ACCEPTED: {record.id} — COX1 extracted"
+                )
+
+                cox1_found = True
+                break
+
+        if not cox1_found:
+            print(
+                f"REJECTED: {record.id} — "
+                f"COX1 feature not found"
+            )
+
+    print(
+        f"\nAccepted COX1 sequences: {len(accepted)}"
+    )
 
     if not accepted:
-        print("No suitable complete COX1 sequences found.")
+        print("No suitable COX1 sequences found.")
         return None
 
     safe_name = scientific_name.replace(" ", "_")
@@ -117,22 +155,28 @@ def fetch_sequences(taxid: str, scientific_name:str, gene: str = "COX1", max_seq
     filename = (
         f"data/sequences/"
         f"{safe_name}_COX1.fasta"
-)
+    )
 
     with open(filename, "w") as file:
 
-        for record in accepted:
-            file.write(f">{record.id} {record.description}\n")
-            file.write(str(record.seq) + "\n")
+        for item in accepted:
 
-    print(f"Saved selected sequences to: {filename}")
+            file.write(
+                f">{item['id']} {item['description']}\n"
+            )
+
+            file.write(
+                str(item["sequence"]) + "\n"
+            )
+
+    print(f"Saved COX1 sequences to: {filename}")
 
     return filename
 
 
-# -----------------------------
+# --------------------------------
 # USER INPUT
-# -----------------------------
+# --------------------------------
 
 common_name = input("Enter an animal: ")
 
@@ -141,21 +185,23 @@ taxids = find_species(common_name)
 print("\nTaxonomy matches found:", len(taxids))
 
 for taxid in taxids:
-    result = summarize_species(taxid)
 
+    result = summarize_species(taxid)
 
     print("\n-----------------------------")
     print("TaxID:", result["taxid"])
     print("Scientific name:", result["scientific_name"])
     print("Rank:", result["rank"])
+
     print("\nTaxonomic lineage:")
 
     for node in result["lineage"]:
+
         print(
             f"- {node['name']} ({node['rank']})"
         )
 
-    sequence_file = fetch_sequences(
+    fetch_sequences(
         taxid,
         result["scientific_name"]
     )

@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.base.evolution.alignment:beast.pkgmgmt:beast.base.core:beast.base.inference:beast.base.evolution.tree.coalescent:beast.pkgmgmt:beast.base.core:beast.base.inference.util:beast.evolution.nuc:beast.base.evolution.operator:beast.base.inference.operator:beast.base.evolution.sitemodel:beast.base.evolution.substitutionmodel:beast.base.evolution.likelihood" required="BEAST.base v2.7.7" version="2.7">
+
+    <data
+id="COX1_alignment"
+spec="Alignment"
+name="alignment">
+        <sequence id="seq_Panthera_leo|MG792277.1" spec="Sequence" taxon="Panthera_leo|MG792277.1" totalcount="4" value="attttacctatgttcataaaccgctgactattttcaaccaatcacaaagatattggaactctttaccttctatttggtgcctgggctggtatggtggggactgctctcagtctcctaatccgagccgaactgggtcaacctggcacactactaggggatgaccaaatttataatgtagtcgtcaccgcccatgcttttgtaataatcttctttatagtaatacctatcatgattggaggattcggaaactgattggtcccattaataattggagcccccgatatagcattccctcgaatgaataatataagcttctgacttcttcccccgtctttcctacttttgcttgcatcatctatggtagaagctggagcaggaactgggtggacagtatacccgcctctagccggcaacctagctcacgcaggagcatctgtagatctaactattttttcgctacacctggcaggtgtctcctcaatcctaggtgctattaattttattactactattattaatataaaaccccctgctatatcccaataccaaacacctctatttgtctgatcggttttaatcactgctgtattgctactcctatcactgccagttttagcagcaggcatcactatgctactgacagatcgaaatctgaataccacattttttgaccctgccggaggaggggaccctatcttataccaacatctattctgattttttggtcacccagaagtctacattttaattttacccgggttcggaataatttcacacattgtcacctattattcaggtaaaaaagaaccttttggctacataggaatagtttgagctataatatcaattggttttctgggctttattgtgtgagcccatcacatgtttactgtggggatagatgtggacacacgagcatactttacatctgctactataattattgctattcccactggagtaaaagtatttagctgactggccactcttcatggcggtaatgtcaaatggtctcccgctatgctgtgagccctaggattcatcttcctatttactgtcgggggcttaacaggaattgtactagcaaattcctcattagatattgtccttcacgatacatactatgtagtagcccacttccactatgtattgtcgataggagcagtatttgctattatagggggcttcgttcattgattccccctattctcagggtatactctcgataatacctgggcaaaaattcatttcacaattatgttcgtaggcgtcaatataacgtttttccctcagcattttctaggcttgtccggaatgcctcgacgttattctgactacccagacgcatatacaacttgaaacacagtctcctcaataggctcttttatttcattaacagcagtaatattaatggttttcatagtgtgagaggcttttgcatcaaagcgagaagtggccatagtggaactaaccacgactaatcttgaatgactacatggatgtccccctccataccacacatttgaagaaccaacctatgtgttgctaaaataa"/>
+        <sequence id="seq_Panthera_onca|PX668385.1" spec="Sequence" taxon="Panthera_onca|PX668385.1" totalcount="4" value="---------atgttcataaaccgctgactattttcaaccaatcacaaagatattggaactctctaccttctatttggcgcctgggctggtatggtggggactgctctcagtctcttaatccgagctgagctaggtcaacctggcacactattaggggacgaccagatttataatgtagtcgtcaccgcccatgcttttgtaataatcttcttcatagtgatgcctatcatgattggaggattcggaaactgattagtcccattaatgattggggctcccgacatagcattccctcgaatgaataatatgagcttctgactcctccctccatctttcctacttttgctcgcatcatctatggtagaggctggagcagggactgggtggacagtatacccacctctagccggtaacctagctcatgcaggagcatccgtagatctaactattttttcactgcacctggcaggtgtctcctcaatcttaggtgctattaattttattactactattatcaatataaaaccccctgctatatcccaatatcaaacacccctgtttgtctgatcggttttaatcactgctgtattactacttctatcactgccagttttagcagcaggcatcactatactactgacagatcgaaatctaaacaccacattttttgaccccgccggaggaggggatcctatcttatatcaacacctattctgatttttcggtcacccagaagtctacattttaattttacccgggtttggaataatttcacatattgtcacctattactcaggtaaaaaggaaccttttggctatatgggaatggtttgagctataatatcaattggctttctgggctttattgtatgagcccatcacatgttcactgtagggatagacgtggacacacgagcatactttacatcagctactataattattgctattcccactggggtaaaagtatttagctgactggctactcttcatgggggtaatatcaaatggtcccccgccatgctatgagccctgggattcattttcctatttaccgtagggggcttaacaggaattgtactggcaaattcctcattagatattgtccttcacgacacatactacgtagtagcccacttccactacgtattgtcaataggagcagtatttgctatcatagggggtttcgttcattgattccccctattctcaggatacactcttgatgacacttgggcaaaaattcattttacgattatgtttgtaggcgtcaatataacgtttttccctcagcattttctaggcctgtccggaatgccccgacgttattctgactatccagacgcatacacaacttgaaacacagtctcatcaataggctcttttatttcactaacagcagtaatactaatagtttttatagtgtgagaagcttttgcatcaaagcgagaagtggctacagtggaactaaccacaactaaccttgaatggctacatggatgccctcctccgtatcacacatttgaagagccaacctatgtgctgctaaaataa"/>
+        <sequence id="seq_Panthera_pardus|OR817741.1" spec="Sequence" taxon="Panthera_pardus|OR817741.1" totalcount="4" value="---------atgttcataaaccgctgactattttcaaccaatcacaaagatattggaactctttaccttctattcggtgcctgggctggcatggtggggactgctctcagtctcttaatccgagccgaactgggtcaacctggcacactgctaggggacgaccaaatttataatgtagtcgttaccgcccatgcttttgtaataatcttctttatagtaatacccatcatgattggaggattcggaaactgattggtcccattaataattggagcccccgatatagcattcccccgaatgaataatatgagcttttgactccttcccccgtctttcctacttttgctcgcatcatctgtggtagaggctggggcaggaactgggtgaacagtatatccacccctagccggcaacctagcccatgcaggggcatccgtagatctaactattttttcactacacctggcaggtgtctcctcaatcttaggcgctattaattttattactactattattaatataaaaccccctgctatatcccaataccaaacacctctattcgtctgatcggtcttaatcactgctgtattgctactcctatcgctgccagttttagcagcaggcatcactatgctactgacagatcgaaatctgaacaccacattctttgaccctgccggggggggggatcctatcttataccagcacctattctgatttttcggtcacccagaagtttatattttaattttacctgggttcggaataatttcacacattgtcacctattactcaggtaaaaaagagccttttggctatatgggaatagtttgagctataatatcgattggcttcctgggctttatcgtgtgagcccaccacatgtttactgtagggatagacgtggacacacgagcatactttacatcagctactataattattgctattcccactggagtaaaagtatttagctgactagccactcttcatggaggtagtatcaaatgatctcccgctatgctatgagccctaggattcatctttctatttactgtagggggcttaacaggaattgtactagcaaattcctcattagacattgtccttcacgacacatactacgtagtagcccacttccactacgtactgtcaataggagcagtatttgctattataggaggcttcgttcattgattccccctattctcagggtatactctcgataatacttgggcaaaaattcattttacgattatgttcgtaggtgtcaatataacgtttttccctcagcatttcctaggcttgtccggaatgcctcgacgttattctgactacccagacgcatatacaacttgaaacacagtttcctcaataggctcttttatttcactaacagcagtaatattaatggtttttatagtatgagaggcttttgcatcaaagcgagaagtggccatagtggaactaactacaactaatcttgaatgattacatggatgtccccctccgtatcacacatttgaagagccaacttatgtgttattaaaataa"/>
+        <sequence id="seq_Panthera_spelaea|OK513017.1" spec="Sequence" taxon="Panthera_spelaea|OK513017.1" totalcount="4" value="---------atgttcataaaccgctgactattttcaaccaatcacaaagatattggaactctttaccttctatttggtgcctgggctggtatagtagggactgctcttagtctcctaattcgagccgaactgggtcaacctggcacactactaggggatgaccagatttataatgtagtcgtcaccgcccatgcttttgtaataatcttctttatagtaatacctatcatgattggggggttcggaaactgattggtcccattaataattggagctcccgatatggcattccctcgaatgaataatataagcttctgacttcttcctccgtctttcctacttttgctcgcatcatctatggtagaggctggggcaggaactgggtggacagtatacccgcctctagccggcaacctagctcacgcaggggcatccgtagatctaactattttttcactacacctagcaggtgtctcctcaatcctaggtgctattaattttattactactattattaatataaaaccccctgctatatcccaataccaaacacctctgtttgtctgatcggttttaatcactgctgtattgctactcctatcactgccagttttagcagcaggcatcactatgctactgacagatcgaaatctgaataccacattttttgaccctgccggaggaggggaccctatcttataccaacatctattctgattttttggtcacccggaggtctatattttaattttacccgggttcggaataatttcacatattgtcacctattactcaggtaaaaaagaaccttttggttacatgggaatagtttgagctataatatcaattggttttctgggctttattgtgtgagcccatcacatgtttactgtggggatagatgtggacacacgagcatactttacatctgccactataattattgcaattcccactggagtaaaagtatttagctggctggccactcttcatggcggtaatgttaaatggtcccccgctatgctgtgagccctaggattcattttcctatttactgttgggggcttaacaggaattgtactagcaaattcctcattagatattgttcttcacgacacatactacgtagtagcccacttccactatgtattgtcaataggagcagtatttgccattataggaggcttcgttcattgattccccctattctcagggtatgctctcgataacacctgggcaaaaattcattttacgattatgttcgtaggtgttaatataacgtttttccctcagcattttctaggcttgtccggaatgcctcgacgttattctgactacccagacgcatatacaacttgaaacacagtctcctcaataggctcttttatttcactaacagcagtgatattaatggttttcatagtgtgagaggcttttgcatcaaaacgagaagtggccatagtggaactaaccacgactaatcttgaatgactacatggatgtccccctccataccacacatttgaagaaccaacctatgtgctgttaaaataa"/>
+        <sequence id="seq_Panthera_tigris|NC_010642.1" spec="Sequence" taxon="Panthera_tigris|NC_010642.1" totalcount="4" value="---------atgttcataaaccgctgactattttcaaccaatcacaaggatattggaactctttaccttttatttggcgcctgggctggtatagtggggactgccctcagtctcctaattcgagccgaactgggtcaacctggcacactactaggagatgaccaaatttataatgtagtagttactgcccatgcctttgtgataatcttttttatagtaatgcctattataattggaggattcggaaactggctagttccgttaataatcggagcccccgatatggcattccctcgaatgaataacataagcttctgactccttcccccatccttcctacttctgctcgcatcgtctatggtagaagctggggcaggaactgggtggacagtatacccacccctagctggcaacctagcccatgcaggagcatccgtggatctaactattttttcactacacctagcaggcgtctcctcaatcttaggtgctattaattttattactactattattaatataaaaccgcccgctatgtcccaataccaaacacccctgtttgtttgatcggttctaattactgctgtgttgctacttctatcactgccagttttagcagcaggcatcaccatgctactgacagatcgaaatctaaataccacattttttgatcctgccgggggaggagaccccatcttatatcaacacctattctgattcttcggtcacccagaagtctatatcttaatcctgcccgggtttggaataatttcacatattgtcacctactactcaggcaaaaaagaaccttttggctacatggggatagtctgagccataatgtcaattggctttctgggctttatcgtatgggcccatcacatgtttactgtagggatagatgtggatacacgagcatactttacgtcagctactataattatcgctattcctactggggtaaaagtatttagctgattggccactcttcacgggggtaatattaaatggtctcccgctatactatgggctttgggattcattttcctattcaccgtagggggcttaacaggaattgtactagcaaactcctcattggatattgtccttcacgacacatactacgtagtagcccacttccactacgtcttgtcaataggagcagtatttgctattatagggggcttcgttcactgattccccttattctcagggtatactcttgataatacttgggcaaaagttcattttacgatcatgttcgtaggtgtcaatataacgtttttccctcagcatttcctaggcctgtctgggatgcctcgacgttattctgactatccagacgcgtatacaacttgaaacacaatctcctcaataggctcttttatttcactaacagcagtaatattaatagtctttataatgtgagaagctttcgcatcaaagcgagaagtagccacagtggaactaaccacaactaatctcgaatgacttcacggatgtcctcctccgtatcacacatttgaagagccagcctacgtgctgttaaaataa"/>
+        <sequence id="seq_Panthera_uncia|PZ790876.1" spec="Sequence" taxon="Panthera_uncia|PZ790876.1" totalcount="4" value="---------atgttcataaaccgctgactattttcaaccaatcacaaagatattggaactctttaccttctatttggcgcctgagctggtatggtggggactgctctcagtctcttaatccgagccgagctgggtcaacctggcacactgctaggggatgaccagatttataatgtagtcgtcaccgcccatgcttttgtaataatcttctttatagtgatgcctattataattggagggtttggaaactgattagtcccattaataatcggggcccccgatatagcattccctcgaatgaataatatgagtttctgactcctccccccgtcttttctgcttttgctcgcatcatctatggtagaggctggagcggggactgggtggacagtatacccgcctctagccggcaacctagctcatgcaggagcatccgtagacctaactattttctcactacacttggcaggtgtctcctcaatcttaggcgctattaattttattactactattattaatataaaaccccctgctatatcccagtatcaaacacctctatttgtctgatcggtcttaatcactgctgtattactactcctatcgctgccagttttagcagcaggcatcactatgctactgacagatcgaaatctgaacaccacattttttgaccccgctggaggaggggatcctatcttatatcaacacctattctgatttttcggtcacccagaagtctacattttaattttacccgggtttggaatgatttcacatattgtcacctattactcaggtaaaaaagaaccttttggctacatgggaatagtttgagctataatatcaattggctttctgggctttatcgtatgggcccatcacatgtttactgtggggatagatgtggacacacgagcatactttacatcagctactataattattgctattcccacaggggtaaaagtatttagttgactggctactcttcatggaggtaatattaaatggtctcccgctatgctatgggccctaggatttattttcttattcactgtggggggcctaacaggaatcgtactagcaaattcctcattagacattgtccttcacgacacatactacgtagtagctcacttccactatgtattgtcaataggagcagtatttgctatcatagggggttttgttcattgattccccctattctcaggatatactctcgataatacttgggcaaaaattcatttcactattatattcgtaggtgtcaatataacgtttttcccccagcattttctaggcttgtccggaatgcctcgacgttattctgactatccagatgcatatacaacttgaaatacagtctcctcaataggctcttttatctcactaacagcagtaatattaatggttttcatagtgtgagaagcttttgcatcaaagcgagaagtggccacagtggaactaaccacaaccaatcttgaatggctgcatggatgtccccctccgtatcacacatttgaagaaccaacctatgtactgttaaaataa"/>
+    </data>
+
+    <data
+id="ND1_alignment"
+spec="Alignment"
+name="alignment">
+        <sequence id="seq_Panthera_leo|NC_028302.1" spec="Sequence" taxon="Panthera_leo|NC_028302.1" totalcount="4" value="atgttcataatcaatatcctctcactaatcatccccattctcctcgccgtagccttcctaaccctagttgaacgtaaagtactaggctacatacaacttcgcaaaggaccaaatgtcgtagggccatacggcctacttcaacccattgcagacgccataaaactcttcactaaagaacccctccggccccttacatcctctacattcatatttattatagcacctatcctagcccttacactagccctaaccatatgaatcccactgcccataccatacccactcattaacataaacctaggggtgctattcatactagccatatccagcctagctgtttactccatcctatgatccggatgggcttcaaactcaaaatatgctctaatcggtgccctacgagccgtagctcaaacaatctcatacgaagtcacactagctattatcctcttatcagtactactaataaacggatccttcacattagccacactaatcaccacccaagaatatatctgacttattatccccgcatgacccctggctataatatgattcatctctacactagcagagaccaaccgagccccattcgacctcacagaaggagaatcagagcttgtttccggatttaacgtagaatacgcagcaggtcctttcgccctattctttttagcagaatatgccaacattatcataataaacatcctcacaacaatcctgttcttcggagcatttcatagtccctacataccagaactatacaccactaacttcaccgtaaaaaccctgatcttaacaaccaccttcctatgaatccgagcatcttatccacgattccgatacgaccaactaatacacctcctatgaaaaagctttctaccccttaccctagctctatgtatatggcacgtctccctacccattatcacagcaagtatcccacctcaaacata"/>
+        <sequence id="seq_Panthera_onca|PX668385.11" spec="Sequence" taxon="Panthera_onca|PX668385.1" totalcount="4" value="atgttcatagtcaacatcctctcactaactatccctattctcctcgccgtagccttcctaaccctagttgaacgtaaagtactgggttacatacaactccgcaaaggaccaaacgtcgtaggaccatacggcctactccaacccattgcagacgccatgaaactcttcactaaagagcccctccgacccctcacatcttccacattcatattcattatagcacccatcctagcccttacactagccctaactatatgaatcccgctgcccataccatacccactcattaacataaacctaggagtactatttatactagccatatccagcctggccgtctactccattctatgatccggatgggcctcaaactcaaaatacgccctaattggagccctacgagctgtagcccaaacaatctcatatgaagtcacactagccatcatcctcttatcagtactactaataaacggatccttcacattagccacactaattaccactcaagaatttatctgacttgttatccctgcatgacccctggccataatatgattcatttctacactagcagaaaccaaccgagccccgtttgacctcacagagggggaatcagaactcgtttccggatttaacgtagaatacgcagcaggtccctttgccctgttttttctagcagaatacgccaacatcatcataataaatatcctcacaacaatcctattcttcggagcatttcacagcccctatataccagaactatataccaccaacttcactataaaaaccctgattctaacaaccaccttcctatgaatccgagcatcttacccacgattccgatacgaccaattaatacacctcctatgaaaaagctttctaccccttaccctagccttatgcatatgacacgtctccctgcccatcatcacagcaagcattccgcctcaaacata"/>
+        <sequence id="seq_Panthera_pardus|PV605089.1" spec="Sequence" taxon="Panthera_pardus|PV605089.1" totalcount="4" value="atgttcataattaataccctctcattaatcgtcccaattctcctcgccgtggccttcctaactctagttgaacgcaaagtactaggctacatgcaacttcgtaaggggccaaatgtcgtagggccatatggtctacttcaacccattgcagacgccataaaactcttcactaaagaacctctccgacccctcacatcctccatatccatatttattatagcacccatcctagcccttacactagccctaaccatatgaattccactacccataccatacccgctcattaatataaacctaggagtgctattcatactagccatatccagcctagctgtttactccatcttatgatccgggtgggcttcaaactcaaaatatgctctaatcggcgccctgcgagccgtagctcaaacaatctcatatgaagtcacactagctattatcctcttatcagtactactaataaatggatcattcacattagccacactaattaccactcaagaatatatctgacttattatccccgcatgacccctagctataatatgattcatctctacactagcagaaaccaaccgagccccattcgacctcacagaaggagaatcagagctcgtttccggattcaacgtagagtatgcagcaggtccctttgccctattctttctagcagaatacgccaacattatcataataaacatcctcacaacaatcctgttcttcggagcatatcacagcccctacataccagagctatacaccaccaacttcaccgtaaaaactctaatcctaacaaccaccttcctatgaatccgagcatcttatccacggttccgatacgaccaattaatgcacctcctatgaaaaagctttctaccccttaccctagccctatgtatatgacatgtctccctacccatcattacagcaagcattccaccccaaacata"/>
+        <sequence id="seq_Panthera_spelaea|PV930008.1" spec="Sequence" taxon="Panthera_spelaea|PV930008.1" totalcount="4" value="atgttcataatcaatatcctctcactaatcatccctattctcctcgccgtagccttcctaaccctagttgaacgtaaagtactaggctatatacaacttcgcaagggaccaaatgtcgtaggaccatatggcctacttcaacccattgcagacgccataaaactcttcactaaagaacccctccggccccttacatcctctacattcatatttattatagcacccatcctagcccttacactagccctaaccatatgaatcccactgcccataccatacccactcatcaacataaacctaggggtgctattcatactagccatatccagcctagctgtttactccattctatgatccgggtgggcttcaaactcaaaatacgctctaatcggcgccctacgagccgtagctcaaacaatctcatatgaagtcacactagctattatcctcttatcagtactactaataaacggatcctttacattggccacactaatcatcacccaagaatatatctgacttattattcccacatgacccctagctataatatgattcatctctacactagcagaaaccaaccgagccccatttgaccttacagaaggagaatcagagctcgtttccggatttaacgtagaatatgcagcaggccccttcgccctattctttttagcagaatatgccaacattatcataataaacatcctcacaacaatcctgttcttcggagcatttcatagtccctacatgccagagctatataccactaacttcaccgtaaaaaccctgatcctaacaaccaccttcctatgaatccgagcatcttatccacgattccgatacgaccaactaatacacctcctatgaaaaagctttctaccccttaccctagctctatgcatatgacacgtctccctacccattatcacagcaagtatcccacctcaaacata"/>
+        <sequence id="seq_Panthera_tigris|NC_010642.11" spec="Sequence" taxon="Panthera_tigris|NC_010642.1" totalcount="4" value="atgtttataatcaatattctctcattaattatccctattctcttcgccgtagccttcctaaccctagttgaacgtaaagtactgggctacatacaactccgtaaaggaccaaacgtcgtaggaccatacggcctacttcagcctattgcagacgccatgaaactcttcactaaagaacccctccgacccctcacatcctccacattcatattcatcacagcacccatcctagctcttacactagccctaaccatatgaatcccactgcccataccatacccactcattaacataaacttaggagtgctatttatactagctatgtccagcctagctgtttactccattctatgatcaggatgggcttcaaactcaaaatatgccctaatcggagccctacgagccgtagcccaaacaatctcatatgaagtcacattagctatcattctcttatcagtactactaataaatggatccttcacattagctgcactaattaccacccaagaatacatctggctcatcatccctgcatgacccctagccataatatgattcatctccacactagcagaaaccaaccgagctccatttgatctaacagaaggagaatcagaactcgtttccggattcaacgtagaatacgcagcaggcccctttgccctattttttctagcagaatacgctaatattatcataataaacatcctcacaacaatcttatttttcggagcattccataatccctatataccagaactatatactatcaacttcactgtaaaaaccctaattctaacaaccaccttcctatggatccgagcatcttatccacgattccgatatgaccaattaatgcacctcctatgaaaaaacttcctaccccttactctagccctatgcatatgacacgtctccctacccatcattacagcaagcattccaccccaaacata"/>
+        <sequence id="seq_Panthera_uncia|PZ790876.11" spec="Sequence" taxon="Panthera_uncia|PZ790876.1" totalcount="4" value="atgttcataatcaatatcctctcactaattatccccattctcctcgctgtagccttcctaaccctagttgaacgcaaagtactaggctacatgcaacttcgcaaggggccgaacatcgtaggaccatatggcctgctccaacccattgcagacgccatgaaactcttcactaaagagcccctccgacccctcacatcatccacattcatatttattatagcacctatcctagcccttacactagccctaaccatatgaatcccattgcccataccatacccactcatcaatataaacctgggagtactattcatactagccatatccagcctagctgtctactccattctatgatccgggtgggcttcaaactcaaagtacgctctaatcggcgccctacgagccgtagcccaaacaatctcatatgaagtcacactagctattatcctcttatctgtactactaataaatggatccttcacattagccacactaattaccactcaagaatatatctgacttattatccccgcatgacccctagctataatatgattcatctctactctagcagaaaccaaccgagccccatttgacctcacagaaggagaatcagagcttgtttccggatttaacgtagaatatgcagcaggccctttcgccctgttctttctagcagaatacgccaacattatcataataaacatcctcacaacaatcctattcttcggagcatttcatagtccctacataccagaactatacaccaccaacttcactgtaaaaaccctaatcctaacaaccaccttcctatggatccgagcatcctatccacgattccgatacgaccaattaatacacctcctatgaaaaagctttctaccccttaccctagccctatgtatatgacacgtctccctgcccatcaccacagcaagtattccacctcaaacata"/>
+    </data>
+
+    <data
+id="ND2_alignment"
+spec="Alignment"
+name="alignment">
+        <sequence id="seq_Panthera_leo|AY170043.1" spec="Sequence" taxon="Panthera_leo|AY170043.1" totalcount="4" value="atcaaaccccctattttcattatcattatattaaccgttatctcaggaactatgatcgtaataacaacttcccactgactcatggtctgaatcggcttcgaaataaacctactagccattattcctatcctcataaaaaaatacaacccacgagccatagaagcagccacaaaatacttcctaacacaagcaactgcttccatgctcctaataataggaatcatcatcaacttactgcactcaggacaatgaactgtctcaaaagacctgaaccccatagcatccattataataacaaccgccctagcaataaaactaggattagccccattccacttctgactgcccgaagtcacacaaggaatctccatgtcctcgggcctaatcctactcacatgacaaaaaatcgccccactatcaattctataccaaatctcacctaccattaatcctaacctactcctaacaatagccatcatatcagttataatcggaggctgagggggactcaatcagacccaactacgaaaaatcatagcatattcctcaatcgcccatataggctgaatagcagctatcataatatacagccccacaataataattttaaacctgatcatctacatcaccataacactaaccacctttatactattcatatataactcaaccacaacaacatcatccctatcacagacatgaaataaaactcccctaatcacctcatttatcctagtactaataatatctctaagcggccttcctccactctccggcttcatcccaaaatgaataatcatccaagaactaactaaaaatgaaataattataatacccacactactagctataacagcgctacttaacctatacttctacatacgactaacatataccactgcactaactatattcccctcaaataactgcataaaaatgaaatgacgattcgaacgcacaaaaaaaacaatcctttta------ccccccttaatcgtaatatctaccatactactaccactcgcaccaatactatctgtcctagattag"/>
+        <sequence id="seq_Panthera_onca|NC_022842.1" spec="Sequence" taxon="Panthera_onca|NC_022842.1" totalcount="4" value="atcaaaccccctatttttattatcattatatcaaccgttatttcaggaactataatcgtaataacagcctcccattgacttatagtctgaatcggcctcgaaataaacctattagccattattcccatcctcataaaaaaatataatccacgagccatagaagcagccacaaaatatttcctgacacaagcaactgcttcaatactcctaataataggaatcatcatcaacctactgcattcaggacaatgaactgtatcaaaagatctcaaccccatagcatctatcataataacaaccgccttagcaataaaactaggactagccccattccacttctgagtgcccgaagttacacaaggaatctccatatcctcaggcctaatcctactcacatgacaaaaaattgctccactatcaatcctataccaaatctcacccaccatcaatcccaacctactcctaacaatagccatcatatcagttatagtcggaggctgaggaggacttaaccaaacccaactacgaaaaattatagcatattcctcaattgcccacataggctgaatagcagccatcataacatatagccccacaataataattttaaacctgaccatctacatcatcataacactaaccaccttcatattattcatacacaactccaccacaacaacatcatccctatcacaaacatgaaacaaaacacccctaatcacctcatttatcctagtactaataatgtctctaggcggccttcctccactctccggcttcatcccaaaatgaataatcattcaggaactaactaaaaacgaaataattataatacccacactactagctataacagcactacttaacctgtacttctacatacgactaacgtataccactgcactgactatattcccctcaaacaactgtataaaaataaaatgacgattcgggtgcacagaaaaaacaatccttttaccccccccccccttaattgtaatatccaccatgctactaccactcgcaccaatactatccatcctagatt--"/>
+        <sequence id="seq_Panthera_pardus|OR817741.11" spec="Sequence" taxon="Panthera_pardus|OR817741.1" totalcount="4" value="atcaaaccccccatttttatcatcatcatattaaccgttatctcaggaactacaatcgtaataacagcctcccactgacttatggtctgaattggcttcgaaataaacctactagccgtcattcccatccttataaaaaaatacaacccacgagccacagaagcagccacaaaatatttcctaacacaagcaactgcttcaatactcctaataataggaatcatcatcaacttactgcactcaggacagtgaaccgtatcaaaagacctcaaccccatagcatccattataataacaactgccctggcaataaaactaggactagccccattccacttctgagtgcccgaagttacacaaggaatctccatatcctcaggcctgatcctactcacatgacaaaaaatcgccccactatcaatcctatatcaaatctcacccaccatcaaccccaacctactcctaacaatagccatcatatcagttatagtcggaggttgaggaggacttaatcaaacccaactgcgaaaaatcatagcatactcctcaattgcccacataggctgaatagcagccatcataatatacagccctacaataataattttaaacctgactatctacatcatcataacactaaccaccttcatactattcatatataattccaccacaacaacatcatccctatcacaaacatgaaacaaaacacctttgatcacctcatttatcctagttctaataatatctctaggcggtctccctccactctccggcttcatcccaaaatgaataatcattcaagaactaactaaaaacgaaataattataatacccacactactagctataacagcactacttaacctgtacttctacatacgactaacatacaccactgcactaactatattcccctcaaacaactgcataaaaataaaatgacgatttgagcgcacaaaaaaaacaatctttttg------tcccccttaattgtaatatctaccatactgctaccactcacacccatactatccatcctaaatt--"/>
+        <sequence id="seq_Panthera_spelaea|OK513017.11" spec="Sequence" taxon="Panthera_spelaea|OK513017.1" totalcount="4" value="atcaaaccccccatttttattatcattatattaaccgttatctcaggaaccgtaatcgtaattacaaccccccactgacttatagtctgaatcggcttcgaaataaacctactagccatcattcccatcctcataaaaaaatacaacccacgagccacagaagcagccacaaaatatttcctaacacaagcaaccgcctcaatgctcctaataataggaatcatcatcaacttactgcactcaggacaatgaaccgtatcaaaggatctcaaccccatagcatccatcgtaataacaaccgccctggcaataaaactaggactagccccattccacttctgagtgcccgaagtcacacaaggaatctccatatcctcaggcctaatcctgctcacgtgacaaaaaatcgccccactatcaatcctttatcaaatctcacccaccatcaaccccaaccttctcctaacaatagctaccatatcagttataattggaggctgaggaggacttaatcaaacccaactacgaaaaatcatagcatattcctcaattgcccacataggctgaataacagccatcataatatacagccccacaataataattttaaacctgactatctacatcatcataacactaaccaccttcatactattcatatacaactccaccacaacaacatcatccctatcacaaacatgaaacaaaacacccctaatcacctcatttatcctagtactaataatatctctaggcggccttcctccgctctccggctttatcccaaaatgaataatcattcaagaactaactaaaaatgaaataattataatacccacactactagctacaacagcactacttaacctgtacttctacatacgactaacatataccactgcactaactatattcccctcaaacaactgcataaaaataaaatgacgattcgaacgcacaaaaaaaacaatctttttg------ccccccttaattgtaatatctaccatactgctaccactcgcaccaatactgtccatcctagatt--"/>
+        <sequence id="seq_Panthera_tigris|AY750645.1" spec="Sequence" taxon="Panthera_tigris|AY750645.1" totalcount="4" value="atcaaaccccctatcctcaccatcattatactaaccgttatctcaggaactataatcgtaataacaacttctcactgacttatagtctgaattggcttcgaaataaacctattagctattattcccatcctcatgaaaaaatataacccacgagccatagaagcagccacaaaatacttcctgacacaagcaaccgcttcaatactcctaataataggaattatcatcaacctgctgcactcaggacaatgaaccgtatcaaaagacctcaaccccatggcatccattataataacaaccgccttagcagtaaaactaggactagccccattccacttctgagtgcccgaagttacacaaggaatctccttgtcttcaggcctgatcctactcacatgacaaaaaatcgcaccactatcaattctttaccaaatttcacccaccattaaccccaacctactcctagcaatagccattatatcagttataatcggaggctgagggggacttaaccaaacccagctacgaaaaatcatagcatactcctcaatcgcccatataggttgaataacagccatcataatatatagccccacaataataattttaaacctaactatctatatcattataacactaaccactttcatgttactcatatacaactccaccacaacaacattatccttatcacaaacatgaaacaaaacgcccctgatcacctcacttatcctactgctaataatatctctgggcggcctccccccactctctggcttcatcccaaaatgaataatcattcaagaactaaccaaaaatgaaataatcataatacccacactactagccataacagcactacttaacctatacttctacatacgactaacatataccactgcactaactatattcccctcaaacaactgtataaaaataaaatgacggttcaaatgcacaaaaaaaataatcttttta------ccccccttaatcgtaatgtccaccatactactcccactcacaccaatactatccgtccttgattag"/>
+        <sequence id="seq_Panthera_uncia|PZ790876.12" spec="Sequence" taxon="Panthera_uncia|PZ790876.1" totalcount="4" value="atcaaaccccctattttcattatcattatattaaccgttatctcaggaactatgatcgtaataacaacttcccactgactcatggtctgaatcggcttcgaaataaacctactagccatcattcctatcctcataaaaaaatacaacccacgagccatagaagcagccacaaaatacttcctaacacaagcaactgcttccatactcctaataataggaatcatcatcaacttactgcactcaggacaatgaactgtctcaaaagacctgaaccccatagcatccattataataacaaccgccctagcaataaaactaggattagccccattccacttctgactgcccgaagtcacacaaggaatctccatgtcctcaggcctaatcctactcacatgacaaaaaatcgccccactatcaattctataccaaatctcacctaccattaatcctaacctactcctaacaatagccatcatatcagttataatcggaggctgagggggactcaatcagacccaactacgaaaaatcatagcatattcctcaatcgcccatataggctgaatagcagctatcataatatacagccccacaataataattttaaacctgattatctacatcaccataacactaaccacctttatactattcatatataactcaaccacaacaacatcatccctatcacagacatgaaataaaactcccctaatcacctcatttatcctagtactaataatatctctaggcggccttcctccactctccggcttcatcccaaaatgaataatcatccaagaactaactaaaaatgaaataattataatacccacactactagctataacagcgctacttaacctatacttctacatacgactaacatataccactgcactaactatattcccctcaaataactgcataaaaatgaaatgacgattcgaacgcacaaaaaaaacaatcctttta------ccccccttaatcgtaatatctaccatactactaccactcgcaccaatactatctgtcctagatt--"/>
+    </data>
+
+    <data
+id="RAG1_alignment"
+spec="Alignment"
+name="alignment">
+        <sequence id="seq_Panthera_leo|XM_042907087.1" spec="Sequence" taxon="Panthera_leo|XM_042907087.1" totalcount="4" value="---------------------------------------------------------------------------------------------------------------------------------------------atggctgtctctttgccacctgccctgggactcagttccgccccagatgaaattcagcacccgcatatgaaattttcagaatggaaatttaagctcttcagggtgagatcttttgaaaaggcacctgaagaagctcaaatagaaaagaaaatttcctccgaggggaaaccctctctggagcaatctccagtagtcctggacgaggctgatggtcagaagccagccctgagtcaaccggcattaaaagctcaccctatgttttcaaagaagtcccatgatgatgggaaagcaggagacaaagcaatccaccaagccaaccttcgccatctctgccgtatctgtggaaattcttttaaaactgatgggtacaataggagctatccagtccatgggccagtggatggtaaaacccaagtccttttacgaaagaaggaaaagagagccacttcctggccagacctcattgccaaggttttccggattgatgtgaaagcagacgttgactcgatccaccccactgaattctgccacagctgctggaacatcatgtacaggaagtttagcagtgccccgtgtgaagttaacttcccaaggaatgcacccatggagtggcatccccacacgccatcctgtgacatctgccacgctgcccgccggggactcaaaaggaagagtcatcagccaaacgtgcagctcagcaaaaaactcaaaaccgtggttgaccgagcgagaagagcccgtcggcacaagaaaagagcccaggcaaggatcagcagcaaggaagtgatgaagaagatctccaagtgcagtgacattcatcttagtaccaagcttcttgcggtggacttcccggcacactttgtgaaatctatctcctgccagatttgtgaacacatcctggctgaccctgtggagaccagctgtaagcacgtattttgcaggatttgcattctcaggtgcctcaaagtcatgggcagctattgtccctgttgccaatatccctgcttccctaccgacctggagagtccagtgaagtcctttgtgagcatcttgaactccctgatggtgagatgtccagcaaaagagtgcaatgaggaggtcagcttggaaaaatataaccaccatgtctcaagccacaaggagtcaaaagagacttttgtgcatattaataaagggggtcggccccgccagcatctcctgtccttgacgcgaagggctcagaagcatcgcctgagggagctcaagctgcaagtgaaggctttcgccgacaaggaagaaggtggagatgtgaagtctgtgtgtctgaccttgttcctgctggcactgagggcgaggaatgagcacagacaagccgacgagctggaggccatcatgcagggacggggttctggcctgcagccagctgtgtgcttggccatccgtgtcaacaccttcctcagctgcagtcagtaccacaagatgtacaggactgtgaaagccatcacggggaggcagatttttcagcctttgcacgcccttcggaatgctgagaaggtccttctgccaggctactacccctttgagtggcagccacctctgaagaacgtgtcttccagcactgacgtcggcattattgacggcctgtctggactgtcctcctctgtggacgattacccggtggacaccattgccaagcggttccgctacgactcggctttggtgtctgctttgatggacatggaagaagacatcctggaaggcatgagagcccaagacttggatgactacctgaatggccccttcaccgtcgtggtgaaggagtcttgtgacggcatgggagatgtgagtgagaagcatgggagcgggccagcagttccagaaaaggcggttcgcttttcgttcacagtcatgaagatttccgtagcgcacggctcagaaaacgtgaaggtatttgaggaggtcaaacctaactctgaactgtgttgcaagcccttgtgcctcatgctggcagacgagtctgaccacgagacgctgacggccatcttgagccctctcatcgccgagagggaggccatgaaggccagcaacttagtgctggagatgggaggcatccttcggactttcaagttcatcttcaggggcactgggtacgatgagaagcttgtccgggaagttgaaggcctcgaggcttctggctcagtctacatttgtaccctttgtgatgccacccgcctggaggcctctcaaaatcttgtcttccactccataaccagaagccactctgagaacctggagcgctacgaggtctggcgttccaacccgtaccacgagtctgtggaagaactgcgggatcgcgtgaaaggagtctcatcgaaacctttcattgagaccgtcccttccatagatgcactccactgtgacattggcaatgcggctgagttctacaagattttccagctagagataggggaggtgtacaagaatcccaatgcctccaaagaggagaggaaaaggtggcaggctacgctggacaagcatctccggaagaagatgaacctgaagccaatcatgaggatgaacggcaactttgccaggaggctcatgaccaaagaaacagttgaagcagtctgtgaattaatcccctccgaggagaggcacgaagctctcagggagctgatggacctttacctgaagatgaaacccgtgtggcgatcgtcatgtcctgctaaagagtgcccagaatccctctgccagtatagtttcaattcacagcgttttgctgagctcctctctaccaagttcaagtatagatatgagggcaaaatcaccaattactttcacaaaaccctggcgcacgtgcctgaaattattgagagagacggctccattggggcatgggcaagcgagggaaatgaatctggcaacaaactgttcaggcgcttccgaaaaatgaatgccagacagtccaagtgctacgagatggaagatgtcttgaaacatcactggttgtatacctccaaatatctgcagaagtttatgaacgctcataacgcgtatagaaactctgggtttaccttaaactcgcagtcaggcgtgggggacccaataggcctagaggactctctggaaactcaagattcgatggatttttaa----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        <sequence id="seq_Panthera_onca|XM_060607925.2" spec="Sequence" taxon="Panthera_onca|XM_060607925.2" totalcount="4" value="---------------------------------------------------------------------------------------------------------------------------------------------atggctgtctctttgccacctgccctgggactcagttccgccccagatgaaattcagcacccgcatatgaaattttcagaatggaaatttaagctcttcagggtgagatcttttgaaaaggcacctgaagaagctcaaatagaaaagaaaatttcctccgaggggaaaccctctctggagcaatctccagcagtcctggacgaggctgatggtcagaagccagccctgagtcaaccggcattaaaagctcaccctatgttttcaaagaagtcccatgatgatgggaaagcaggagacaaagcaatccaccaagccaaccttcgctatctctgccgtatctgtggaaattcttttaaaactgatgggtacaataggagctatccagtccatgggccagtggatggtaaaacccaagtccttttacgaaagaaggaaaagagagccacttcctggccagacctcattgccaaggttttccggattgatgtgaaagcagacattgactcgatccaccccactgaattctgccacagctgctggaacatcatgtacaggaagtttagcagtgccccgtgtgaagttaacttcccaaggaatgcacccatggagtggcatccccacacgccatcctgtgacatctgccacgctgcccgccggggactcaaaaggaagagtcatcagccaaacgtgcagctcagcaaaaaactcaaaaccgtggttgaccgagcgagaagagcccgtcggcacaagaaaagagcccaggcaaggatcagcagcaaggaagtgatgaagaagatctccaagtgcagtgacattcatcttagtaccaagcttcttgcggtggacttcccggcacattttgtgaaatctatctcctgccagatttgtgaacacatcctggctgaccctgtggagaccagctgtaagcacgtattttgcaggatttgcattctcaggtgcctcaaagtcatgggcagctattgtccctgttgccaatatccctgcttccctaccgacctggagagtccagtgaagtcctttgtgagcatcttgaactccctgatggtgagatgtccagcaaaagagtgcaatgaggaggtcagcttggaaaaatataaccaccatgtctcaagccacaaggagtcaaaagagacttttgtgcatattaataaagggggtcggccccgccagcatctcctgtccttgacgcgaagggctcagaagcatcgcctgagggagctcaagctgcaagtgaaggctttcgccgacaaggaagaaggtggagatgtgaagtctgtgtgtctgaccttgttcctgctggcactgagggcgaggaatgagcacagacaagccgacgagctggaggccatcatgcagggacggggctctggcctgcagccagctgtgtgcttggccatccgtgtcaacaccttcctcagctgcagtcagtaccacaagatgtacaggactgtgaaagccatcacggggaggcagatttttcagcctttgcacgcccttcggaatgctgagaaggtccttctgccaggctactacccctttgagtggcagccacctctgaagaacgtgtcttccagcactgacgtcggcattattgatggcctgtctggactgtcctcctctgtggacgattacccggtggacaccattgccaagcggttccgctacgactcggctttggtgtctgctttgatggacatggaagaagacatcctggaaggcatgagagcccaagacttggatgactacctgaatggccccttcacggtcgtggtgaaggagtcttgtgacggcatgggagatgtgagtgagaagcatgggagcgggccagcagttccagaaaaggcggttcgcttttcgttcacagtcatgaagatttccgtagcgcacggctcagaaaatgtgaaggtatttgaggaggtcaaacctaactctgaactgtgttgcaagcccttgtgcctcatgctggcagacgagtctgaccacgagacgctgacggccatcttgagccctctcatcgccgagagggaggccatgaaggccagcaacttagtgctggagatgggaggcatccttcggactttcaagttcatcttcaggggcactgggtacgatgagaagcttgtccgggaagttgaaggcctcgaggcttctggctcagtctacatttgtaccctttgtgatgccacccgcctggaggcctctcaaaatcttgtcttccactccataaccagaagccactctgagaacctggagcgctacgaggtctggcgttccaatccgtaccacgagtctgtggaagaactgcgggatcgcgtgaaaggagtctcatcgaaacctttcattgagaccgtcccttccatagatgcactccactgtgacattggcaatgcggctgagttctacaagattttccagctagagataggggaggtgtacaagaatcccaatgcctccaaagaggagaggaaaaggtggcaggctacgctggacaagcatctccggaagaagatgaacctgaagccaatcatgaggatgaacggcaactttgccaggaggctcatgaccaaagaaacagttgaagcagtctgtgaattaatcccctccgaggagaggcacgaagctctcagggagctgatgggcctttacctgaagatgaaacccgtgtggcgatcgtcatgtcctgctaaagagtgcccagaatccctctgccagtatagtttcaattcacagcgttttgctgagctcctctctaccaagttcaagtatagatatgagggcaaaatcaccaattactttcacaaaaccctggcgcacgtgcctgaaattattgagagagacggctccattggggcatgggcaagcgagggaaatgaatctggcaacaaactgttcaggcgcttccgaaaaatgaatgccagacagtccaagtgctacgagatggaagatgtcttgaaacatcactggttgtatacctccaaatatctgcagaagtttatgaacgctcataacgcgtatagaaactctgggtttaccttaaactcgcagtcaggcgtgggggacccaataggcctagaggactctctggaagctcaagattcgatggatttttaa----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        <sequence id="seq_Panthera_pardus|XM_019470137.2" spec="Sequence" taxon="Panthera_pardus|XM_019470137.2" totalcount="4" value="gtctgttctgagggacgagaaggcaaagaggaggaggagaacacactttgccttctctttggcatcaagtgatatcagacgaattacagacatcccaacaatttggccaggcagcctgctgagcaaggtaactcagccatcatggctgtctctttgccacctgccctgggactcagttccgccccagatgaaattcagcacccgcatatgaaattttcagaatggaaatttaagctcttcagggtgagatcttttgaaaaggcacctgaagaagctcaaatagaaaagaaaatttcctccgaggggaaaccctctctggagcaatctccagtagtcctggacgaggctgatggtcagaagccagccctgagtcaaccggcattaaaagctcaccctacgttttcaaagaagtcccatgatgatgggaaagcaggagacaaagcaatccaccaagccaaccttcgccatctctgccgtatctgtggaaattcttttaaaactgatgggtacaataggagctatccagtccatgggccagtggatggtaaaacccaagtccttttacgaaagaaggaaaagagagccacttcctggccagacctcattgccaaggttttccggattgatgtgaaagcagacgttgactcgatccaccccactgaattctgccacagctgctggaacatcatgtacaggaagtttagcagtgccccgtgtgaagttaacttcccaaggaatgcacccatggagtggcatccccacacgccatcctgtgacatctgccacgctgcccgccggggactcaaaaggaagagtcatcagccaaacgtgcagctcagcaaaaaactcaaaaccgtggttgaccgagcgagaagagcccgtcggcacaagaaaagagcccaggcaaggatcagcagcaaggaagtgatgaagaagatctccaagtgcagtgacattcatcttagtaccaagcttcttgcggtggacttcccggcacactttgtgaaatctatctcctgccagatttgtgaacacatcctggctgaccctgtggagaccagctgtaagcacgtattttgcaggatttgcattctcaggtgcctcaaagtcatgggcagctattgtccctgttgccaatatccctgcttccctaccgacctggagagtccagtgaagtcctttgtgagcatcttgaactccctgatggtgagatgtccagcaaaagagtgcaatgaggaggtcagcttggaaaaatataaccaccatgtctcaagccacaaggagtcaaaagagacttttgtgcatattaataaagggggtcggccccgccagcatctcctgtccttgacgcgaagggctcagaagcatcgcctgagggagctcaagctgcaagtgaaggctttcgccgacaaggaagaaggtggagatgtgaagtctgtgtgtctgaccttgttcctgctggcactgagggcgaggaatgagcacagacaagccgacgagctggaggccatcatgcagggacggggctctggcctgcagccagctgtgtgcttggccatccgtgtcaacaccttcctcagctgcagtcagtaccacaagatgtacaggactgtgaaagccatcacggggaggcagatttttcagcctttgcacgcccttcggaatgctgagaaggtccttctgccaggctactacccctttgagtggcagccacctctgaagaacgtgtcttccagcactgacgtcggcattattgacggcctgtctggactgtcctcctctgtggacgattacccggtggacaccattgccaagcggttccgctacgactcggctttggtgtctgctttgatggacatggaagaagacatcctggaaggcatgagagcccaagacttggatgactacctgaatggccccttcaccgtcgtggtgaaggagtcttgtgacggcatgggagatgtgagtgagaagcatgggagcgggccagcagttccagaaaaggcggttcgcttttcgttcacagtcatgaagatttccgtagcgcacggctcagaaaacgtgaaggtatttgaggaggtcaaacctaactctgaactgtgttgcaagcccttgtgcctcatgctggcagacgagtctgaccacgagacgctgacggccatcttgagccctctcatcgccgagagggaggccatgaaggccagcaacttagtgctggagatgggaggcatccttcggactttcaagttcatcttcaggggcactgggtacgatgagaagcttgtccgggaagttgaaggcctcgaggcttctggctcagtctacatttgtaccctttgtgatgccacccgcctggaggcctctcaaaatcttgtcttccactccataaccagaagccactctgagaacctggagcgctacgaggtctggcgttccaacccgtaccacgagtctgtggaagaactgcgggatcgcgtgaaaggagtctcatcgaaacctttcattgagaccgtcccttccatagatgcactccactgtgacattggcaatgcggctgagttctacaagattttccagctagagataggggaggtgtacaagaatcccaatgcctccaaagaggagaggaaaaggtggcaggctacgctggacaagcatctccggaagaagatgaacctgaagccaatcatgaggatgaacggcaactttgccaggaggctcatgaccaaagaaacagttgaagcagtctgtgaattaatcccctccgaggagaggcacgaagctctcagggagctgatggacctttacctgaagatgaaacccgtgtggcgatcgtcatgtcctgctaaagagtgcccagaatccctctgccagtatagtttcaattcacagcgttttgctgagctcctctctaccaagttcaagtatagatatgagggcaaaatcaccaattactttcacaaaaccctggcgcacgtgcctgaaattattgagagagacggctccattggggcatgggcaagcgagggaaatgaatctggcaacaaactgttcaggcgcttccgaaaaatgaatgccagacagtccaagtgctacgagatggaagatgtcttgaaacatcactggttgtatacctccaaatatctgcagaagtttatgaacgctcataacgcgtatagaaactctgggtttaccttaaactcgcagtcaggcgtgggggacccaataggcctagaggactctctggaaactcaagattcgatggatttttaagcagggcagccgcctttgtgttggttttgcaaataagttttcttctgggttgcactcagaccttctcctggcacccttcacttctgtgtgtggggcttcaccacccgagcagtggtagatcggagaggccagaggtgccgaatccatgtcagcaatggataactgatgagctgagtgcttgagccgtttagggagttcaggaaagcaacaggagaaatcagttacttggaagctcaataactcagaacaggagtaactgcaggggcccagagatgaacaaagatgtgcgtgtgtgactgagtgccgtggaaaatcaaagataaggttgtcaaagaaatagccagggaagtcaggaaagggatttgtcttgtggtttgcattccccaccccctcaatgtattattttttgtattgagatataagtgtgtgttttttttaaataccatttctgtagaattctttattttataaatttcacagatcttggcttattccacaggattcaaaaatctttcaaagcttttcagatttctctgataataacatcttacacttgtatggcatggtgacctttacaaagtgctcagtgcattttctcatttggtattcttatgcagaaataccctagaaatatccagaaaatttttggaaaatcagccttcttctgagtctcaatgatgtcaatgtcgagtgaccttaaggggcttagggggtcatctgccaccgtgaatttttcaataataaagttgaaagaataaaactgttagctacagttagtcatgaaatcttctgataatacatttttcttatctatcagtagccaaatatgatttttatttttactttttaatttcaatagagtctccaatgcttttctatataatcttgaagccttttaaaatctgggttgacttactgtataaaaacagatttaatgttttactgaaaaatttctgccagattttctccatgtgaaaccggggtcaattttactaaatccagatttcatggagtctttccctctgcaatatgttactctttctattaagaccagtttacttttttattatttatttttgtttttattttttgagagacagcacaaacagtggagtggcagagagagagagagagagagagagaaagagagagagacccaagcaagcttcacgcccagtgcagagcctgacatgaggcttgatcttgccactgggagatcataacctgagccaaaatcaagagtttggcttgggtgactgagccacccagataccccaagatcagtttacttttagtgtattcagattttcatagcaggatacctttgtacttttcacacctgctctgtttagatgaatcctgctcgtagtaaagaggaagagttaacatttgtagagtgagtttttggggtttttttgtggggttttttggccacttt"/>
+        <sequence id="seq_Panthera_tigris|XM_007082060.2" spec="Sequence" taxon="Panthera_tigris|XM_007082060.2" totalcount="4" value="---------------------------------------------------------------------------------------------------------------------------------------------atggctgtctctttgccacccgccctgggactcagttccgccccagatgaaattcagcacccgcatatgaaattttcagaatggaaatttaagctcttcagggtgagatcttttgaaaaggcacctgaagaagctcaaatagaaaagaaaatttcctccgaggggaaaccctctctggagcaatctccagcagtcctggacgaggctgatggtcagaagccagccctgagtcaaccggcattaaaagctcaccctacgttttcaaagaagtcccatgatgatgggaaagcaggagacaaagcaatccaccaagccaaccttcgccatctctgccgtatctgtgggaattcttttaaaactgatgggcacaataggagctatccagtccatgggccagtggatggtaaaacccaagtccttttacgaaagaaggaaaagagagccacttcctggccagacctcattgccaaggttttccggattgatgtgaaagcagacgttgactcgatccaccccactgaattctgccacagctgctggaacatcatgtacaggaagtttagcagtgccccgtgtgaagttaacttcccaaggaatgcacccatggagtggcatccccacacgccatcctgtgacatctgccacgctgcccgccggggactcaaaaggaagagtcatcagccaaacgtgcagctcagcaaaaaactcaaaaccgtggttgaccgagcgagaagagcccgtcggcacaagaaaagagcccaggcaaggatcagcagcaaggaagtgatgaagaagatctccaagtgcagtgacattcatcttagtaccaagcttcttgcggtggacttcccggcacactttgtgaaatctatctcctgccagatttgtgaacacatcctggctgaccctgtggagaccagctgtaagcacgtattttgcaggatttgcattctcaggtgcctcaaagtcatgggcagctattgtccctgttgccaatatccctgcttccctaccgacctggagagtccagtgaagtcctttgtgagcatcttgaactccctgatggtgagatgtccagcaaaagagtgcaatgaggaggtcagcttggaaaaatataaccaccatgtctcaagccacaaggagtcaaaagagacttttgtgcatattaataaagggggtcggccccgccagcatctcctgtccttgacgcgaagggctcagaagcatcgcctgagggagctcaagctgcaagtgaaggctttcgccgacaaggaagaaggtggagatgtgaagtctgtgtgtctgaccttgttcctgctggcactgagggcgaggaatgagcacagacaagccgacgagctggaggccatcatgcagggacggggctctggcctgcagccagctgtgtgcttggccatccgtgtcaacaccttcctcagctgcagtcagtaccacaagatgtacaggactgtgaaagccatcacggggaggcagatttttcagcctttgcacgcccttcggaatgctgagaaggtccttctgccaggctactacccctttgagtggcagccacctctgaagaacgtgtcttccagcactgacgtcggcattattgatggcctgtctggactgtcctcctctgtggacgattacccggtggacaccattgccaagcggttccgctacgactcggctttggtgtctgctttgatggacatggaagaagacatcctggaaggcatgagagcccaagacttggatgactacctgaatggccccttcacggtcatggtgaaggagtcttgtgacggcatgggagatgtgagtgagaagcatgggagcgggccagcagttccagaaaaggcggttcgcttttcgttcacagtcatgaagatttccatagcgcacggctcagaaaacgtgaaggtatttgaggaggtcagacctaactctgaactgtgttgcaagcccttgtgcctcatgctggcagacgagtctgaccacgagacgctgacggccatcttgagccctctcatcgccgagagggaggccatgaaggccagcaacttagtgctggagatgggaggcatccttcggactttcaagttcatcttcaggggcactgggtacgatgagaagcttgtccgggaagttgaaggcctcgaggcttctggctcagtctacatttgtaccctttgtgatgccacccgcctggaggcctctcaaaatcttgtcttccactccataaccagaagccactctgagaacctggagcgctacgaggtctggcgttccaacccgtaccacgagtctgtggaagaactgcgggatcgcgtgaaaggagtctcatcgaaaccttttattgagaccgtcccttccatagatgcactccactgtgacattggcaatgcggctgagttctacaagattttccagctagagataggggaggtgtacaagaatcccaatgcctccaaagaggagaggaaaaggtggcaggctacgctggacaagcatctccggaagaagatgaacctgaagccaatcatgaggatgaacggcaactttgccaggaggctcatgaccaaagaaacagttgaagcagtctgtgaattaatcccctccgaggagaggcacgaagctctcagggagctgatggacctttacctgaagatgaaacccgtgtggcgatcgtcatgtcctgctaaagagtgcccagaatccctctgccagtatagtttcaattcacagcgttttgctgagctcctctctaccaagttcaagtatagatatgagggcaaaatcaccaattactttcacaaaaccctggcgcacgtgcctgaaattattgagagagacggctccattggggcatgggcaagcgagggaaatgaatctggcaacaaactgttcaggcgcttccgaaaaatgaatgccagacagtccaagtgctacgagatggaagatgtcttgaaacatcactggttgtatacctccaaatatctgcagaagtttatgaacgctcataacgcatacagaaactctgggtttaccttaaactcgcagtcaggcgtgggggacccaataggcctagaggactctctggaaactcaagattcgatggatttttaa----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        <sequence id="seq_Panthera_uncia|XM_049647885.1" spec="Sequence" taxon="Panthera_uncia|XM_049647885.1" totalcount="4" value="---------------------------------------------------------------------------------------------------------------------------------------------atggctgtctctttgccacccgccctgggactcagttccgccccagatgaaattcagcacccgcatatgaaattttcagaatggaaatttaagctcttcagggtgagatcttttgaaaaggcacctgaagaagctcaaatagaaaagaaaatttcctccgaggggaaaccctctctggagcaatctccagcagtcctggacgaggctgatggtcagaagccagccctgagtcaaccggcattaaaagctcaccctacgttttcaaagaagtcccatgatgatgggaaagcaggagacaaagcaatccaccaagccaaccttcgccatctctgccgtatctgtgggaattcttttaaaactgatgggcacaataggagctatccagtccatgggccagtggatggtaaaacccaagtccttttacgaaagaaggaaaagagagccacttcctggccagacctcattgccaaggttttccggattgatgtgaaagcagacgttgactcgatccaccccactgaattctgccacagctgctggaacatcatgtacaggaagtttagcagtgccccgtgtgaagttaacttcccaaggaatgcacccatggagtggcatccccacacgccatcctgtgacatctgccacgctgcccgccggggactcaaaaggaagagtcatcagccaaacgtgcagctcagcaaaaaactcaaaaccgtggttgaccgagcgagaagagcccgtcggcacaagaaaagagcccaggcaaggatcagcagcaaggaagtgatgaagaagatctccaagtgcagtgacattcatcttagtaccaagcttcttgcggtggacttcccggcacactttgtgaaatctatctcctgccagatttgtgaacacatcctggctgaccctgtggagaccagctgtaagcacgtattttgcaggatttgcattctcaggtgcctcaaagtcatgggcagctattgtccctgttgccaatatccctgcttccctaccgacctggagagtccagtgaagtcctttgtgagcatcttgaactccctgatggtgagatgtccagcaaaagagtgcaatgaggaggtcagcttggaaaaatataaccaccatgtctcaagccacaaggagtcaaaagagacttttgtgcatattaataaagggggtcggccccgccagcatctcctgtccttgacgcgaagggctcagaagcatcgcctgagggagctcaagctgcaagtgaaggctttcgccgacaaggaagaaggtggagatgtgaagtctgtgtgtctgaccttgttcctgctggcactgagggcgaggaatgagcacagacaagccgacgagctggaggccatcatgcagggacggggctctggcctgcagccagctgtgtgcttggccatccgtgtcaacaccttcctcagctgcagtcagtaccacaagatgtacaggactgtgaaagccatcacggggaggcagatttttcagcctttgcacgcccttcggaatgctgagaaggtccttctgccaggctactacccctttgagtggcagccacctctgaagaacgtgtcttccagcactgacgttggcattattgatggcctgtctggactgtcctcctctgtggacgattacccggtggacaccattgccaagcggttccgctacgactcggctttggtgtctgctttgatggacatggaagaagacatcctggaaggcatgagagcccaagacttggatgactacctgaatggccccttcaccgtcgtggtgaaggagtcttgtgacggcatgggagatgtgagtgagaagcatgggagtgggccagcagttccagaaaaggcggttcgcttttcgttcacagtcatgaagatttccgtagcgcacggctcagaaaacgtgaaggtatttgaggaggtcaaacctaactctgaactgtgttgcaagcccttgtgcctcatgctggcagacgagtctgaccacgagacgctgacggccatcttgagccctctcatcgccgagagggaggccatgaaggccagcaacttagtgctggagatgggaggcatccttcggactttcaagttcatcttcaggggcactgggtacgatgagaagcttgtccgggaagttgaaggcctcgaggcttctggctcagtctacatttgtaccctttgtgatgccacccgcctggaggcctctcaaaatcttgtcttccactccataaccagaagccactctgagaacctggagcgctacgaggtctggcgttccaacccgtaccacgagtctgtggaagaactgcgggatcgcgtgaaaggagtctcatcgaaacctttcattgagaccgtcccttccatagatgcactccactgtgacattggcaatgcggctgagttctacaagattttccagctagagataggggaggtgtacaagaatcccaatgcctccaaagaggagaggaaaaggtggcaggctacgctggacaagcatctccggaagaagatgaacctgaagccaatcatgaggatgaacggcaactttgccaggaggctcatgaccaaagaaacagttgaagcagtctgtgaattaatcccctccgaggagaggcacgaagctctcagggagctgatggacctttacctgaagatgaaacccgtgtggcgatcgtcatgtcctgctaaagagtgcccagaacccctctgccagtatagtttcaattcacagcgttttgctgagctcctctctaccaagttcaagtatagatatgagggcaaaatcaccaattactttcacaaaaccctggcgcacgtgcctgaaattattgagagagacggctccattggggcatgggcaagcgagggaaatgaatctggcaacaaactgttcaggcgcttccgaaaaatgaatgccagacagtccaagtgctacgagatggaagatgtcttgaaacatcactggttgtatacctccaaatatctgcagaagtttatgaacgctcataacgcgtatagaaactctgggtttaccttaaactcgcagtcaggcgtgggggacccaataggcctagaggactctctggaaactcaagattcgatggatttttaagcagggcagccgcctttgtgttggttttgcaaataa----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+    </data>
+
+    <data
+id="RAG2_alignment"
+spec="Alignment"
+name="alignment">
+        <sequence id="seq_Panthera_leo|XM_042906368.1" spec="Sequence" taxon="Panthera_leo|XM_042906368.1" totalcount="4" value="-----------gaaccctaaatgcaggagcaagagc---------------------------------gattgaggaaaaaccaggggcttttgccaagacactcgttgaaatccaattagtgtttccactacgaaa--------------------------tcattatcagataaaagatccatccactatcagaaaatatgtcactacagatgataacagtcagtaataatacagccctaatacaaccaggcttctcactgatgaattttgatgggcaagttttcttctttggtcaaaaaggctggcccaagagatcctgccccactggagttttccactttgatgtaaagcataaccatctcaaactgaagcctgcagttttctctaaggattcctgctaccttcctcctcttcgttacccagccacttgcatcttcagaggcagcttagagtctgaaaagcatcaatatatcatccatggagggaaaacaccaaataatgagctttcagataagatttatgtcatgtctgttgttggcaagaacaacaaaaaagttactttttgctgcacggagaaagacttggtaggagatgttcctgaagccagatatggtcattccattgatgtggtgtatagtcgagggagaagtataggtgttctctttggaggacggtcatacatgccttctgcccaaagaatcacagaaaaatggaatagtgtagctgactgtctgccccatgttttcctggtagattttgaatttgggtgttctacgtcatacattctgccagaacttcaggatgggttatcttttcatgtctccattgccagaaatgataccatttatattttaggaggacactcacttgccaataacatccgccctgccaacctatacagcataaaggttgatctcccactgggtagcccagctgtgaattgcacagtattgccaggaggaatctctgtctccagtgcgatcctgactcaaacaaacagtgatgaatttgttattgttggtggctatcagcttgaaaatcaaaagagaatggtctgcaacattgtctcttttgtggacaacaagatagaaattcgtgagatggagaccccagattggaccccagatattaagcacagcaagatctggtttgggagcaacatgggaaatggaaatgttttccttggcataccaggagacaataaacaggcttcttcagaggcattctatttttatatgttgaaatgtgctgaagatgatgtgaatgaagatcagaaaacactcacaaatagtcagacatcaacagaagacccaggggactccactccctttgaagactcagaagaattttgtttcagtgcagaagcaaatagttttgatggcgatgatgaatttgacacctataacgaagacgatgaagaagatgagtctgagacaggctactggattacatgctgtgctacttgtgatgtggatatcaacacttgggtaccattttattcaactgagctcaataaacctgccatgatctattgctctcatggagatgggcactgggtccatgcccaatgcatggatctggcagaacgcacactcatccatctatcagaaggaagcaacaagtattactgcaatgagcatgtgaagatagcaagagcactacaaacccccaaaagagacctacccttaaaaaagcctccactgaaatccctccacaaaaaaggttctgggaaaatttttactcctgccaagaaatcttttcttagaaggctgtttgattagtttcacaaatgtcttccaaattcaagtgcatcaaatttttaaacctgttttaaagaatcataacaatgatgaaaattatatttctatttttgtttattgaaaatgcccgtgttttcttttagtcttatgaatcaagtgccaggggaaagtgctcataatacaatgctaaatgcttgaaaaaattttagtcaaaggtatcttaaatgagaatttctgacctgaattttttcattcaagcaatcttcaatacagaggcggtagtaataatcaagatatgtttatatccttcatataatttttcataacaaataagctatagagtagttaagacaaaattaagccagtaaagaaactaacacccaaaggacttaaatgaatttttttgcacaatataacaatttgatggttggccaaaaattaaaaccaagatcacctgtatcccatgctagtactctttatatgtctctaactctaaactggtctcttgattatatctatgaacagaaaaagttccataaagcttatttaagctgtaacatagtctccattgacatgaaggaggagaaaaggactctacatcaagtttgttatattttatcaagttacctgcatgactttattcagaggattccccctctctgccctgtctggtgcacagatgatggaccaaggccaattgcttgaaccaattctttgagagatttaatgaaaactgaagtccactgctacttagcagtctgggaaaagggaataagtcagagcatgctaagaaaagaccaccagttaaaatctcataaagaacaatagtattatttccccccaataaaagaagttaaagaatgttctaaagttaataggtataagattttaagtggggaaaaataaatttgtgtgtgtatgtgtctagttgacatgtggtgttggatgccaatgaaaattgcaaaatcaatgaacttgctatggttcaattagatactttctagaaagagagttaaaaaagactgttcactttgaggctttaagacatcaactgataattagatgaccttataaataaatgtctctccttttggagtatttttctagaaaagcatcttactttatcctaggagcttaagccacagcttcctattcatcagtattcattgaaagtccacagtgtgtgaagttctattgccagatttagggggcacatgaccatacaggagataaatccctggaatacaagttcgtctgctaccagttccatgtcttagctactaaaactaacttggatgaattaagtcctgttgtttgtttcagtaatgttgcttaatgaatactccttttgaaccatttg--------------------------------------------------------------------"/>
+        <sequence id="seq_Panthera_onca|XM_060606406.2" spec="Sequence" taxon="Panthera_onca|XM_060606406.2" totalcount="4" value="-----------------------------caagagc---------------------------------gattgaggaaaaaccaggggcttttgccaagacactcgttgaaatccaattagtgtttccactacgaaa--------------------------tcattatcagataaaagatccatccactatcagaaaatatgtcactacagatgataacagtcagtaataatacagccttaatacaaccaggcttctcactgatgaattttgatgggcaagttttcttctttggccaaaaaggctggcccaagagatcctgccccactggagttttccactttgatgtaaagcataaccatctcaaactgaagcctgcagttttctctaaggattcctgctaccttcctcctcttcgttacccagccacttgcatcttcagaggcagcttagagtctgaaaagcatcaatatatcatccatggagggaaaacaccaaataatgagctttcagataagatttatgtcatgtctgttgttggcaagaacaacaaaaaagttactttttgctgcacggagaaagacttggtaggagatgttcctgaagccagatatggtcattccattgatgtggtgtatagtcgagggagaagtataggtgttctctttggaggacggtcatacatgccttctgcccaaagaatcacagaaaaatggaatagtgtagctgactgtctgccccatgttttcctggtagattttgaatttgggtgttctacgtcatacattctgccagaacttcaggatgggttatcttttcatgtctccattgccagaaatgataccatttatattttaggaggacactcacttgccaataacatccgccctgccaacctatacagcataaaggttgatctcccactgggtagcccagctgtgaattgcacagtattgccaggaggaatctctgtctccagtgcgatcctgactcaaacaaacagtgatgaatttgttattgttggtggctatcagcttgaaaatcaaaagagaatggtctgcaacattgtctcttttgtggacaacaagatagaaattcgtgagatggagaccccagattggaccccagatattaagcacagcaagatctggtttgggagcaacatgggaaatggaaatgttttccttggcataccaggagacaataaacaggcttcttcagaggcattctatttttatatgttgaaatgtgctgaagatgatgtgaatgaagatcagaaaacactcacaaatagtcagacatcaacagaagacccaggggactccactccctttgaagactcagaagaattttgtttcagtgcagaagcaaatagttttgatggcgatgatgaatttgacacctataacgaagacgatgaagaagatgagtctgagacaggctactggattacatgctgtgctacttgtgatgtggatatcaacacttgggtaccattttattcaactgagctcaataaacctgccatgatctactgctctcatggagatgggcactgggtccatgcccaatgcatggatctggcagaacgcacactcatccatctatcggaaggaagcaacaagtattactgcaatgagcatgtgaagatagcaagagcactacaaacccccaaaagagacctacccttaaaaaagcctccactgaaatccctccacaaaaaaggttctgggaaaatttttactcctgccaagaaatcttttcttagaaggctgtttgattagtttcacaaacgtcttccaaattcaagtgcatcaaatttttaaacctgttttaaagaatcataacaatgatgaaaattatatttctatttttgtttattgaaaatgcccgtgttttcttttagtcttatgaatcaagtgccaggggaaagtgctcataatacaatgctaaatgcttgaaaaaattttagtcaaaggtatcttaaatgagaatttctgacctgaattttttcattcaagcaatcttcaatacagaggtggtagtaataatcaagatatgtttatatccttcatataatttttcataacaaataagctatagagtagttaagacaaaattaagccagtaaagaaactaatacccaaaggaattaaatgaattattttgcacaatataacaatttggtggttggccaaaaattaaaaccaagatcacctgtatcccatgctagtactctttatatgtctctaactctaaactggtctcttgattatgtctacgaacagaaaaagttccataaagcttatttaagctgtaacatagtctccattgacatgaaggaggagaaaaggactctacatcaagtttgttatattttatcaagttacctgcatgactttattcagaggattccccctctctgccctgtctggtgcacagatgatggaccaaggccaattgcttgaaccaattctttgagagatttaatgaaaactgaagtccactgctacttagcagtctgggaaaagggaataagtcagagcacgctaagaaaagaccaccagttaaaatctcataaagaacaatagtattatttcccccaaataaaagaagttaaagaatgttctaaagttaataggtataagattttaagtggggaaaagtaaatttgtgtgtgtatgtgtctagttgacatgtggagttggatgccaatgaaaattgcaaaatcaatgaacttgctatggttcaattagatactttctagaaagagagttaaaaaagactgttcactttgaggctttaagacatcaactgataattagatgaccttataaataaatgtctctccttttggagtatttttctagaaaagcatcttactttatcctaggagcttaagccacagcttcctattcatcagtattcattgaaagtccacagtgtgtgaagttctattgccagatttagggggcacatgaccatacaggagataaatccctggaatacaagttcgtctgctaccagttccatgtcttagctactaaaactaacttggatgaattaagtcctgttgtttgtttcagtaatgttgcttaatgaatactccttttgaagcatttgctatacctttgctttgattttttgttgtttttgtcatctatgtaaaaccaataaagcattaaaatgtc"/>
+        <sequence id="seq_Panthera_pardus|XM_019470138.2" spec="Sequence" taxon="Panthera_pardus|XM_019470138.2" totalcount="4" value="tg--------gaacatctggaggcacatatacacattctctttactgtgagccttcctcttgccacagtcagagtgggcagtcagtgaatcttccccaag-----tgctgacatttaatacctggtttagcggcaaagattcagagaggggtgagcagcctctctggccttcagataaaagatccatccactatcagaaaatatgtcactacagatgataacagtcagtaataatacagccctaatacaaccaggcttctcactgatgaattttgatgggcaagttttcttctttggccaaaaaggctggcccaagagatcctgccccactggagttttccactttgatgtaaagcataaccatctcaaactgaagcctgcagttttctctaaggattcctgctaccttcctcctcttcgttacccagccacttgcatcttcagaggcagcttagagtctgaaaagcatcaatatatcatccatggagggaaaacaccaaataatgagctttcagataagatttatgtcatgtctgttgttggcaagaacaacaaaaaagttactttttgctgcacggagaaagacttggtaggagatgttcctgaagccagatatggtcattccattgatgtggtgtatagtcgagggagaagcataggtgttctctttggaggacggtcatacatgccttctgcccaaagaatcacagaaaaatggaatagtgtagctgactgtctgccccatgttttcctggtagattttgaatttgggtgttctacgtcatacattctgccagaacttcaggatgggttatcttttcatgtctccattgccagaaatgataccatttatattttaggaggacactcacttgccaataacatccgccctgccaacctatacagcataaaggttgatctcccactgggtagcccagctgtgaattgcacagtattgccaggaggaatctctgtctccagtgcgatcctgactcaaacaaacagtgatgaatttgttattgttggtggctatcagcttgaaaatcaaaagagaatggtctgcaacattgtctcttttgtggacaacaagatagaaatttgtgagatggagaccccagattggaccccagatattaagcacagcaagatctggtttgggagcaacatgggaaatggaaatgttttccttggcataccaggagacaataaacaggcttcttcagaggcattctatttttatatgttgaaatgtgctgaagatgatgtgaatgaagatcagaaaacactcacaaatagtcagacatcaacagaagacccaggggactccactccctttgaagactcagaagaattttgtttcagtgcagaagcaaatagttttgatggcgatgatgaatttgacacctataacgaagacgatgaagaagatgagtctgagacaggctactggattacatgctgtgctacttgtgatgtggatatcaacacttgggtaccattttattcaactgagctcaataaacctgccatgatctactgctctcatggagatgggcactgggtccatgcccagtgcatggatctggcagaacgcacactcatccatctatcagaaggaagcaacaagtattactgcaatgagcatgtgaagatagcaagagcactacaaacccccaaaagagacctacccttaaaaaagcctccactgaaatccctccacaaaaaaggttctgggaaaatttttactcctgccaagaaatcttttcttagaaggctgtttgattagtttcacaaatgtcttccaaattcaagtgcatcaaatttttaaacctgttttaaagaatcataacaatgatgaaaattatatttctatttttgtttattgaaaatgcccgtgttttcttttagtcttatgaatcaagtgccaggggaaagtgctcataatacaatgctaaatgcttgaaaaaattttagtcaaaggtatcttaaatgagaatttctgacctgaattttttcattcaagcaatcttcaatacagaggcagtagtaataatcaagatatgtttatatccttcatataatttttcataacaaataagctatagagtagttaagacaaaattaagccagtaaagaaactaacacccaaaggacttaaatgaatttttttgcacaatataacaatttgatggttggccaaaaattaaaaccaagatcacctgtatcccatgctagtactctttatatgtctctaactctaaactggtctcttgattatatctatgaacagaaaaagttccataaagcttatttaagctgtaacatagtctccattgacatgaaggaggagaaaaggactctacatcaagtttgttatattttatcaagttacctgcatgacttttttcagaggattccccctctctgccctgtctggtgcacagatgatggaccaaggccaattgcttgaaccaattctttgagagatttaatgaaaactgaagtccactgctacttagcagtctgggaaaagggaataagtcagagcatgctaagaaaagaccaccagttaaaatctcataaagaacaatagtattatttccccccaatgaaagaagttaaagaatgttctaaagttaataggtataagattttaagtggggaaaaataaatttgtgtgtgtatgtgtctagttgacatgtggtgttggatgccaatgaaaattgcaaaatcaatgaacttgctatggttcaattagatactttctagaaagagagttaaaaaagactgttcactttgaggctttaagacatcaactgataattagatgaccttataaataaatgtctctccttttggagtatttttctagaaaagcatcttactttatcctaggagcttaagccacagcttcctattcatcagtattcattgaaagtccacagtgtgtgaagttctattgccagatttagggggcacatgaccatacaggagataaatccctggaatacaagttcgtctgctaccagttccatgtcttagctactaaaactaacttggatgaattaagtcctgttgtttgtttcagtaatgttgcttaatgaatactccttttgaaccatttgctatacctttgctttgattttttgttgtttttgtcatctatgtaaacccaataaagcattaaaatgtc"/>
+        <sequence id="seq_Panthera_tigris|XM_007082061.2" spec="Sequence" taxon="Panthera_tigris|XM_007082061.2" totalcount="4" value="-----------gaaccctaaatgcaggagcaagagc---------------------------------gattgaggaaaaaccaggggcttttgccaagacactcgttgaaatccaattagtgtttccactacgaaa--------------------------tcattatcagataaaagatccatccactatcagaaaatatgtcactacagatgataacagtcagtaataatacagccttaatacaaccaggcttctcactgatgaattttgatgggcaagttttcttctttggccaaaaaggctggcccaagagatcctgccccactggagttttccactttgatgtaaagcataaccatctcaaactgaagcctgcagttttctctaaggattcctgctaccttcctcctcttcgttacccagccacttgcatcttcagaggcagcttagagtctgaaaagcatcaatatatcatccatggagggaaaacaccaaataatgagctttcagataagatttatgtcatgtctgttgttggcaagaacaacaaaaaagttactttttgctgcacggagaaagacttggtaggagatgttcctgaagccagatatggtcattccattgatgtggtgtatagtcgagggagaagtataggtgttctctttggaggacggtcatacatgccttctgcccaaagaatcacagaaaaatggaatagtgtagctgactgtctgccccatgttttcctggtagattttgaatttgggtgttctacgtcatacattctgccagaacttcaggatgggttatcttttcatgtctccattgccagaaatgataccatttatattttaggaggtcactcacttgccaataacatccgccctgccaacctatacagcataaaggttgatctcccactgggtagcccagctgtgaattgcacagtattgccaggaggaatctctgtctccagtgcgatcctgactcaaacaaacagtgatgaatttgttattgttggtggctatcagcttgaaaatcaaaagagaatggtctgcaacattgtctcttttgtggacaacaagatagaaattcgtgagatggagaccccagattggaccccagatattaagcacagcaagatctggtttgggagcaacatgggaaatggaaatgttttccttggcataccaggagacaataaacaggcttcttcagaggcattctatttttatatgttgaaatgtgctgaagatgatgtgaatgaagatcagaaaacactcacaaatagtcagacatcaacagaagacccaggggactccactccctttgaagactcagaagaattttgtttcagtgcagaagcaaatagttttgatggcgatgatgaatttgacacctataacgaagatgatgaagaagatgagtctgagacaggctactggattacatgctgtgctacttgtgatgtggatatcaacacttgggtaccattttattcaactgagctcaataaacctgccatgatctactgctctcatggagatgggcactgggtccatgcccaatgcatggatctggcagaacgcacactcatccatctatcggaaggaagcaacaagtattactgcaatgagcatgtgaagatagcaagagcactacaaacccccaaaagagacctacccttaaaaaagcctccactgaaatccctccacaaaaaaggttctgggaaaatttttactcctgccaagaaatcttttcttagaaggctgtttgattagtttcacaaacgtcttccaaattcaagtgcatcaaatttttaaacctgttttaaagaatcataacaatgatgaaaattatatttctatttttgtttattgaaaatgcccgtgttttcttttagtcttatgaatcaagtgccaggggaaagtgctcataatacaatgctaaatgcttgaaaaaattttagtcaaaggtatcttaaatgagaatttctgacctgaattttttcattcaagcaatcttcaatacagaggcggtagtaataatcaagatatgtttatatccttcatataatttttcataacaaataagctatagagtagttaagacaaaattaagccagtaaagaaactaacacccaaaggaattaaatgaattattttgcacaatataacaattcggtggttggccaaaaattaaaaccaagatcacctgtatcccatgctagtactctttatatgtctctaactctaaactggtctcttgattatgtctacgaacagaaaaagttccataaagtttatttaagctgtaacatagtctccattgacatgaaggaggagaaaaggactctacatcaagtttgttatattttatcaagttacctgcatgactttattcagaggattccccctctctgccctgtctggtgcacagatgatggaccaaggccaattgcttgaaccaattctttgagagatttaatgaaaactgaagtccactgctacttagcagtctgggaaaagggaataagtcagagcacgctaagaaaagaccaccagttaaaatctcataaagaacaatagtattatttcccccaaataaaagaagttaaagaatgttctaaagttaataggtataagattttaagtggggaaaagtaaatttgtgtgtgtatgtgtctagttgacatgtggagttggatgccaatgaaaattgcaaaatcaatgaacttgctatggttcaattagatactttctagaaagagagttaaaaaagactgttcactttgaggctttaagacatcaactgataattagatgaccttataaataaatgtctctccttttggagtatttttctagaaaagcatcttactttatcctaggagcttaagccacagcttcctattcatcagtattcattgaaagtccacagtgtgtgaagttctattgccagatttagggggcacatgaccatacaggagataaatccctggaatacaagttcgtctgctaccagttccatgtcttagctactaaaactaacttggatgaattaagtcctgttgtttgtttcagtaatgttgcttaatgaatactccttttgaaccatttgctatacctttgctttgattttttgttgtttttgtcatctatgtaaacccaataaagcattaaaatgtc"/>
+        <sequence id="seq_Panthera_uncia|XM_049647899.1" spec="Sequence" taxon="Panthera_uncia|XM_049647899.1" totalcount="4" value="tgctaattcagtccctctacaagcttgtggaagaacttttttta-aataagcgttttacatgta-----aggtgatgcaaacataatgatttatatgaagagatacagtaattttgtgtgtgtaattc----------------------------------------tttcagataaaagatccatccactatcagaaaatatgtcactacagatgataacagtcagtaataatacagccttaatacaaccaggcttctcactgatgaattttgatgggcaagttttcttctttggccaaaaaggctggcccaagagatcctgccccactggagttttccactttgatgtaaagcataaccatctcaaactgaagcctgcagttttctctaaggattcctgctaccttcctcctcttcgttacccagccacttgcatcttcagaggcagcttagagtctgaaaagcatcaatatatcatccatggagggaaaacaccaaataatgagctttcagataagatttatgtcatgtctgttgttggcaagaacaacaaaaaagttactttttgctgcacggagaaagacttggtaggagatgttcctgaagccagatatggtcattccattgatgtggtgtatagtcgagggagaagtataggtgttctctttggaggacggtcatacatgccttctgcccaaagaatcacagaaaaatggaatagtgtagctgactgtccgccccatgttttcctggtagattttgaatttgggtgttctacgtcatacattctgccagaacttcaggatgggttatcttttcatgtctccattgccagaaatgataccatttatattttaggaggacactcacttgccaataacatccgccctgccaacctatacagcataaaggttgatctcccactgggtagcccagctgtgaattgcacagtattgccaggaggaatctctgtctccagtgcgatcctgactcaaacaaacagtgatgaatttgttattgttggtggctatcagcttgaaaatcaaaagagaatggtctgcaacattgtctcttttgtggacaacaagatagaaattcgtgagatggagaccccagattggaccccagatattaagcacagcaagatctggtttgggagcaacatgggaaatggaaatgttttccttggcataccaggagacaataaacaggcttcttcagaggcattctatttttatatgttgaaatgtgctgaagatgatgtgaatgaagatcagaaaacactcacaaatagtcagacatcaacagaagacccaggggactccactccctttgaagactcagaagaattttgtttcagtgcagaagcaaatagttttgatggcgatgatgaatttgacacctataacgaagacgatgaagaagatgagtctgagacaggctactggattacatgctgtgctacttgtgatgtggatatcaacacttgggtaccattttattcaactgagctcaataaacctgccatgatctactgctctcatggagatgggcactgggtccatgcccaatgcatggatctggcagaacgcacactcatccatctatcggaaggaagcaacaagtattactgcaatgagcatgtgaagatagcaagagcactacaaacccccaaaagagacctacccttaaaaaagcctccactgaaatccctccacaaaaaaggttctgggaaaatttttactcctgccaagaaatcttttcttagaaggctgtttgattagtttcacaaacgtcttccaaattcaagtgcatcaaatttttaaacctgttttaaagaatcataacaatgatgaaaattatatttctatttttgtttattgaaaatgcccgtgttttcttttggtcttatgaatcaagtgccaggggaaagtgctcataatacaatgctaaatgcttgaaaaaattttagtcaaaggtatcttaaatgagaatttctgacctgaattttttcattcaagcaatcttcaatacagaggcggtagtaataatcaagatatgtttatatccttcatataatttttcataacaaataagctatagagtagttaagacaaaattaagccagtaaagaaactaacacccaaaggaattaaatgaattattttgcacaatataacaatttggtggctggccaaaaattaaaaccaagatcacctgtatcccatgctagtactctttatatgtctctaactctaaactggtctcttgattatgtctacgaacagaaaaagttccataaagtttatttaagctgtaacatagtctccattgacatgaaggaggagaaaaggactctacatcaagtttgttatattttatcaagttacctgtatgactttattcagaggattccccctctctgccctgtctggtgcacagatgatggaccaaggccaattgcttgaaccaattctttgagagatttaatgaaaactgaagtccactgctacttagcagtctgggaaaagggaataagtcagagcacgctaagaaaagaccaccagttaaaatctcataaagaacaatagtattatttcccccaaataaaagaagttaaagaatgttctaaagttaataggtataagattttaagtggggaaaagtaaatttgtgtgtgtatgtgtctagttgacatgtggagtcggatgccaatgaaaattgcaaaatcaatgaacttgctatggttcaattagatactttctagaaagagagttaaaaaagactgttcactttgaggctttaagacatcaactgataattagatgaccttataaataaatgtctctccttttggagtatttttctagaaaagcatcttactttatcctaggagcttaagccacagcttcctattcatcagtattcattgaaagtccacagtgtgtgaagttctattgccagatttagggggcacatgaccatacaggagataaatccctggaatacaagttggtctgctaccagttccatgtcttagctactaaaactaacttggatgaattaagtcctgttgtttgtttcagtaatgttgcttaatgaatactccttttgaaccatttgctatacctttgctttgattttttgttgtttttgtcatctatgtaaacccaataaagcattaaaatgtc"/>
+    </data>
+
+    <map name="Uniform" >beast.base.inference.distribution.Uniform</map>
+
+    <map name="Exponential" >beast.base.inference.distribution.Exponential</map>
+
+    <map name="LogNormal" >beast.base.inference.distribution.LogNormalDistributionModel</map>
+
+    <map name="Normal" >beast.base.inference.distribution.Normal</map>
+
+    <map name="Beta" >beast.base.inference.distribution.Beta</map>
+
+    <map name="Gamma" >beast.base.inference.distribution.Gamma</map>
+
+    <map name="LaplaceDistribution" >beast.base.inference.distribution.LaplaceDistribution</map>
+
+    <map name="prior" >beast.base.inference.distribution.Prior</map>
+
+    <map name="InverseGamma" >beast.base.inference.distribution.InverseGamma</map>
+
+    <map name="OneOnX" >beast.base.inference.distribution.OneOnX</map>
+
+    <run id="mcmc" spec="MCMC" chainLength="50000000" storeEvery="5000">
+        <state id="state" spec="State" storeEvery="5000">
+            <tree id="Tree.t:COX1_alignment" spec="beast.base.evolution.tree.Tree" name="stateNode">
+                <taxonset id="TaxonSet.COX1_alignment" spec="TaxonSet">
+                    <alignment idref="COX1_alignment"/>
+                </taxonset>
+            </tree>
+            <parameter id="birthRate.t:COX1_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+            <tree id="Tree.t:ND1_alignment" spec="beast.base.evolution.tree.Tree" name="stateNode">
+                <taxonset id="TaxonSet.ND1_alignment" spec="TaxonSet">
+                    <alignment idref="ND1_alignment"/>
+                </taxonset>
+            </tree>
+            <parameter id="birthRate.t:ND1_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+            <tree id="Tree.t:ND2_alignment" spec="beast.base.evolution.tree.Tree" name="stateNode">
+                <taxonset id="TaxonSet.ND2_alignment" spec="TaxonSet">
+                    <alignment idref="ND2_alignment"/>
+                </taxonset>
+            </tree>
+            <parameter id="birthRate.t:ND2_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+            <tree id="Tree.t:RAG1_alignment" spec="beast.base.evolution.tree.Tree" name="stateNode">
+                <taxonset id="TaxonSet.RAG1_alignment" spec="TaxonSet">
+                    <alignment idref="RAG1_alignment"/>
+                </taxonset>
+            </tree>
+            <parameter id="birthRate.t:RAG1_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+            <tree id="Tree.t:RAG2_alignment" spec="beast.base.evolution.tree.Tree" name="stateNode">
+                <taxonset id="TaxonSet.RAG2_alignment" spec="TaxonSet">
+                    <alignment idref="RAG2_alignment"/>
+                </taxonset>
+            </tree>
+            <parameter id="birthRate.t:RAG2_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+            <parameter id="kappa.s:COX1_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">2.0</parameter>
+            <parameter id="freqParameter.s:COX1_alignment" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+            <parameter id="gammaShape.s:COX1_alignment" spec="parameter.RealParameter" lower="0.1" name="stateNode">1.0</parameter>
+            <parameter id="gammaShape.s:ND1_alignment" spec="parameter.RealParameter" lower="0.1" name="stateNode">1.0</parameter>
+            <parameter id="kappa.s:ND1_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">2.0</parameter>
+            <parameter id="freqParameter.s:ND1_alignment" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+            <parameter id="kappa.s:ND2_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">2.0</parameter>
+            <parameter id="freqParameter.s:ND2_alignment" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+            <parameter id="gammaShape.s:ND2_alignment" spec="parameter.RealParameter" lower="0.1" name="stateNode">1.0</parameter>
+            <parameter id="gammaShape.s:RAG1_alignment" spec="parameter.RealParameter" lower="0.1" name="stateNode">1.0</parameter>
+            <parameter id="kappa.s:RAG1_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">2.0</parameter>
+            <parameter id="freqParameter.s:RAG1_alignment" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+            <parameter id="kappa.s:RAG2_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">2.0</parameter>
+            <parameter id="freqParameter.s:RAG2_alignment" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+            <parameter id="gammaShape.s:RAG2_alignment" spec="parameter.RealParameter" lower="0.1" name="stateNode">1.0</parameter>
+            <parameter id="clockRate.c:RAG2_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+            <parameter id="clockRate.c:ND2_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+            <parameter id="clockRate.c:RAG1_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+            <parameter id="clockRate.c:COX1_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+            <parameter id="clockRate.c:ND1_alignment" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+        </state>
+        <init id="RandomTree.t:COX1_alignment" spec="RandomTree" estimate="false" initial="@Tree.t:COX1_alignment" taxa="@COX1_alignment">
+            <populationModel id="ConstantPopulation0.t:COX1_alignment" spec="ConstantPopulation">
+                <parameter id="randomPopSize.t:COX1_alignment" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+            </populationModel>
+        </init>
+        <init id="RandomTree.t:ND1_alignment" spec="RandomTree" estimate="false" initial="@Tree.t:ND1_alignment" taxa="@ND1_alignment">
+            <populationModel id="ConstantPopulation0.t:ND1_alignment" spec="ConstantPopulation">
+                <parameter id="randomPopSize.t:ND1_alignment" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+            </populationModel>
+        </init>
+        <init id="RandomTree.t:ND2_alignment" spec="RandomTree" estimate="false" initial="@Tree.t:ND2_alignment" taxa="@ND2_alignment">
+            <populationModel id="ConstantPopulation0.t:ND2_alignment" spec="ConstantPopulation">
+                <parameter id="randomPopSize.t:ND2_alignment" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+            </populationModel>
+        </init>
+        <init id="RandomTree.t:RAG1_alignment" spec="RandomTree" estimate="false" initial="@Tree.t:RAG1_alignment" taxa="@RAG1_alignment">
+            <populationModel id="ConstantPopulation0.t:RAG1_alignment" spec="ConstantPopulation">
+                <parameter id="randomPopSize.t:RAG1_alignment" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+            </populationModel>
+        </init>
+        <init id="RandomTree.t:RAG2_alignment" spec="RandomTree" estimate="false" initial="@Tree.t:RAG2_alignment" taxa="@RAG2_alignment">
+            <populationModel id="ConstantPopulation0.t:RAG2_alignment" spec="ConstantPopulation">
+                <parameter id="randomPopSize.t:RAG2_alignment" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+            </populationModel>
+        </init>
+        <distribution id="posterior" spec="CompoundDistribution">
+            <distribution id="prior" spec="CompoundDistribution">
+                <distribution id="YuleModel.t:COX1_alignment" spec="beast.base.evolution.speciation.YuleModel" birthDiffRate="@birthRate.t:COX1_alignment" tree="@Tree.t:COX1_alignment"/>
+                <distribution id="YuleModel.t:ND1_alignment" spec="beast.base.evolution.speciation.YuleModel" birthDiffRate="@birthRate.t:ND1_alignment" tree="@Tree.t:ND1_alignment"/>
+                <distribution id="YuleModel.t:ND2_alignment" spec="beast.base.evolution.speciation.YuleModel" birthDiffRate="@birthRate.t:ND2_alignment" tree="@Tree.t:ND2_alignment"/>
+                <distribution id="YuleModel.t:RAG1_alignment" spec="beast.base.evolution.speciation.YuleModel" birthDiffRate="@birthRate.t:RAG1_alignment" tree="@Tree.t:RAG1_alignment"/>
+                <distribution id="YuleModel.t:RAG2_alignment" spec="beast.base.evolution.speciation.YuleModel" birthDiffRate="@birthRate.t:RAG2_alignment" tree="@Tree.t:RAG2_alignment"/>
+                <prior id="YuleBirthRatePrior.t:COX1_alignment" name="distribution" x="@birthRate.t:COX1_alignment">
+                    <Uniform id="Uniform.1" name="distr" upper="Infinity"/>
+                </prior>
+                <prior id="YuleBirthRatePrior.t:ND1_alignment" name="distribution" x="@birthRate.t:ND1_alignment">
+                    <Uniform id="Uniform.4" name="distr" upper="Infinity"/>
+                </prior>
+                <prior id="YuleBirthRatePrior.t:ND2_alignment" name="distribution" x="@birthRate.t:ND2_alignment">
+                    <Uniform id="Uniform.7" name="distr" upper="Infinity"/>
+                </prior>
+                <prior id="YuleBirthRatePrior.t:RAG1_alignment" name="distribution" x="@birthRate.t:RAG1_alignment">
+                    <Uniform id="Uniform.10" name="distr" upper="Infinity"/>
+                </prior>
+                <prior id="YuleBirthRatePrior.t:RAG2_alignment" name="distribution" x="@birthRate.t:RAG2_alignment">
+                    <Uniform id="Uniform.13" name="distr" upper="Infinity"/>
+                </prior>
+                <prior id="ClockPrior.c:COX1_alignment" name="distribution" x="@clockRate.c:COX1_alignment">
+                    <Uniform id="Uniform.0" name="distr" upper="Infinity"/>
+                </prior>
+                <prior id="ClockPrior.c:ND1_alignment" name="distribution" x="@clockRate.c:ND1_alignment">
+                    <Uniform id="Uniform.3" name="distr" upper="Infinity"/>
+                </prior>
+                <prior id="ClockPrior.c:ND2_alignment" name="distribution" x="@clockRate.c:ND2_alignment">
+                    <Uniform id="Uniform.6" name="distr" upper="Infinity"/>
+                </prior>
+                <prior id="ClockPrior.c:RAG1_alignment" name="distribution" x="@clockRate.c:RAG1_alignment">
+                    <Uniform id="Uniform.9" name="distr" upper="Infinity"/>
+                </prior>
+                <prior id="ClockPrior.c:RAG2_alignment" name="distribution" x="@clockRate.c:RAG2_alignment">
+                    <Uniform id="Uniform.12" name="distr" upper="Infinity"/>
+                </prior>
+                <prior id="FrequenciesPrior.s:COX1_alignment" name="distribution" x="@freqParameter.s:COX1_alignment">
+                    <distr id="Dirichlet.0" spec="distribution.Dirichlet">
+                        <parameter id="RealParameter.7" spec="parameter.RealParameter" dimension="4" estimate="false" name="alpha">4.0 4.0 4.0 4.0</parameter>
+                    </distr>
+                </prior>
+                <prior id="FrequenciesPrior.s:ND1_alignment" name="distribution" x="@freqParameter.s:ND1_alignment">
+                    <distr id="Dirichlet.1" spec="distribution.Dirichlet">
+                        <parameter id="RealParameter.10" spec="parameter.RealParameter" dimension="4" estimate="false" name="alpha">4.0 4.0 4.0 4.0</parameter>
+                    </distr>
+                </prior>
+                <prior id="FrequenciesPrior.s:ND2_alignment" name="distribution" x="@freqParameter.s:ND2_alignment">
+                    <distr id="Dirichlet.2" spec="distribution.Dirichlet">
+                        <parameter id="RealParameter.13" spec="parameter.RealParameter" dimension="4" estimate="false" name="alpha">4.0 4.0 4.0 4.0</parameter>
+                    </distr>
+                </prior>
+                <prior id="FrequenciesPrior.s:RAG1_alignment" name="distribution" x="@freqParameter.s:RAG1_alignment">
+                    <distr id="Dirichlet.3" spec="distribution.Dirichlet">
+                        <parameter id="RealParameter.16" spec="parameter.RealParameter" dimension="4" estimate="false" name="alpha">4.0 4.0 4.0 4.0</parameter>
+                    </distr>
+                </prior>
+                <prior id="FrequenciesPrior.s:RAG2_alignment" name="distribution" x="@freqParameter.s:RAG2_alignment">
+                    <distr id="Dirichlet.4" spec="distribution.Dirichlet">
+                        <parameter id="RealParameter.19" spec="parameter.RealParameter" dimension="4" estimate="false" name="alpha">4.0 4.0 4.0 4.0</parameter>
+                    </distr>
+                </prior>
+                <prior id="GammaShapePrior.s:COX1_alignment" name="distribution" x="@gammaShape.s:COX1_alignment">
+                    <Exponential id="Exponential.0" name="distr">
+                        <parameter id="RealParameter.0" spec="parameter.RealParameter" estimate="false" name="mean">1.0</parameter>
+                    </Exponential>
+                </prior>
+                <prior id="GammaShapePrior.s:ND1_alignment" name="distribution" x="@gammaShape.s:ND1_alignment">
+                    <Exponential id="Exponential.1" name="distr">
+                        <parameter id="RealParameter.1" spec="parameter.RealParameter" estimate="false" name="mean">1.0</parameter>
+                    </Exponential>
+                </prior>
+                <prior id="GammaShapePrior.s:ND2_alignment" name="distribution" x="@gammaShape.s:ND2_alignment">
+                    <Exponential id="Exponential.2" name="distr">
+                        <parameter id="RealParameter.2" spec="parameter.RealParameter" estimate="false" name="mean">1.0</parameter>
+                    </Exponential>
+                </prior>
+                <prior id="GammaShapePrior.s:RAG1_alignment" name="distribution" x="@gammaShape.s:RAG1_alignment">
+                    <Exponential id="Exponential.3" name="distr">
+                        <parameter id="RealParameter.3" spec="parameter.RealParameter" estimate="false" name="mean">1.0</parameter>
+                    </Exponential>
+                </prior>
+                <prior id="GammaShapePrior.s:RAG2_alignment" name="distribution" x="@gammaShape.s:RAG2_alignment">
+                    <Exponential id="Exponential.4" name="distr">
+                        <parameter id="RealParameter.4" spec="parameter.RealParameter" estimate="false" name="mean">1.0</parameter>
+                    </Exponential>
+                </prior>
+                <prior id="KappaPrior.s:COX1_alignment" name="distribution" x="@kappa.s:COX1_alignment">
+                    <LogNormal id="LogNormalDistributionModel.0" name="distr">
+                        <parameter id="RealParameter.5" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                        <parameter id="RealParameter.6" spec="parameter.RealParameter" estimate="false" name="S">1.25</parameter>
+                    </LogNormal>
+                </prior>
+                <prior id="KappaPrior.s:ND1_alignment" name="distribution" x="@kappa.s:ND1_alignment">
+                    <LogNormal id="LogNormalDistributionModel.1" name="distr">
+                        <parameter id="RealParameter.8" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                        <parameter id="RealParameter.9" spec="parameter.RealParameter" estimate="false" name="S">1.25</parameter>
+                    </LogNormal>
+                </prior>
+                <prior id="KappaPrior.s:ND2_alignment" name="distribution" x="@kappa.s:ND2_alignment">
+                    <LogNormal id="LogNormalDistributionModel.2" name="distr">
+                        <parameter id="RealParameter.11" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                        <parameter id="RealParameter.12" spec="parameter.RealParameter" estimate="false" name="S">1.25</parameter>
+                    </LogNormal>
+                </prior>
+                <prior id="KappaPrior.s:RAG1_alignment" name="distribution" x="@kappa.s:RAG1_alignment">
+                    <LogNormal id="LogNormalDistributionModel.3" name="distr">
+                        <parameter id="RealParameter.14" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                        <parameter id="RealParameter.15" spec="parameter.RealParameter" estimate="false" name="S">1.25</parameter>
+                    </LogNormal>
+                </prior>
+                <prior id="KappaPrior.s:RAG2_alignment" name="distribution" x="@kappa.s:RAG2_alignment">
+                    <LogNormal id="LogNormalDistributionModel.4" name="distr">
+                        <parameter id="RealParameter.17" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                        <parameter id="RealParameter.18" spec="parameter.RealParameter" estimate="false" name="S">1.25</parameter>
+                    </LogNormal>
+                </prior>
+                <distribution id="panthera.prior" spec="beast.base.evolution.tree.MRCAPrior" monophyletic="true" tree="@Tree.t:COX1_alignment">
+                    <taxonset id="panthera" spec="TaxonSet">
+                        <taxon id="Panthera_leo|MG792277.1" spec="Taxon"/>
+                        <taxon id="Panthera_onca|PX668385.1" spec="Taxon"/>
+                        <taxon id="Panthera_pardus|OR817741.1" spec="Taxon"/>
+                        <taxon id="Panthera_spelaea|OK513017.1" spec="Taxon"/>
+                        <taxon id="Panthera_tigris|NC_010642.1" spec="Taxon"/>
+                        <taxon id="Panthera_uncia|PZ790876.1" spec="Taxon"/>
+                    </taxonset>
+                    <Exponential id="Exponential.6" name="distr" offset="5.95">
+                        <parameter id="RealParameter.23" spec="parameter.RealParameter" estimate="false" name="mean">1.0</parameter>
+                    </Exponential>
+                </distribution>
+            </distribution>
+            <distribution id="likelihood" spec="CompoundDistribution" useThreads="true">
+                <distribution id="treeLikelihood.COX1_alignment" spec="ThreadedTreeLikelihood" data="@COX1_alignment" tree="@Tree.t:COX1_alignment">
+                    <siteModel id="SiteModel.s:COX1_alignment" spec="SiteModel" gammaCategoryCount="4" shape="@gammaShape.s:COX1_alignment">
+                        <parameter id="mutationRate.s:COX1_alignment" spec="parameter.RealParameter" estimate="false" lower="0.0" name="mutationRate">1.0</parameter>
+                        <parameter id="proportionInvariant.s:COX1_alignment" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                        <substModel id="hky.s:COX1_alignment" spec="HKY" kappa="@kappa.s:COX1_alignment">
+                            <frequencies id="estimatedFreqs.s:COX1_alignment" spec="Frequencies" frequencies="@freqParameter.s:COX1_alignment"/>
+                        </substModel>
+                    </siteModel>
+                    <branchRateModel id="StrictClock.c:COX1_alignment" spec="beast.base.evolution.branchratemodel.StrictClockModel" clock.rate="@clockRate.c:COX1_alignment"/>
+                </distribution>
+                <distribution id="treeLikelihood.ND1_alignment" spec="ThreadedTreeLikelihood" data="@ND1_alignment" tree="@Tree.t:ND1_alignment">
+                    <siteModel id="SiteModel.s:ND1_alignment" spec="SiteModel" gammaCategoryCount="4" shape="@gammaShape.s:ND1_alignment">
+                        <parameter id="mutationRate.s:ND1_alignment" spec="parameter.RealParameter" estimate="false" lower="0.0" name="mutationRate">1.0</parameter>
+                        <parameter id="proportionInvariant.s:ND1_alignment" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                        <substModel id="hky.s:ND1_alignment" spec="HKY" kappa="@kappa.s:ND1_alignment">
+                            <frequencies id="estimatedFreqs.s:ND1_alignment" spec="Frequencies" frequencies="@freqParameter.s:ND1_alignment"/>
+                        </substModel>
+                    </siteModel>
+                    <branchRateModel id="StrictClock.c:ND1_alignment" spec="beast.base.evolution.branchratemodel.StrictClockModel" clock.rate="@clockRate.c:ND1_alignment"/>
+                </distribution>
+                <distribution id="treeLikelihood.ND2_alignment" spec="ThreadedTreeLikelihood" data="@ND2_alignment" tree="@Tree.t:ND2_alignment">
+                    <siteModel id="SiteModel.s:ND2_alignment" spec="SiteModel" gammaCategoryCount="4" shape="@gammaShape.s:ND2_alignment">
+                        <parameter id="mutationRate.s:ND2_alignment" spec="parameter.RealParameter" estimate="false" lower="0.0" name="mutationRate">1.0</parameter>
+                        <parameter id="proportionInvariant.s:ND2_alignment" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                        <substModel id="hky.s:ND2_alignment" spec="HKY" kappa="@kappa.s:ND2_alignment">
+                            <frequencies id="estimatedFreqs.s:ND2_alignment" spec="Frequencies" frequencies="@freqParameter.s:ND2_alignment"/>
+                        </substModel>
+                    </siteModel>
+                    <branchRateModel id="StrictClock.c:ND2_alignment" spec="beast.base.evolution.branchratemodel.StrictClockModel" clock.rate="@clockRate.c:ND2_alignment"/>
+                </distribution>
+                <distribution id="treeLikelihood.RAG1_alignment" spec="ThreadedTreeLikelihood" data="@RAG1_alignment" tree="@Tree.t:RAG1_alignment">
+                    <siteModel id="SiteModel.s:RAG1_alignment" spec="SiteModel" gammaCategoryCount="4" shape="@gammaShape.s:RAG1_alignment">
+                        <parameter id="mutationRate.s:RAG1_alignment" spec="parameter.RealParameter" estimate="false" lower="0.0" name="mutationRate">1.0</parameter>
+                        <parameter id="proportionInvariant.s:RAG1_alignment" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                        <substModel id="hky.s:RAG1_alignment" spec="HKY" kappa="@kappa.s:RAG1_alignment">
+                            <frequencies id="estimatedFreqs.s:RAG1_alignment" spec="Frequencies" frequencies="@freqParameter.s:RAG1_alignment"/>
+                        </substModel>
+                    </siteModel>
+                    <branchRateModel id="StrictClock.c:RAG1_alignment" spec="beast.base.evolution.branchratemodel.StrictClockModel" clock.rate="@clockRate.c:RAG1_alignment"/>
+                </distribution>
+                <distribution id="treeLikelihood.RAG2_alignment" spec="ThreadedTreeLikelihood" data="@RAG2_alignment" tree="@Tree.t:RAG2_alignment">
+                    <siteModel id="SiteModel.s:RAG2_alignment" spec="SiteModel" gammaCategoryCount="4" shape="@gammaShape.s:RAG2_alignment">
+                        <parameter id="mutationRate.s:RAG2_alignment" spec="parameter.RealParameter" estimate="false" lower="0.0" name="mutationRate">1.0</parameter>
+                        <parameter id="proportionInvariant.s:RAG2_alignment" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                        <substModel id="hky.s:RAG2_alignment" spec="HKY" kappa="@kappa.s:RAG2_alignment">
+                            <frequencies id="estimatedFreqs.s:RAG2_alignment" spec="Frequencies" frequencies="@freqParameter.s:RAG2_alignment"/>
+                        </substModel>
+                    </siteModel>
+                    <branchRateModel id="StrictClock.c:RAG2_alignment" spec="beast.base.evolution.branchratemodel.StrictClockModel" clock.rate="@clockRate.c:RAG2_alignment"/>
+                </distribution>
+            </distribution>
+        </distribution>
+        <operator id="YuleBirthRateScaler.t:COX1_alignment" spec="kernel.BactrianScaleOperator" parameter="@birthRate.t:COX1_alignment" upper="10.0" weight="3.0"/>
+        <operator id="YuleModelTreeRootScaler.t:COX1_alignment" spec="kernel.BactrianScaleOperator" rootOnly="true" scaleFactor="0.5" tree="@Tree.t:COX1_alignment" upper="10.0" weight="3.0"/>
+        <operator id="YuleModelUniformOperator.t:COX1_alignment" spec="kernel.BactrianNodeOperator" tree="@Tree.t:COX1_alignment" weight="30.0"/>
+        <operator id="YuleModelSubtreeSlide.t:COX1_alignment" spec="kernel.BactrianSubtreeSlide" tree="@Tree.t:COX1_alignment" weight="15.0"/>
+        <operator id="YuleModelNarrow.t:COX1_alignment" spec="Exchange" tree="@Tree.t:COX1_alignment" weight="15.0"/>
+        <operator id="YuleModelWide.t:COX1_alignment" spec="Exchange" isNarrow="false" tree="@Tree.t:COX1_alignment" weight="3.0"/>
+        <operator id="YuleModelWilsonBalding.t:COX1_alignment" spec="WilsonBalding" tree="@Tree.t:COX1_alignment" weight="3.0"/>
+        <operator id="YuleModelBICEPSEpochTop.t:COX1_alignment" spec="EpochFlexOperator" scaleFactor="0.1" tree="@Tree.t:COX1_alignment" weight="2.0"/>
+        <operator id="YuleModelBICEPSEpochAll.t:COX1_alignment" spec="EpochFlexOperator" fromOldestTipOnly="false" scaleFactor="0.1" tree="@Tree.t:COX1_alignment" weight="2.0"/>
+        <operator id="YuleModelBICEPSTreeFlex.t:COX1_alignment" spec="TreeStretchOperator" scaleFactor="0.01" tree="@Tree.t:COX1_alignment" weight="2.0"/>
+        <operator id="YuleBirthRateScaler.t:ND1_alignment" spec="kernel.BactrianScaleOperator" parameter="@birthRate.t:ND1_alignment" upper="10.0" weight="3.0"/>
+        <operator id="YuleModelTreeRootScaler.t:ND1_alignment" spec="kernel.BactrianScaleOperator" rootOnly="true" scaleFactor="0.5" tree="@Tree.t:ND1_alignment" upper="10.0" weight="3.0"/>
+        <operator id="YuleModelUniformOperator.t:ND1_alignment" spec="kernel.BactrianNodeOperator" tree="@Tree.t:ND1_alignment" weight="30.0"/>
+        <operator id="YuleModelSubtreeSlide.t:ND1_alignment" spec="kernel.BactrianSubtreeSlide" tree="@Tree.t:ND1_alignment" weight="15.0"/>
+        <operator id="YuleModelNarrow.t:ND1_alignment" spec="Exchange" tree="@Tree.t:ND1_alignment" weight="15.0"/>
+        <operator id="YuleModelWide.t:ND1_alignment" spec="Exchange" isNarrow="false" tree="@Tree.t:ND1_alignment" weight="3.0"/>
+        <operator id="YuleModelWilsonBalding.t:ND1_alignment" spec="WilsonBalding" tree="@Tree.t:ND1_alignment" weight="3.0"/>
+        <operator id="YuleModelBICEPSEpochTop.t:ND1_alignment" spec="EpochFlexOperator" scaleFactor="0.1" tree="@Tree.t:ND1_alignment" weight="2.0"/>
+        <operator id="YuleModelBICEPSEpochAll.t:ND1_alignment" spec="EpochFlexOperator" fromOldestTipOnly="false" scaleFactor="0.1" tree="@Tree.t:ND1_alignment" weight="2.0"/>
+        <operator id="YuleModelBICEPSTreeFlex.t:ND1_alignment" spec="TreeStretchOperator" scaleFactor="0.01" tree="@Tree.t:ND1_alignment" weight="2.0"/>
+        <operator id="YuleBirthRateScaler.t:ND2_alignment" spec="kernel.BactrianScaleOperator" parameter="@birthRate.t:ND2_alignment" upper="10.0" weight="3.0"/>
+        <operator id="YuleModelTreeRootScaler.t:ND2_alignment" spec="kernel.BactrianScaleOperator" rootOnly="true" scaleFactor="0.5" tree="@Tree.t:ND2_alignment" upper="10.0" weight="3.0"/>
+        <operator id="YuleModelUniformOperator.t:ND2_alignment" spec="kernel.BactrianNodeOperator" tree="@Tree.t:ND2_alignment" weight="30.0"/>
+        <operator id="YuleModelSubtreeSlide.t:ND2_alignment" spec="kernel.BactrianSubtreeSlide" tree="@Tree.t:ND2_alignment" weight="15.0"/>
+        <operator id="YuleModelNarrow.t:ND2_alignment" spec="Exchange" tree="@Tree.t:ND2_alignment" weight="15.0"/>
+        <operator id="YuleModelWide.t:ND2_alignment" spec="Exchange" isNarrow="false" tree="@Tree.t:ND2_alignment" weight="3.0"/>
+        <operator id="YuleModelWilsonBalding.t:ND2_alignment" spec="WilsonBalding" tree="@Tree.t:ND2_alignment" weight="3.0"/>
+        <operator id="YuleModelBICEPSEpochTop.t:ND2_alignment" spec="EpochFlexOperator" scaleFactor="0.1" tree="@Tree.t:ND2_alignment" weight="2.0"/>
+        <operator id="YuleModelBICEPSEpochAll.t:ND2_alignment" spec="EpochFlexOperator" fromOldestTipOnly="false" scaleFactor="0.1" tree="@Tree.t:ND2_alignment" weight="2.0"/>
+        <operator id="YuleModelBICEPSTreeFlex.t:ND2_alignment" spec="TreeStretchOperator" scaleFactor="0.01" tree="@Tree.t:ND2_alignment" weight="2.0"/>
+        <operator id="YuleBirthRateScaler.t:RAG1_alignment" spec="kernel.BactrianScaleOperator" parameter="@birthRate.t:RAG1_alignment" upper="10.0" weight="3.0"/>
+        <operator id="YuleModelTreeRootScaler.t:RAG1_alignment" spec="kernel.BactrianScaleOperator" rootOnly="true" scaleFactor="0.5" tree="@Tree.t:RAG1_alignment" upper="10.0" weight="3.0"/>
+        <operator id="YuleModelUniformOperator.t:RAG1_alignment" spec="kernel.BactrianNodeOperator" tree="@Tree.t:RAG1_alignment" weight="30.0"/>
+        <operator id="YuleModelSubtreeSlide.t:RAG1_alignment" spec="kernel.BactrianSubtreeSlide" tree="@Tree.t:RAG1_alignment" weight="15.0"/>
+        <operator id="YuleModelNarrow.t:RAG1_alignment" spec="Exchange" tree="@Tree.t:RAG1_alignment" weight="15.0"/>
+        <operator id="YuleModelWide.t:RAG1_alignment" spec="Exchange" isNarrow="false" tree="@Tree.t:RAG1_alignment" weight="3.0"/>
+        <operator id="YuleModelWilsonBalding.t:RAG1_alignment" spec="WilsonBalding" tree="@Tree.t:RAG1_alignment" weight="3.0"/>
+        <operator id="YuleModelBICEPSEpochTop.t:RAG1_alignment" spec="EpochFlexOperator" scaleFactor="0.1" tree="@Tree.t:RAG1_alignment" weight="2.0"/>
+        <operator id="YuleModelBICEPSEpochAll.t:RAG1_alignment" spec="EpochFlexOperator" fromOldestTipOnly="false" scaleFactor="0.1" tree="@Tree.t:RAG1_alignment" weight="2.0"/>
+        <operator id="YuleModelBICEPSTreeFlex.t:RAG1_alignment" spec="TreeStretchOperator" scaleFactor="0.01" tree="@Tree.t:RAG1_alignment" weight="2.0"/>
+        <operator id="YuleBirthRateScaler.t:RAG2_alignment" spec="kernel.BactrianScaleOperator" parameter="@birthRate.t:RAG2_alignment" upper="10.0" weight="3.0"/>
+        <operator id="YuleModelTreeRootScaler.t:RAG2_alignment" spec="kernel.BactrianScaleOperator" rootOnly="true" scaleFactor="0.5" tree="@Tree.t:RAG2_alignment" upper="10.0" weight="3.0"/>
+        <operator id="YuleModelUniformOperator.t:RAG2_alignment" spec="kernel.BactrianNodeOperator" tree="@Tree.t:RAG2_alignment" weight="30.0"/>
+        <operator id="YuleModelSubtreeSlide.t:RAG2_alignment" spec="kernel.BactrianSubtreeSlide" tree="@Tree.t:RAG2_alignment" weight="15.0"/>
+        <operator id="YuleModelNarrow.t:RAG2_alignment" spec="Exchange" tree="@Tree.t:RAG2_alignment" weight="15.0"/>
+        <operator id="YuleModelWide.t:RAG2_alignment" spec="Exchange" isNarrow="false" tree="@Tree.t:RAG2_alignment" weight="3.0"/>
+        <operator id="YuleModelWilsonBalding.t:RAG2_alignment" spec="WilsonBalding" tree="@Tree.t:RAG2_alignment" weight="3.0"/>
+        <operator id="YuleModelBICEPSEpochTop.t:RAG2_alignment" spec="EpochFlexOperator" scaleFactor="0.1" tree="@Tree.t:RAG2_alignment" weight="2.0"/>
+        <operator id="YuleModelBICEPSEpochAll.t:RAG2_alignment" spec="EpochFlexOperator" fromOldestTipOnly="false" scaleFactor="0.1" tree="@Tree.t:RAG2_alignment" weight="2.0"/>
+        <operator id="YuleModelBICEPSTreeFlex.t:RAG2_alignment" spec="TreeStretchOperator" scaleFactor="0.01" tree="@Tree.t:RAG2_alignment" weight="2.0"/>
+        <operator id="KappaScaler.s:COX1_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="kappa.s:COX1_alignment"/>
+            <operator id="AVMNOperator.COX1_alignment" spec="kernel.AdaptableVarianceMultivariateNormalOperator" allowNonsense="true" beta="0.05" burnin="400" initial="800" weight="0.1">
+                <transformations id="AVMNSumTransform.COX1_alignment" spec="operator.kernel.Transform$LogConstrainedSumTransform">
+                    <f idref="freqParameter.s:COX1_alignment"/>
+                </transformations>
+                <transformations id="AVMNLogTransform.COX1_alignment" spec="operator.kernel.Transform$LogTransform">
+                    <f idref="kappa.s:COX1_alignment"/>
+                    <f idref="gammaShape.s:COX1_alignment"/>
+                    <f idref="clockRate.c:COX1_alignment"/>
+                </transformations>
+                <transformations id="AVMNNoTransform.COX1_alignment" spec="operator.kernel.Transform$NoTransform">
+                    <f idref="Tree.t:COX1_alignment"/>
+                </transformations>
+            </operator>
+            <operator id="KappaScalerX.s:COX1_alignment" spec="kernel.BactrianScaleOperator" parameter="@kappa.s:COX1_alignment" scaleFactor="0.1" upper="10.0" weight="0.1"/>
+        </operator>
+        <operator id="FrequenciesExchanger.s:COX1_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="freqParameter.s:COX1_alignment"/>
+            <operator idref="AVMNOperator.COX1_alignment"/>
+            <operator id="FrequenciesExchangerX.s:COX1_alignment" spec="operator.kernel.BactrianDeltaExchangeOperator" delta="0.01" weight="0.1">
+                <parameter idref="freqParameter.s:COX1_alignment"/>
+            </operator>
+        </operator>
+        <operator id="gammaShapeScaler.s:COX1_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="gammaShape.s:COX1_alignment"/>
+            <operator idref="AVMNOperator.COX1_alignment"/>
+            <operator id="gammaShapeScalerX.s:COX1_alignment" spec="kernel.BactrianScaleOperator" parameter="@gammaShape.s:COX1_alignment" scaleFactor="0.5" upper="10.0" weight="0.1"/>
+        </operator>
+        <operator id="gammaShapeScaler.s:ND1_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="gammaShape.s:ND1_alignment"/>
+            <operator id="AVMNOperator.ND1_alignment" spec="kernel.AdaptableVarianceMultivariateNormalOperator" allowNonsense="true" beta="0.05" burnin="400" initial="800" weight="0.1">
+                <transformations id="AVMNSumTransform.ND1_alignment" spec="operator.kernel.Transform$LogConstrainedSumTransform">
+                    <f idref="freqParameter.s:ND1_alignment"/>
+                </transformations>
+                <transformations id="AVMNLogTransform.ND1_alignment" spec="operator.kernel.Transform$LogTransform">
+                    <f idref="gammaShape.s:ND1_alignment"/>
+                    <f idref="kappa.s:ND1_alignment"/>
+                    <f idref="clockRate.c:ND1_alignment"/>
+                </transformations>
+                <transformations id="AVMNNoTransform.ND1_alignment" spec="operator.kernel.Transform$NoTransform">
+                    <f idref="Tree.t:ND1_alignment"/>
+                </transformations>
+            </operator>
+            <operator id="gammaShapeScalerX.s:ND1_alignment" spec="kernel.BactrianScaleOperator" parameter="@gammaShape.s:ND1_alignment" scaleFactor="0.5" upper="10.0" weight="0.1"/>
+        </operator>
+        <operator id="KappaScaler.s:ND1_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="kappa.s:ND1_alignment"/>
+            <operator idref="AVMNOperator.ND1_alignment"/>
+            <operator id="KappaScalerX.s:ND1_alignment" spec="kernel.BactrianScaleOperator" parameter="@kappa.s:ND1_alignment" scaleFactor="0.1" upper="10.0" weight="0.1"/>
+        </operator>
+        <operator id="FrequenciesExchanger.s:ND1_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="freqParameter.s:ND1_alignment"/>
+            <operator idref="AVMNOperator.ND1_alignment"/>
+            <operator id="FrequenciesExchangerX.s:ND1_alignment" spec="operator.kernel.BactrianDeltaExchangeOperator" delta="0.01" weight="0.1">
+                <parameter idref="freqParameter.s:ND1_alignment"/>
+            </operator>
+        </operator>
+        <operator id="KappaScaler.s:ND2_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="kappa.s:ND2_alignment"/>
+            <operator id="AVMNOperator.ND2_alignment" spec="kernel.AdaptableVarianceMultivariateNormalOperator" allowNonsense="true" beta="0.05" burnin="400" initial="800" weight="0.1">
+                <transformations id="AVMNSumTransform.ND2_alignment" spec="operator.kernel.Transform$LogConstrainedSumTransform">
+                    <f idref="freqParameter.s:ND2_alignment"/>
+                </transformations>
+                <transformations id="AVMNLogTransform.ND2_alignment" spec="operator.kernel.Transform$LogTransform">
+                    <f idref="kappa.s:ND2_alignment"/>
+                    <f idref="gammaShape.s:ND2_alignment"/>
+                    <f idref="clockRate.c:ND2_alignment"/>
+                </transformations>
+                <transformations id="AVMNNoTransform.ND2_alignment" spec="operator.kernel.Transform$NoTransform">
+                    <f idref="Tree.t:ND2_alignment"/>
+                </transformations>
+            </operator>
+            <operator id="KappaScalerX.s:ND2_alignment" spec="kernel.BactrianScaleOperator" parameter="@kappa.s:ND2_alignment" scaleFactor="0.1" upper="10.0" weight="0.1"/>
+        </operator>
+        <operator id="FrequenciesExchanger.s:ND2_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="freqParameter.s:ND2_alignment"/>
+            <operator idref="AVMNOperator.ND2_alignment"/>
+            <operator id="FrequenciesExchangerX.s:ND2_alignment" spec="operator.kernel.BactrianDeltaExchangeOperator" delta="0.01" weight="0.1">
+                <parameter idref="freqParameter.s:ND2_alignment"/>
+            </operator>
+        </operator>
+        <operator id="gammaShapeScaler.s:ND2_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="gammaShape.s:ND2_alignment"/>
+            <operator idref="AVMNOperator.ND2_alignment"/>
+            <operator id="gammaShapeScalerX.s:ND2_alignment" spec="kernel.BactrianScaleOperator" parameter="@gammaShape.s:ND2_alignment" scaleFactor="0.5" upper="10.0" weight="0.1"/>
+        </operator>
+        <operator id="gammaShapeScaler.s:RAG1_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="gammaShape.s:RAG1_alignment"/>
+            <operator id="AVMNOperator.RAG1_alignment" spec="kernel.AdaptableVarianceMultivariateNormalOperator" allowNonsense="true" beta="0.05" burnin="400" initial="800" weight="0.1">
+                <transformations id="AVMNSumTransform.RAG1_alignment" spec="operator.kernel.Transform$LogConstrainedSumTransform">
+                    <f idref="freqParameter.s:RAG1_alignment"/>
+                </transformations>
+                <transformations id="AVMNLogTransform.RAG1_alignment" spec="operator.kernel.Transform$LogTransform">
+                    <f idref="gammaShape.s:RAG1_alignment"/>
+                    <f idref="kappa.s:RAG1_alignment"/>
+                    <f idref="clockRate.c:RAG1_alignment"/>
+                </transformations>
+                <transformations id="AVMNNoTransform.RAG1_alignment" spec="operator.kernel.Transform$NoTransform">
+                    <f idref="Tree.t:RAG1_alignment"/>
+                </transformations>
+            </operator>
+            <operator id="gammaShapeScalerX.s:RAG1_alignment" spec="kernel.BactrianScaleOperator" parameter="@gammaShape.s:RAG1_alignment" scaleFactor="0.5" upper="10.0" weight="0.1"/>
+        </operator>
+        <operator id="KappaScaler.s:RAG1_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="kappa.s:RAG1_alignment"/>
+            <operator idref="AVMNOperator.RAG1_alignment"/>
+            <operator id="KappaScalerX.s:RAG1_alignment" spec="kernel.BactrianScaleOperator" parameter="@kappa.s:RAG1_alignment" scaleFactor="0.1" upper="10.0" weight="0.1"/>
+        </operator>
+        <operator id="FrequenciesExchanger.s:RAG1_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="freqParameter.s:RAG1_alignment"/>
+            <operator idref="AVMNOperator.RAG1_alignment"/>
+            <operator id="FrequenciesExchangerX.s:RAG1_alignment" spec="operator.kernel.BactrianDeltaExchangeOperator" delta="0.01" weight="0.1">
+                <parameter idref="freqParameter.s:RAG1_alignment"/>
+            </operator>
+        </operator>
+        <operator id="KappaScaler.s:RAG2_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="kappa.s:RAG2_alignment"/>
+            <operator id="AVMNOperator.RAG2_alignment" spec="kernel.AdaptableVarianceMultivariateNormalOperator" allowNonsense="true" beta="0.05" burnin="400" initial="800" weight="0.1">
+                <transformations id="AVMNSumTransform.RAG2_alignment" spec="operator.kernel.Transform$LogConstrainedSumTransform">
+                    <f idref="freqParameter.s:RAG2_alignment"/>
+                </transformations>
+                <transformations id="AVMNLogTransform.RAG2_alignment" spec="operator.kernel.Transform$LogTransform">
+                    <f idref="kappa.s:RAG2_alignment"/>
+                    <f idref="gammaShape.s:RAG2_alignment"/>
+                    <f idref="clockRate.c:RAG2_alignment"/>
+                </transformations>
+                <transformations id="AVMNNoTransform.RAG2_alignment" spec="operator.kernel.Transform$NoTransform">
+                    <f idref="Tree.t:RAG2_alignment"/>
+                </transformations>
+            </operator>
+            <operator id="KappaScalerX.s:RAG2_alignment" spec="kernel.BactrianScaleOperator" parameter="@kappa.s:RAG2_alignment" scaleFactor="0.1" upper="10.0" weight="0.1"/>
+        </operator>
+        <operator id="FrequenciesExchanger.s:RAG2_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="freqParameter.s:RAG2_alignment"/>
+            <operator idref="AVMNOperator.RAG2_alignment"/>
+            <operator id="FrequenciesExchangerX.s:RAG2_alignment" spec="operator.kernel.BactrianDeltaExchangeOperator" delta="0.01" weight="0.1">
+                <parameter idref="freqParameter.s:RAG2_alignment"/>
+            </operator>
+        </operator>
+        <operator id="gammaShapeScaler.s:RAG2_alignment" spec="AdaptableOperatorSampler" weight="0.05">
+            <parameter idref="gammaShape.s:RAG2_alignment"/>
+            <operator idref="AVMNOperator.RAG2_alignment"/>
+            <operator id="gammaShapeScalerX.s:RAG2_alignment" spec="kernel.BactrianScaleOperator" parameter="@gammaShape.s:RAG2_alignment" scaleFactor="0.5" upper="10.0" weight="0.1"/>
+        </operator>
+        <operator id="StrictClockRateScaler.c:RAG2_alignment" spec="AdaptableOperatorSampler" weight="1.5">
+            <parameter idref="clockRate.c:RAG2_alignment"/>
+            <operator idref="AVMNOperator.RAG2_alignment"/>
+            <operator id="StrictClockRateScalerX.c:RAG2_alignment" spec="kernel.BactrianScaleOperator" parameter="@clockRate.c:RAG2_alignment" upper="10.0" weight="3.0"/>
+        </operator>
+        <operator id="strictClockUpDownOperator.c:RAG2_alignment" spec="AdaptableOperatorSampler" weight="1.5">
+            <parameter idref="clockRate.c:RAG2_alignment"/>
+            <tree idref="Tree.t:RAG2_alignment"/>
+            <operator idref="AVMNOperator.RAG2_alignment"/>
+            <operator id="strictClockUpDownOperatorX.c:RAG2_alignment" spec="operator.kernel.BactrianUpDownOperator" scaleFactor="0.75" weight="3.0">
+                <up idref="clockRate.c:RAG2_alignment"/>
+                <down idref="Tree.t:RAG2_alignment"/>
+            </operator>
+        </operator>
+        <operator id="StrictClockRateScaler.c:ND2_alignment" spec="AdaptableOperatorSampler" weight="1.5">
+            <parameter idref="clockRate.c:ND2_alignment"/>
+            <operator idref="AVMNOperator.ND2_alignment"/>
+            <operator id="StrictClockRateScalerX.c:ND2_alignment" spec="kernel.BactrianScaleOperator" parameter="@clockRate.c:ND2_alignment" upper="10.0" weight="3.0"/>
+        </operator>
+        <operator id="strictClockUpDownOperator.c:ND2_alignment" spec="AdaptableOperatorSampler" weight="1.5">
+            <parameter idref="clockRate.c:ND2_alignment"/>
+            <tree idref="Tree.t:ND2_alignment"/>
+            <operator idref="AVMNOperator.ND2_alignment"/>
+            <operator id="strictClockUpDownOperatorX.c:ND2_alignment" spec="operator.kernel.BactrianUpDownOperator" scaleFactor="0.75" weight="3.0">
+                <up idref="clockRate.c:ND2_alignment"/>
+                <down idref="Tree.t:ND2_alignment"/>
+            </operator>
+        </operator>
+        <operator id="StrictClockRateScaler.c:RAG1_alignment" spec="AdaptableOperatorSampler" weight="1.5">
+            <parameter idref="clockRate.c:RAG1_alignment"/>
+            <operator idref="AVMNOperator.RAG1_alignment"/>
+            <operator id="StrictClockRateScalerX.c:RAG1_alignment" spec="kernel.BactrianScaleOperator" parameter="@clockRate.c:RAG1_alignment" upper="10.0" weight="3.0"/>
+        </operator>
+        <operator id="strictClockUpDownOperator.c:RAG1_alignment" spec="AdaptableOperatorSampler" weight="1.5">
+            <parameter idref="clockRate.c:RAG1_alignment"/>
+            <tree idref="Tree.t:RAG1_alignment"/>
+            <operator idref="AVMNOperator.RAG1_alignment"/>
+            <operator id="strictClockUpDownOperatorX.c:RAG1_alignment" spec="operator.kernel.BactrianUpDownOperator" scaleFactor="0.75" weight="3.0">
+                <up idref="clockRate.c:RAG1_alignment"/>
+                <down idref="Tree.t:RAG1_alignment"/>
+            </operator>
+        </operator>
+        <operator id="StrictClockRateScaler.c:COX1_alignment" spec="AdaptableOperatorSampler" weight="1.5">
+            <parameter idref="clockRate.c:COX1_alignment"/>
+            <operator idref="AVMNOperator.COX1_alignment"/>
+            <operator id="StrictClockRateScalerX.c:COX1_alignment" spec="kernel.BactrianScaleOperator" parameter="@clockRate.c:COX1_alignment" upper="10.0" weight="3.0"/>
+        </operator>
+        <operator id="strictClockUpDownOperator.c:COX1_alignment" spec="AdaptableOperatorSampler" weight="1.5">
+            <parameter idref="clockRate.c:COX1_alignment"/>
+            <tree idref="Tree.t:COX1_alignment"/>
+            <operator idref="AVMNOperator.COX1_alignment"/>
+            <operator id="strictClockUpDownOperatorX.c:COX1_alignment" spec="operator.kernel.BactrianUpDownOperator" scaleFactor="0.75" weight="3.0">
+                <up idref="clockRate.c:COX1_alignment"/>
+                <down idref="Tree.t:COX1_alignment"/>
+            </operator>
+        </operator>
+        <operator id="StrictClockRateScaler.c:ND1_alignment" spec="AdaptableOperatorSampler" weight="1.5">
+            <parameter idref="clockRate.c:ND1_alignment"/>
+            <operator idref="AVMNOperator.ND1_alignment"/>
+            <operator id="StrictClockRateScalerX.c:ND1_alignment" spec="kernel.BactrianScaleOperator" parameter="@clockRate.c:ND1_alignment" upper="10.0" weight="3.0"/>
+        </operator>
+        <operator id="strictClockUpDownOperator.c:ND1_alignment" spec="AdaptableOperatorSampler" weight="1.5">
+            <parameter idref="clockRate.c:ND1_alignment"/>
+            <tree idref="Tree.t:ND1_alignment"/>
+            <operator idref="AVMNOperator.ND1_alignment"/>
+            <operator id="strictClockUpDownOperatorX.c:ND1_alignment" spec="operator.kernel.BactrianUpDownOperator" scaleFactor="0.75" weight="3.0">
+                <up idref="clockRate.c:ND1_alignment"/>
+                <down idref="Tree.t:ND1_alignment"/>
+            </operator>
+        </operator>
+        <logger id="tracelog" spec="Logger" fileName="$(filebase).log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+            <log idref="posterior"/>
+            <log idref="likelihood"/>
+            <log idref="prior"/>
+            <log idref="treeLikelihood.COX1_alignment"/>
+            <log id="TreeHeight.t:COX1_alignment" spec="beast.base.evolution.tree.TreeStatLogger" tree="@Tree.t:COX1_alignment"/>
+            <log idref="YuleModel.t:COX1_alignment"/>
+            <log idref="birthRate.t:COX1_alignment"/>
+            <log idref="treeLikelihood.ND1_alignment"/>
+            <log id="TreeHeight.t:ND1_alignment" spec="beast.base.evolution.tree.TreeStatLogger" tree="@Tree.t:ND1_alignment"/>
+            <log idref="YuleModel.t:ND1_alignment"/>
+            <log idref="birthRate.t:ND1_alignment"/>
+            <log idref="treeLikelihood.ND2_alignment"/>
+            <log id="TreeHeight.t:ND2_alignment" spec="beast.base.evolution.tree.TreeStatLogger" tree="@Tree.t:ND2_alignment"/>
+            <log idref="YuleModel.t:ND2_alignment"/>
+            <log idref="birthRate.t:ND2_alignment"/>
+            <log idref="treeLikelihood.RAG1_alignment"/>
+            <log id="TreeHeight.t:RAG1_alignment" spec="beast.base.evolution.tree.TreeStatLogger" tree="@Tree.t:RAG1_alignment"/>
+            <log idref="YuleModel.t:RAG1_alignment"/>
+            <log idref="birthRate.t:RAG1_alignment"/>
+            <log idref="treeLikelihood.RAG2_alignment"/>
+            <log id="TreeHeight.t:RAG2_alignment" spec="beast.base.evolution.tree.TreeStatLogger" tree="@Tree.t:RAG2_alignment"/>
+            <log idref="YuleModel.t:RAG2_alignment"/>
+            <log idref="birthRate.t:RAG2_alignment"/>
+            <log idref="kappa.s:COX1_alignment"/>
+            <log idref="freqParameter.s:COX1_alignment"/>
+            <log idref="gammaShape.s:COX1_alignment"/>
+            <log idref="gammaShape.s:ND1_alignment"/>
+            <log idref="kappa.s:ND1_alignment"/>
+            <log idref="freqParameter.s:ND1_alignment"/>
+            <log idref="kappa.s:ND2_alignment"/>
+            <log idref="freqParameter.s:ND2_alignment"/>
+            <log idref="gammaShape.s:ND2_alignment"/>
+            <log idref="gammaShape.s:RAG1_alignment"/>
+            <log idref="kappa.s:RAG1_alignment"/>
+            <log idref="freqParameter.s:RAG1_alignment"/>
+            <log idref="kappa.s:RAG2_alignment"/>
+            <log idref="freqParameter.s:RAG2_alignment"/>
+            <log idref="gammaShape.s:RAG2_alignment"/>
+            <log idref="panthera.prior"/>
+            <log idref="clockRate.c:RAG2_alignment"/>
+            <log idref="clockRate.c:ND2_alignment"/>
+            <log idref="clockRate.c:RAG1_alignment"/>
+            <log idref="clockRate.c:COX1_alignment"/>
+            <log idref="clockRate.c:ND1_alignment"/>
+        </logger>
+        <logger id="screenlog" spec="Logger" logEvery="1000">
+            <log idref="posterior"/>
+            <log idref="likelihood"/>
+            <log idref="prior"/>
+        </logger>
+        <logger id="treelog.t:COX1_alignment" spec="Logger" fileName="$(filebase)-$(tree).trees" logEvery="1000" mode="tree">
+            <log id="TreeWithMetaDataLogger.t:COX1_alignment" spec="beast.base.evolution.TreeWithMetaDataLogger" tree="@Tree.t:COX1_alignment"/>
+        </logger>
+        <logger id="treelog.t:ND1_alignment" spec="Logger" fileName="$(filebase)-$(tree).trees" logEvery="1000" mode="tree">
+            <log id="TreeWithMetaDataLogger.t:ND1_alignment" spec="beast.base.evolution.TreeWithMetaDataLogger" tree="@Tree.t:ND1_alignment"/>
+        </logger>
+        <logger id="treelog.t:ND2_alignment" spec="Logger" fileName="$(filebase)-$(tree).trees" logEvery="1000" mode="tree">
+            <log id="TreeWithMetaDataLogger.t:ND2_alignment" spec="beast.base.evolution.TreeWithMetaDataLogger" tree="@Tree.t:ND2_alignment"/>
+        </logger>
+        <logger id="treelog.t:RAG1_alignment" spec="Logger" fileName="$(filebase)-$(tree).trees" logEvery="1000" mode="tree">
+            <log id="TreeWithMetaDataLogger.t:RAG1_alignment" spec="beast.base.evolution.TreeWithMetaDataLogger" tree="@Tree.t:RAG1_alignment"/>
+        </logger>
+        <logger id="treelog.t:RAG2_alignment" spec="Logger" fileName="$(filebase)-$(tree).trees" logEvery="1000" mode="tree">
+            <log id="TreeWithMetaDataLogger.t:RAG2_alignment" spec="beast.base.evolution.TreeWithMetaDataLogger" tree="@Tree.t:RAG2_alignment"/>
+        </logger>
+        <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+    </run>
+
+</beast>
