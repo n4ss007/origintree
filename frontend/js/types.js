@@ -89,6 +89,64 @@
  * @property {number}  length      Length of the full record, in bases
  */
 
+/**
+ * A dated fossil assigned to a clade, from the project's own dataset.
+ *
+ * This is the age of the OLDEST KNOWN FOSSIL for the clade, which makes it a
+ * minimum age for that group — not the date two lineages diverged. Present
+ * only when data/fossils.csv actually holds a row for the clade; never
+ * estimated or interpolated.
+ *
+ * @typedef  {object}  FossilCalibration
+ * @property {string}  clade
+ * @property {number|null} minimum_ma
+ * @property {number|null} maximum_ma
+ * @property {string}  source          the paper it comes from
+ * @property {string}  justification
+ * @property {string}  matched_rank
+ * @property {string}  taxid
+ */
+
+/**
+ * Where two organisms' classifications agree, and where they part.
+ *
+ * `shared` runs root-first and ends at `common_ancestor`; `only_a`/`only_b`
+ * are what remains of each path after that point. `relationship` is
+ * "distinct", "nested" (one inside the other) or "identical".
+ *
+ * @typedef  {object}        Comparison
+ * @property {Taxon}         a
+ * @property {Taxon}         b
+ * @property {string}        relationship
+ * @property {string}        summary        one plain sentence
+ * @property {LineageNode[]} shared
+ * @property {number}        shared_count
+ * @property {LineageNode|null} common_ancestor
+ * @property {LineageNode[]} only_a
+ * @property {LineageNode[]} only_b
+ * @property {FossilCalibration|null} fossil
+ */
+
+/**
+ * How much two organisms' COX1 barcodes agree.
+ *
+ * `identity` is the percentage of aligned columns carrying the same base,
+ * from a local alignment of the best confirmed record for each organism.
+ * Null whenever `available` is false — never estimated, and refused rather
+ * than reported when the two records overlap too little to mean anything.
+ *
+ * @typedef  {object}  BarcodeComparison
+ * @property {boolean} available
+ * @property {string}  reason          why it is unavailable, when it is
+ * @property {string}  gene
+ * @property {number|null} identity
+ * @property {number}  matches
+ * @property {number}  differences
+ * @property {number}  aligned_length
+ * @property {{accession: string, organism: string, length: number}|null} a
+ * @property {{accession: string, organism: string, length: number}|null} b
+ */
+
 /* ---------------------------------------------------------------
    Extension points
 

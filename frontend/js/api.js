@@ -80,3 +80,32 @@ export function fetchSequences(taxid, limit = SEQUENCE_LIMIT) {
 export function fetchBarcode(taxid) {
   return request(`/api/species/${encodeURIComponent(taxid)}/barcode`);
 }
+
+/**
+ * Compare two organisms: what classification they share, where they part.
+ *
+ * Each argument is a name or a TaxID — a TaxID is exact and skips a search.
+ *
+ * @param   {string} a
+ * @param   {string} b
+ * @returns {Promise<import("./types.js").Comparison>}
+ */
+export function compareOrganisms(a, b) {
+  const query = `a=${encodeURIComponent(a)}&b=${encodeURIComponent(b)}`;
+  return request(`/api/compare?${query}`);
+}
+
+/**
+ * Align two organisms' COX1 barcodes and report how much they agree.
+ *
+ * Slower than the taxonomy comparison — two record fetches plus an
+ * alignment — so it is called only when asked for.
+ *
+ * @param   {string} taxidA
+ * @param   {string} taxidB
+ * @returns {Promise<import("./types.js").BarcodeComparison>}
+ */
+export function compareBarcodes(taxidA, taxidB) {
+  const query = `a=${encodeURIComponent(taxidA)}&b=${encodeURIComponent(taxidB)}`;
+  return request(`/api/compare/barcode?${query}`);
+}

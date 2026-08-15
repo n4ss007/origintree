@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Off the tree — OriginTree</title>
+  <meta name="description" content="That page is not part of the record. Return to OriginTree and trace an organism's lineage." />
+  <meta name="theme-color" content="#0c1310" />
+  <meta name="robots" content="noindex" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="alternate icon" href="assets/favicon.ico" />
+
+  <link rel="preload" as="font" href="assets/fraunces-latin.woff2" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/notfound.css" />
+</head>
+<body class="notfound-body">
+
+  <main class="notfound">
+
+    <div class="notfound-ground" aria-hidden="true">
+      <!-- A branch that stops short: the path ran out rather than reaching
+           an organism. Drawn here rather than scripted so the page stands
+           on its own with no JavaScript. -->
+      <svg class="notfound-branch" viewBox="0 0 320 240" fill="none" focusable="false">
+        <path class="notfound-limb" d="M160 236 L160 168" />
+        <path class="notfound-limb" d="M160 168 C160 168 116 150 96 106" />
+        <path class="notfound-limb" d="M160 168 C160 168 204 150 224 106" />
+        <path class="notfound-limb is-faded" d="M96 106 C96 106 78 84 74 60" />
+        <path class="notfound-limb is-broken" d="M224 106 C224 106 238 88 240 72" />
+        <circle class="notfound-node" cx="160" cy="168" r="4.2" />
+        <circle class="notfound-node" cx="96" cy="106" r="3.4" />
+        <circle class="notfound-node" cx="74" cy="60" r="2.8" />
+        <circle class="notfound-node is-terminal" cx="240" cy="72" r="3.4" />
+      </svg>
+    </div>
+
+    <div class="notfound-content">
+      <p class="notfound-code mono">404</p>
+
+      <h1 class="notfound-title">You've wandered off the tree.</h1>
+
+      <p class="notfound-body-text">
+        This branch doesn't lead anywhere in the record. Nothing here has been
+        classified — head back and trace an organism that has.
+      </p>
+
+      <a class="notfound-link" href="/">Back to OriginTree</a>
+    </div>
+
+  </main>
+
+</body>
+</html>

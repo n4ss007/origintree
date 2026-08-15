@@ -57,39 +57,11 @@
   color: var(--ink-soft);
 }
 
-.loading-motif {
-  color: var(--green);
-}
 
-.loading-motif path {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 30;
-  animation: loading-grow 1.6s var(--ease-out) infinite;
-}
 
-@keyframes loading-grow {
-  0% {
-    stroke-dashoffset: 30;
-    opacity: 0.35;
-  }
-  55% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 0.35;
-  }
-}
 
-.state-error {
-  border-left: 3px solid var(--rust);
-  padding-left: var(--space-5);
-}
+
+
 
 .state-error .state-title {
   color: var(--rust);

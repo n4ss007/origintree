@@ -1,0 +1,72 @@
+/*
+  The four-organism loading indicator.
+
+  Flat green silhouettes on the paper ground, lit one at a time. The
+  brightening is deliberately small — this runs while someone waits, and a
+  strong pulse at the edge of vision is tiring rather than premium.
+*/
+
+.organism-loader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.organism-loader-track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.organism-icon {
+  display: block;
+  flex-shrink: 0;
+  fill: var(--green);
+  opacity: 0.22;
+  transform: scale(0.9);
+  transform-origin: center;
+  transition: opacity var(--duration-medium) var(--ease-out),
+    transform var(--duration-medium) var(--ease-out),
+    fill var(--duration-medium) var(--ease-out);
+}
+
+.organism-icon.is-active {
+  opacity: 1;
+  transform: scale(1);
+  fill: var(--green-deep);
+}
+
+.organism-loader-label {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+/* On the dark leg of the page the silhouettes need the brighter green to
+   hold up against the ground. */
+.hero .organism-icon,
+.site-footer .organism-icon {
+  fill: var(--green-bright);
+}
+
+.hero .organism-loader-label,
+.site-footer .organism-loader-label {
+  color: var(--bone-soft);
+}
+
+/* Static arrangement: every organism visible, the first one marked, and no
+   timer running behind it. */
+.organism-loader.is-static .organism-icon {
+  opacity: 0.55;
+  transform: none;
+  transition: none;
+}
+
+.organism-loader.is-static .organism-icon.is-active {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .organism-icon {
+    transition: none;
+  }
+}

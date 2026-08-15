@@ -15,6 +15,8 @@
 import { fetchSequences, ApiError } from "./api.js";
 import { renderTree } from "./tree.js";
 import { renderBarcode } from "./barcode.js";
+import { renderCompare } from "./compare.js";
+import { createLoader } from "./loader.js";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 
@@ -53,39 +55,38 @@ export function registerReveal(el) {
    Transient states
    --------------------------------------------------------------- */
 
+/**
+ * The loader runs on a timer, so exactly one may exist at a time and it has
+ * to be stopped the moment anything else is painted. Every render function
+ * below calls this first.
+ */
+let activeLoader = null;
+
+function stopActiveLoader() {
+  if (activeLoader) {
+    activeLoader.stop();
+    activeLoader = null;
+  }
+}
+
 export function renderLoading(container, query) {
+  stopActiveLoader();
   clearNode(container);
 
   const state = document.createElement("div");
   state.className = "state state-loading";
-  state.appendChild(buildLoadingMotif());
 
-  const text = document.createElement("p");
-  text.className = "state-title";
-  text.textContent = query ? `Tracing lineage for “${query}”…` : "Tracing lineage…";
-  state.appendChild(text);
+  activeLoader = createLoader(
+    query ? `Tracing lineage for “${query}”…` : "Tracing lineage…"
+  );
+  state.appendChild(activeLoader.el);
 
   container.appendChild(state);
 }
 
-function buildLoadingMotif() {
-  const svg = document.createElementNS(SVG_NS, "svg");
-  svg.setAttribute("class", "loading-motif");
-  svg.setAttribute("width", "40");
-  svg.setAttribute("height", "40");
-  svg.setAttribute("viewBox", "0 0 40 40");
-  svg.setAttribute("aria-hidden", "true");
-
-  ["M20 34 V20", "M20 20 C20 20 12 17 9 8", "M20 20 C20 20 28 17 31 8"].forEach((d) => {
-    const path = document.createElementNS(SVG_NS, "path");
-    path.setAttribute("d", d);
-    svg.appendChild(path);
-  });
-
-  return svg;
-}
 
 export function renderError(container, error, { onRetry } = {}) {
+  stopActiveLoader();
   clearNode(container);
 
   const state = document.createElement("div");
@@ -131,6 +132,7 @@ export function renderError(container, error, { onRetry } = {}) {
 }
 
 export function renderEmpty(container, query) {
+  stopActiveLoader();
   clearNode(container);
 
   const state = document.createElement("div");
@@ -156,6 +158,7 @@ export function renderEmpty(container, query) {
 let sectionIdCounter = 0;
 
 export function renderResults(container, response, { selectedIndex, onSelect }) {
+  stopActiveLoader();
   clearNode(container);
 
   const view = document.createElement("div");
@@ -182,6 +185,7 @@ export function renderResults(container, response, { selectedIndex, onSelect }) 
     sections.push(
       buildOrganismSection(taxon, uid),
       buildLineageSection(taxon, uid),
+      buildComparisonSection(taxon),
       buildScientificDataSection(taxon, uid)
     );
     sections.forEach((section) => view.appendChild(section));
@@ -350,6 +354,18 @@ function buildOrganismSection(taxon, uid) {
 
   section.appendChild(buildPlateHead(taxon, headingId));
 
+  return section;
+}
+
+/**
+ * COMPARISON — how this organism relates to another.
+ *
+ * Sits after the lineage because it asks a question about that lineage,
+ * and before the sequence data, which is about this organism alone.
+ */
+function buildComparisonSection(taxon) {
+  const host = document.createDocumentFragment();
+  const section = renderCompare(host, taxon);
   return section;
 }
 

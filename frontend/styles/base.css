@@ -339,3 +339,21 @@ h4 {
     transform: none;
   }
 }
+
+/* Both contributors sit in the "Built by" column as linked names. */
+.footer-creator a {
+  color: var(--bone);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+  padding-block: var(--space-1);
+}
+
+.footer-creator a:hover {
+  border-bottom-color: var(--gold);
+}
+
+.footer-list-note a {
+  color: var(--bone-faint);
+  padding-block: 0;
+}

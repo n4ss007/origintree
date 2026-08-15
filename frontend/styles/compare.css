@@ -1,0 +1,408 @@
+/*
+  Comparing two organisms.
+
+  Everything here is drawn from the existing token set — the same paper
+  ground, the same green for a shared path, the same gold reserved for the
+  one point that matters. The divergence figure deliberately echoes the
+  lineage tree's grammar so a comparison reads as the same kind of object,
+  not a separate widget bolted on.
+*/
+
+.compare-section {
+  max-width: 70ch;
+}
+
+.compare-intro {
+  margin: 0 0 var(--space-5);
+  color: var(--ink-soft);
+  max-width: var(--measure);
+}
+
+/* ---------------------------------------------------------------
+   The control
+   --------------------------------------------------------------- */
+
+.compare-form {
+  margin-bottom: var(--space-4);
+}
+
+.compare-field {
+  display: flex;
+  align-items: stretch;
+  max-width: 34rem;
+  border: 1px solid var(--ink-faint);
+  border-radius: var(--radius-sm);
+  background: var(--paper-raised);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.compare-field:focus-within {
+  border-color: var(--green);
+}
+
+.compare-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--ink);
+}
+
+.compare-input::placeholder {
+  color: var(--ink-faint);
+}
+
+.compare-button {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding-inline: var(--space-5);
+  background: var(--green-deep);
+  color: var(--paper);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.compare-button:hover:not(:disabled) {
+  background: var(--ink);
+}
+
+.compare-button:disabled {
+  background: var(--ink-faint);
+  cursor: default;
+}
+
+.compare-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+  font-size: var(--text-sm);
+}
+
+.compare-suggestions-label {
+  color: var(--ink-faint);
+}
+
+.compare-chip {
+  min-height: 44px;
+  padding-inline: var(--space-1);
+  background: none;
+  color: var(--ink-soft);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-base);
+  border-bottom: 1px solid var(--paper-deep);
+  transition: color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.compare-chip:hover {
+  color: var(--green-deep);
+  border-bottom-color: var(--gold);
+}
+
+/* ---------------------------------------------------------------
+   Output
+   --------------------------------------------------------------- */
+
+.compare-output {
+  opacity: 0;
+  transition: opacity var(--duration-medium) var(--ease-out);
+}
+
+.compare-output.is-in {
+  opacity: 1;
+}
+
+.compare-status,
+.compare-error {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+}
+
+.compare-error {
+  color: var(--rust);
+}
+
+.compare-summary {
+  margin: 0 0 var(--space-6);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-variation-settings: "opsz" 24, "SOFT" 2, "WONK" 0;
+  line-height: var(--leading-snug);
+  color: var(--ink);
+  max-width: 54ch;
+}
+
+/* ---------------------------------------------------------------
+   The divergence figure — shared path above, two branches below
+   --------------------------------------------------------------- */
+
+.divergence {
+  position: relative;
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--green);
+}
+
+.divergence-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+}
+
+.divergence-mark {
+  flex-shrink: 0;
+  fill: var(--green);
+  margin-left: calc(-1 * var(--space-4) - 8px);
+}
+
+.divergence-row.is-elided {
+  color: var(--ink-faint);
+  font-size: var(--text-sm);
+  font-style: italic;
+}
+
+.divergence-row.is-elided .divergence-mark {
+  fill: var(--ink-faint);
+  opacity: 0.5;
+}
+
+/* The point the two paths stop being the same one — the answer to the
+   question, so it carries the gold the tree reserves for its endpoint. */
+.divergence-row.is-split {
+  margin-top: var(--space-1);
+  padding-bottom: var(--space-4);
+}
+
+.divergence-row.is-split .divergence-mark {
+  fill: var(--gold-deep);
+  transform: scale(1.35);
+}
+
+.divergence-row.is-split .divergence-name {
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-size: var(--text-md);
+  color: var(--ink);
+}
+
+.divergence-name {
+  color: var(--ink);
+}
+
+.divergence-rank {
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.divergence-branches {
+  display: grid;
+  gap: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--paper-deep);
+}
+
+@media (min-width: 640px) {
+  .divergence-branches {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+}
+
+.divergence-branch {
+  min-width: 0;
+}
+
+.divergence-branch-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-size: var(--text-md);
+  color: var(--ink);
+}
+
+.divergence-branch-sci {
+  margin: 0 0 var(--space-1);
+  font-style: italic;
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+.divergence-branch-count {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.divergence-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.divergence-steps li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--paper-deep);
+}
+
+.divergence-step-name {
+  color: var(--ink-soft);
+}
+
+.divergence-step-rank {
+  font-size: var(--text-2xs);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ---------------------------------------------------------------
+   Fossil note — only ever shown when the dataset holds a real row
+   --------------------------------------------------------------- */
+
+.fossil-note {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  background: var(--paper-raised);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.fossil-label {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.fossil-age {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  line-height: var(--leading-snug);
+  color: var(--ink);
+}
+
+.fossil-justification {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+.fossil-source {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .compare-output {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Molecular comparison — the other half of "how related are they?"
+   --------------------------------------------------------------- */
+
+.barcode-compare {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: var(--border-hair);
+}
+
+.barcode-compare-toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: var(--space-4);
+  border: 1px solid var(--ink-faint);
+  border-radius: 999px;
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  background: transparent;
+  transition: border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.barcode-compare-toggle:hover:not(:disabled) {
+  border-color: var(--green);
+  color: var(--green-deep);
+}
+
+.barcode-compare-toggle:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.barcode-identity {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  line-height: var(--leading-snug);
+  color: var(--ink);
+  max-width: 52ch;
+}
+
+.barcode-identity strong {
+  font-size: var(--text-xl);
+  font-variation-settings: "opsz" 32, "SOFT" 2, "WONK" 0;
+  color: var(--green-deep);
+}
+
+.barcode-detail {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  max-width: var(--measure);
+}
+
+/* A plain proportional bar: the figure is the point, not the decoration. */
+.identity-bar {
+  height: 6px;
+  max-width: 34rem;
+  background: var(--paper-deep);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.identity-bar-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--green);
+  border-radius: 3px;
+  transition: width var(--duration-slow) var(--ease-grow);
+}
+
+.barcode-sources {
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--ink-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .identity-bar-fill {
+    transition: none;
+  }
+}
