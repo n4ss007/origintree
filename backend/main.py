@@ -13,7 +13,16 @@ Configuration, all optional:
 """
 
 import os
+import sys
 from pathlib import Path
+
+# The modules below are imported by bare name — `import validation`, not
+# `from backend import validation` — which only resolves when this directory
+# is on the import path. Running `uvicorn main:app --app-dir backend` puts it
+# there; importing the app as `backend.main:app`, which is what a deployment
+# does, does not. Adding it here makes both work without every module having
+# to change.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import JSONResponse

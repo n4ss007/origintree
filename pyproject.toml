@@ -1,0 +1,8 @@
+# Deployment configuration only. The project is not packaged or installed,
+# so there is deliberately no [project] or [build-system] section here.
+
+[tool.vercel]
+# The ASGI application lives at backend/main.py as `app`. Without this,
+# Vercel looks in its default locations, finds nothing, and fails with
+# "No FastAPI entrypoint found in default locations".
+entrypoint = "backend.main:app"
