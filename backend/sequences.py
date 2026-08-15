@@ -12,7 +12,7 @@ web request. Here we ask for summaries only: no full sequences, no files.
 import rate_limit
 from Bio import Entrez
 
-from ncbi_test import Entrez as _configured_entrez  # noqa: F401  (sets email/tool)
+import ncbi_test  # noqa: F401  — importing this configures Entrez.email and .tool
 
 DEFAULT_GENE = "COX1"
 
@@ -28,6 +28,14 @@ GENE_ALIASES = {
 # candidates rather than across whatever arbitrary slice NCBI returned first.
 POOL_MULTIPLIER = 5
 MAX_POOL = 60
+
+# A barcode is a gene-length read, not a genome. NCBI returns newest-first,
+# and for well-sequenced organisms the newest records are complete
+# mitochondrial genomes — for humans, every one of the first sixty is. Asking
+# NCBI for barcode-length sequences skips them at the query level and finds
+# the records this panel is actually about. Without it, human returns nothing.
+MIN_BARCODE_LENGTH = 500
+MAX_BARCODE_LENGTH = 2000
 
 
 def _aliases(gene: str) -> tuple:
@@ -70,7 +78,10 @@ def fetch_sequence_summaries(taxid: str, gene: str = DEFAULT_GENE, max_records: 
     first as the second tells the user something untrue about the record.
     """
 
-    term = f"txid{taxid}[Organism:exp] AND {gene}[Gene]"
+    term = (
+        f"txid{taxid}[Organism:exp] AND {gene}[Gene] "
+        f"AND {MIN_BARCODE_LENGTH}:{MAX_BARCODE_LENGTH}[SLEN]"
+    )
     pool = min(MAX_POOL, max(max_records, max_records * POOL_MULTIPLIER))
 
     rate_limit.wait()
@@ -165,6 +176,32 @@ def _first_window(fasta_text: str, size: int) -> tuple:
     return "".join(bases), offset or 0
 
 
+def fetch_fasta(uid: str) -> str:
+    """The FASTA payload for one nuccore record, as GenBank returns it."""
+
+    rate_limit.wait()
+
+    handle = Entrez.efetch(db="nuccore", id=str(uid), rettype="fasta", retmode="text")
+    text = handle.read()
+    handle.close()
+
+    return text
+
+
+def read_sequence(fasta_text: str) -> str:
+    """Every called base in a FASTA payload, header lines dropped.
+
+    Ambiguity codes are kept here, unlike the display window: an aligner
+    needs the sequence as GenBank actually recorded it.
+    """
+
+    return "".join(
+        line.strip().upper()
+        for line in fasta_text.splitlines()
+        if line.strip() and not line.startswith(">")
+    )
+
+
 def fetch_barcode_window(taxid: str, gene: str = DEFAULT_GENE, size: int = WINDOW_BASES) -> dict:
     """Read a short window of real bases from this taxon's best COX1 record.
 
@@ -190,16 +227,7 @@ def fetch_barcode_window(taxid: str, gene: str = DEFAULT_GENE, size: int = WINDO
 
     record = summaries["sequences"][0]
 
-    rate_limit.wait()
-
-    handle = Entrez.efetch(
-        db="nuccore",
-        id=record["uid"],
-        rettype="fasta",
-        retmode="text",
-    )
-    fasta_text = handle.read()
-    handle.close()
+    fasta_text = fetch_fasta(record["uid"])
 
     bases, offset = _first_window(fasta_text, size)
 

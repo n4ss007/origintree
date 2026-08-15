@@ -1,3 +1,5 @@
+import os
+
 from Bio import Entrez, SeqIO
 from pathlib import Path
 import subprocess
@@ -12,7 +14,7 @@ import time
 
 
 
-Entrez.email = "shiforrandom@gmail.com"
+Entrez.email = os.environ.get("NCBI_EMAIL", "YOUR_EMAIL@example.com")
 
 Entrez.tool = "EvolutionProject"
 

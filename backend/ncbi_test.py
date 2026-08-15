@@ -1,6 +1,8 @@
+import os
+
 from Bio import Entrez, SeqIO
 
-Entrez.email = "YOUR_EMAIL@example.com"
+Entrez.email = os.environ.get("NCBI_EMAIL", "YOUR_EMAIL@example.com")
 Entrez.tool = "EvolutionProject"
 
 
@@ -176,32 +178,37 @@ def fetch_sequences(
 
 # --------------------------------
 # USER INPUT
+#
+# Guarded so the web API can import the functions above without being
+# prompted for an animal name. Running this file directly is unchanged.
 # --------------------------------
 
-common_name = input("Enter an animal: ")
+if __name__ == "__main__":
 
-taxids = find_species(common_name)
+    common_name = input("Enter an animal: ")
 
-print("\nTaxonomy matches found:", len(taxids))
+    taxids = find_species(common_name)
 
-for taxid in taxids:
+    print("\nTaxonomy matches found:", len(taxids))
 
-    result = summarize_species(taxid)
+    for taxid in taxids:
 
-    print("\n-----------------------------")
-    print("TaxID:", result["taxid"])
-    print("Scientific name:", result["scientific_name"])
-    print("Rank:", result["rank"])
+        result = summarize_species(taxid)
 
-    print("\nTaxonomic lineage:")
+        print("\n-----------------------------")
+        print("TaxID:", result["taxid"])
+        print("Scientific name:", result["scientific_name"])
+        print("Rank:", result["rank"])
 
-    for node in result["lineage"]:
+        print("\nTaxonomic lineage:")
 
-        print(
-            f"- {node['name']} ({node['rank']})"
+        for node in result["lineage"]:
+
+            print(
+                f"- {node['name']} ({node['rank']})"
+            )
+
+        fetch_sequences(
+            taxid,
+            result["scientific_name"]
         )
-
-    fetch_sequences(
-        taxid,
-        result["scientific_name"]
-    )

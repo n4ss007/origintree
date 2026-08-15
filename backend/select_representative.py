@@ -1,7 +1,9 @@
+import os
+
 from Bio import Entrez, SeqIO
 
 
-Entrez.email = "shiforrandom@gmail.com"
+Entrez.email = os.environ.get("NCBI_EMAIL", "YOUR_EMAIL@example.com")
 Entrez.tool = "EvolutionProject"
 
 

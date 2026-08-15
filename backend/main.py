@@ -15,19 +15,33 @@ Configuration, all optional:
 import os
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from models import BarcodeWindow, SearchResponse, SequenceResponse, Taxon
+import validation
+from barcode_compare import compare_barcodes
+from comparison import compare, summarize
+from fossils import calibration_for_path
+from models import BarcodeComparison, BarcodeWindow, Comparison, SearchResponse, SequenceResponse, Taxon
+from security import rate_limit_middleware, security_headers_middleware
 from sequences import fetch_barcode_window, fetch_sequence_summaries
 from taxonomy import get_species, search
+
+# The interactive docs describe a read-only public API and are genuinely
+# useful for a research project, so they stay on by default. Set
+# ORIGINTREE_DOCS=off to withdraw them from a deployment.
+_docs_enabled = os.environ.get("ORIGINTREE_DOCS", "on").lower() not in ("off", "0", "false")
 
 app = FastAPI(
     title="OriginTree",
     description="Trace the story of life.",
     version="2.0.0",
+    docs_url="/docs" if _docs_enabled else None,
+    redoc_url="/redoc" if _docs_enabled else None,
+    openapi_url="/openapi.json" if _docs_enabled else None,
 )
 
 # The API serves the site from the same origin, so cross-origin access is not
@@ -36,6 +50,9 @@ app = FastAPI(
 DEFAULT_ORIGINS = "http://127.0.0.1:8000,http://localhost:8000"
 
 _origins = os.environ.get("ORIGINTREE_ALLOWED_ORIGINS", DEFAULT_ORIGINS)
+
+app.middleware("http")(rate_limit_middleware)
+app.middleware("http")(security_headers_middleware)
 
 app.add_middleware(
     CORSMiddleware,
@@ -53,11 +70,13 @@ def search_taxa(
 ):
     """Search NCBI Taxonomy, ranked so the strongest name matches come first."""
 
-    if not animal.strip():
-        raise HTTPException(status_code=400, detail="Enter an organism to search for.")
+    try:
+        term = validation.search_term(animal)
+    except validation.InvalidInput as bad:
+        raise HTTPException(status_code=400, detail=str(bad))
 
     try:
-        return search(animal, limit=limit)
+        return search(term, limit=limit)
     except Exception:
         raise HTTPException(
             status_code=502,
@@ -68,6 +87,11 @@ def search_taxa(
 @app.get("/api/species/{taxid}", response_model=Taxon)
 def species_detail(taxid: str):
     """One taxon by its NCBI TaxID."""
+
+    try:
+        taxid = validation.taxid(taxid)
+    except validation.InvalidInput as bad:
+        raise HTTPException(status_code=400, detail=str(bad))
 
     try:
         return get_species(taxid)
@@ -86,6 +110,12 @@ def species_sequences(
     """COX1 records held for this taxon. Loaded on demand: it is a slow call."""
 
     try:
+        taxid = validation.taxid(taxid)
+        gene = validation.gene(gene)
+    except validation.InvalidInput as bad:
+        raise HTTPException(status_code=400, detail=str(bad))
+
+    try:
         return fetch_sequence_summaries(taxid, gene=gene, max_records=limit)
     except Exception:
         raise HTTPException(status_code=502, detail="NCBI did not answer. Try again in a moment.")
@@ -96,7 +126,96 @@ def species_barcode(taxid: str, gene: str = Query("COX1", description="Gene symb
     """A short window of real bases from this taxon's best COX1 record."""
 
     try:
+        taxid = validation.taxid(taxid)
+        gene = validation.gene(gene)
+    except validation.InvalidInput as bad:
+        raise HTTPException(status_code=400, detail=str(bad))
+
+    try:
         return fetch_barcode_window(taxid, gene=gene)
+    except Exception:
+        raise HTTPException(status_code=502, detail="NCBI did not answer. Try again in a moment.")
+
+
+def _resolve(term: str) -> dict:
+    """A search term or a TaxID, resolved to one taxonomy record.
+
+    Digits are treated as a TaxID, which is exact and skips a search; a name
+    goes through the ranked search and takes its best match, so comparison
+    inherits the same ranking the rest of the site uses.
+    """
+
+    try:
+        term = validation.taxid_or_term(term)
+    except validation.InvalidInput:
+        raise HTTPException(status_code=400, detail="Name two organisms to compare.")
+
+    if term.isdigit():
+        try:
+            return get_species(term)
+        except LookupError:
+            raise HTTPException(status_code=404, detail=f"No record for TaxID {term}.")
+
+    found = search(term, limit=1)
+
+    if not found["results"]:
+        raise HTTPException(status_code=404, detail=f"No record of “{term}” in NCBI Taxonomy.")
+
+    return found["results"][0]
+
+
+@app.get("/api/compare", response_model=Comparison)
+def compare_organisms(
+    a: str = Query(..., min_length=1, description="Name or TaxID of the first organism"),
+    b: str = Query(..., min_length=1, description="Name or TaxID of the second organism"),
+):
+    """Compare two organisms: what classification they share, and where they part.
+
+    The comparison itself is pure logic over the two records — the only slow
+    part is fetching them.
+    """
+
+    taxon_a = _resolve(a)
+    taxon_b = _resolve(b)
+
+    try:
+        result = compare(taxon_a, taxon_b)
+    except Exception:
+        raise HTTPException(status_code=500, detail="Those records could not be compared.")
+
+    return {
+        "a": taxon_a,
+        "b": taxon_b,
+        "summary": summarize(taxon_a, taxon_b, result),
+        # only present when the shared path reaches a clade that has a real
+        # dated fossil in the project's dataset
+        "fossil": calibration_for_path(result["shared"]),
+        **result,
+    }
+
+
+@app.get("/api/compare/barcode", response_model=BarcodeComparison)
+def compare_barcode(
+    a: str = Query(..., min_length=1, description="TaxID of the first organism"),
+    b: str = Query(..., min_length=1, description="TaxID of the second organism"),
+    gene: str = Query("COX1", description="Gene symbol to compare"),
+):
+    """Align two organisms' barcodes and report how much they agree.
+
+    Separate from /api/compare because it is slow — two record fetches plus
+    an alignment — so the taxonomy comparison stays fast and this is asked
+    for only when the reader wants it.
+    """
+
+    try:
+        a = validation.taxid(a)
+        b = validation.taxid(b)
+        gene = validation.gene(gene)
+    except validation.InvalidInput as bad:
+        raise HTTPException(status_code=400, detail=str(bad))
+
+    try:
+        return compare_barcodes(a, b, gene=gene)
     except Exception:
         raise HTTPException(status_code=502, detail="NCBI did not answer. Try again in a moment.")
 
@@ -114,6 +233,26 @@ FRONTEND = Path(
 )
 
 if FRONTEND.is_dir():
+
+    @app.exception_handler(404)
+    async def not_found(request: Request, exc):
+        """Serve the OriginTree 404 page for a wrong address.
+
+        API routes keep returning JSON — a client parsing a response should
+        not suddenly receive a page of HTML — so only ordinary navigation
+        gets the page.
+        """
+
+        if request.url.path.startswith("/api/"):
+            detail = getattr(exc, "detail", "Not found.")
+            return JSONResponse(status_code=404, content={"detail": detail})
+
+        page = FRONTEND / "404.html"
+
+        if page.is_file():
+            return FileResponse(page, status_code=404, media_type="text/html")
+
+        return JSONResponse(status_code=404, content={"detail": "Not found."})
 
     @app.get("/favicon.ico", include_in_schema=False)
     def favicon():
