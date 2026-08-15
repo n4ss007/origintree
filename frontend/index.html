@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OriginTree — trace the story of life</title>
+  <meta name="description" content="Search an organism and OriginTree draws the branch of the tree of life that leads to it, from the root of the record down to the species itself, using NCBI Taxonomy." />
+  <meta name="theme-color" content="#0c1310" />
+
+  <meta property="og:title" content="OriginTree — trace the story of life" />
+  <meta property="og:description" content="Search an organism and watch its lineage grow, branch by branch, from NCBI Taxonomy." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="alternate icon" href="assets/favicon.ico" />
+
+  <link rel="preload" as="font" href="assets/fraunces-latin.woff2" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/hero.css" />
+  <link rel="stylesheet" href="styles/tree.css" />
+  <link rel="stylesheet" href="styles/results.css" />
+  <link rel="stylesheet" href="styles/barcode.css" />
+</head>
+<body>
+
+  <noscript>
+    <div class="noscript-banner">OriginTree needs JavaScript to search NCBI Taxonomy and draw a lineage. Please enable it to continue.</div>
+  </noscript>
+
+  <a class="skip-link" href="#animalInput">Skip to search</a>
+
+  <div class="page">
+
+    <header class="hero" id="hero" data-stage="0">
+
+      <div class="hero-ground" aria-hidden="true">
+        <div class="hero-grain"></div>
+        <svg class="hero-phylogeny" viewBox="0 0 800 520" preserveAspectRatio="xMidYMax slice" focusable="false">
+          <!-- populated by hero.js: an anonymous, unlabelled branching structure —
+               the same drawing grammar the lineage tree uses later, rehearsed
+               before any search has happened. -->
+        </svg>
+        <div class="hero-particles"></div>
+      </div>
+
+      <div class="hero-content container">
+        <div class="hero-inner">
+
+          <div class="hero-emblem">
+            <img class="hero-emblem-mark" src="assets/logo.svg" alt="" width="46" height="46" />
+          </div>
+
+          <h1 class="hero-word">
+            <span class="hero-word-line" data-word-line="1">Origin<em>Tree</em></span>
+          </h1>
+          <p class="hero-tagline">Trace the story of life.</p>
+
+          <div class="search-panel" id="searchPanel">
+            <form id="searchForm" class="search-form" novalidate>
+              <label for="animalInput" class="visually-hidden">Name an organism</label>
+              <div class="search-field">
+                <input
+                  type="text"
+                  id="animalInput"
+                  name="animal"
+                  class="search-input"
+                  placeholder="Common or scientific name…"
+                  autocomplete="off"
+                  spellcheck="false"
+                  aria-describedby="searchStatus"
+                />
+                <button type="submit" id="searchButton" class="search-button">
+                  <svg class="search-button-icon" viewBox="0 0 20 20" aria-hidden="true" width="16" height="16">
+                    <circle cx="9" cy="9" r="5.4" />
+                    <path d="M12.9 12.9 L17 17" />
+                  </svg>
+                  <span class="search-button-label">Search</span>
+                </button>
+              </div>
+              <p id="searchStatus" class="search-status" role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="examples">
+              <span class="examples-label" id="examplesLabel">Try</span>
+              <ul class="examples-list" aria-labelledby="examplesLabel">
+                <li><button type="button" class="example-chip" data-animal="giant panda">giant panda</button></li>
+                <li><button type="button" class="example-chip" data-animal="octopus">octopus</button></li>
+                <li><button type="button" class="example-chip" data-animal="king cobra">king cobra</button></li>
+                <li><button type="button" class="example-chip" data-animal="tardigrade">tardigrade</button></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <button type="button" class="hero-skip" id="heroSkip">Skip intro</button>
+
+      <div class="hero-scroll-cue" aria-hidden="true">
+        <span class="hero-scroll-line"></span>
+        <span class="hero-scroll-label">Scroll</span>
+      </div>
+
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <h2 class="visually-hidden">Search results</h2>
+        <section id="results" aria-live="polite">
+          <p class="results-prompt">Search an organism above, or choose one of the examples, and its branch of the tree of life will grow here.</p>
+        </section>
+      </div>
+
+      <!-- Landing only. Hidden once a search has run — see [data-view] in
+           results.css. An introduction is not part of a result. -->
+      <section class="science" id="science" aria-labelledby="scienceHeading">
+        <div class="container science-inner">
+          <p class="science-eyebrow mono">How a lineage is traced</p>
+          <h2 id="scienceHeading" class="science-heading">Every branch is a record, not a guess.</h2>
+          <p class="science-body">
+            NCBI Taxonomy holds a classification for roughly two million named organisms, each
+            one placed under a parent it descended from in the scheme — species under genus,
+            genus under family, on up through kingdom and domain. OriginTree walks that chain of
+            parents from your organism back to the root of the record and draws it as the branch
+            you see above: not an illustration of evolution, but a citation trail through it.
+          </p>
+          <p class="science-body">
+            Some names are shared by organisms with no relation to one another at all — a search
+            for "panda" alone resolves to a bear, a red panda, a catfish, and more. When that
+            happens, OriginTree says so plainly and asks which one you meant, rather than
+            guessing on your behalf.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+
+        <div class="footer-brand">
+          <div class="footer-mark">
+            <img src="assets/logo.svg" alt="" width="26" height="26" />
+            <span class="footer-wordmark">OriginTree</span>
+          </div>
+          <p class="footer-tagline">Trace the story of life.</p>
+        </div>
+
+        <nav class="footer-col" aria-labelledby="footerSources">
+          <h2 class="footer-col-title mono" id="footerSources">Data sources</h2>
+          <ul class="footer-list">
+            <li>
+              <a href="https://www.ncbi.nlm.nih.gov/taxonomy" rel="noopener noreferrer" target="_blank">NCBI Taxonomy</a>
+              <span class="footer-list-note">Classification and lineage</span>
+            </li>
+            <li>
+              <a href="https://www.ncbi.nlm.nih.gov/nuccore" rel="noopener noreferrer" target="_blank">GenBank</a>
+              <span class="footer-list-note">COX1 barcode sequences</span>
+            </li>
+            <li>
+              <a href="https://www.gbif.org" rel="noopener noreferrer" target="_blank">GBIF</a>
+              <span class="footer-list-note">Everyday names only, where NCBI records none</span>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-labelledby="footerProject">
+          <h2 class="footer-col-title mono" id="footerProject">Project</h2>
+          <ul class="footer-list">
+            <li>
+              <a href="https://github.com/n4ss007/origintree" rel="noopener noreferrer" target="_blank">Source on GitHub</a>
+            </li>
+            <li>
+              <a href="#hero">Back to search</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-labelledby="footerCreator">
+          <h2 class="footer-col-title mono" id="footerCreator">Built by</h2>
+          <ul class="footer-list">
+            <li class="footer-creator">Nandana Anis Sindhu</li>
+            <li>
+              <a href="https://github.com/n4ss007" rel="noopener noreferrer" target="_blank">GitHub</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/nandanaanisindhu/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+            </li>
+          </ul>
+        </nav>
+
+        <p class="footer-colophon">
+          Every taxonomic fact shown is read from NCBI, and every DNA base from a
+          real GenBank record — nothing on this page is generated. OriginTree is a
+          research and educational project, not a clinical or diagnostic tool.
+          It stores no personal data and sets no cookies; searches are sent to NCBI
+          and GBIF to answer them.
+        </p>
+
+        <p class="footer-credit">
+          Frontend by
+          <a href="https://github.com/BRGOVIND" rel="noopener noreferrer" target="_blank">BRGOVIND</a>
+        </p>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

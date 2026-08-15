@@ -1,0 +1,121 @@
+/*
+  OriginTree design tokens.
+
+  The palette is a tonal journey rather than one flat backdrop: the hero
+  opens on a deep, near-nocturnal botanical ground (the mystery of an
+  unresolved lineage), the record itself lives on a dense archive paper
+  (the specimen you can now hold and read), and the footer settles back
+  toward ink (the drawer closing). --surface-* tokens exist for each leg
+  of that journey; component files pick the leg they belong to rather
+  than mixing paper and ground colours on one element.
+
+  #009B4D and #FFCC00 are the brief's brand colours. Used flat they read
+  as a UI kit. Here green is pushed toward a wet, shaded forest floor and
+  gold is pulled out of yellow entirely toward old brass and dried
+  specimen ink, so both sit inside the same warm, low-saturation family
+  as the paper and ground rather than sitting on top of them.
+*/
+
+:root {
+  /* ---------------------------------------------------------------
+     Colour — ground (hero, footer: the dark register)
+     --------------------------------------------------------------- */
+  --ground: #0c1310;
+  --ground-raised: #141f19;
+  --ground-line: #263a2f;
+  --bone: #eee6d3;
+  --bone-soft: #b9ae95;
+  --bone-faint: #7c8577;
+
+  /* ---------------------------------------------------------------
+     Colour — paper (exploration, lineage, organism, science)
+     --------------------------------------------------------------- */
+  --paper: #ece0c3;
+  --paper-raised: #e2d3ac;
+  --paper-deep: #d3bd88;
+  --ink: #211a0f;
+  --ink-soft: #55483a;
+  --ink-faint: #8a7c68;
+
+  /* ---------------------------------------------------------------
+     Colour — accents, tuned from brand
+     --------------------------------------------------------------- */
+  --green: #1e6b45;
+  --green-deep: #133f29;
+  --green-bright: #3f9c6c;
+  --green-pale: #d7e3d2;
+
+  --gold: #a9812c;
+  --gold-deep: #7c5e1c;
+  --gold-bright: #d1a44a;
+
+  --rust: #8c3a24;
+  --rust-pale: #e9d3c4;
+
+  --focus-ring-dark: var(--gold-bright);
+  --focus-ring-light: var(--gold-deep);
+
+  /* ---------------------------------------------------------------
+     Type
+     --------------------------------------------------------------- */
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Segoe UI Mono", Consolas,
+    "Liberation Mono", monospace;
+
+  --text-2xs: 0.6875rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.75rem;
+  --text-2xl: clamp(2rem, 1.6rem + 1.6vw, 2.9rem);
+  --text-3xl: clamp(2.4rem, 1.5rem + 3.6vw, 4.6rem);
+  --text-hero: clamp(2.8rem, 1.4rem + 6vw, 6.4rem);
+
+  --leading-tight: 1.05;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.16em;
+  --tracking-widest: 0.28em;
+
+  /* ---------------------------------------------------------------
+     Space
+     --------------------------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+
+  /* ---------------------------------------------------------------
+     Layout
+     --------------------------------------------------------------- */
+  --content-max: 1280px;
+  --measure: 62ch;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --border-hair: 1px solid var(--paper-deep);
+  --border-hair-strong: 1px solid var(--ink-faint);
+  --border-hair-dark: 1px solid var(--ground-line);
+
+  /* ---------------------------------------------------------------
+     Motion
+     --------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.16, 0.8, 0.24, 1);
+  --ease-grow: cubic-bezier(0.3, 0.66, 0.18, 1);
+  --duration-fast: 150ms;
+  --duration-medium: 340ms;
+  --duration-slow: 640ms;
+  --tree-step: 180ms; /* mirrors TREE_STEP_MS in config.js; kept in sync by hand */
+
+  --z-sticky: 10;
+  --z-hero-content: 5;
+}

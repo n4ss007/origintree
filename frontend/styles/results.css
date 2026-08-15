@@ -1,0 +1,622 @@
+/*
+  Everything on the paper leg of the tonal journey: transient states
+  (loading, error, empty), the EXPLORATION section (ambiguous notice and
+  the pick-one list), the ORGANISM record and its molecular evidence
+  panel, and the SCIENCE note. The LINEAGE tree is styled in tree.css, the
+  barcode motif in barcode.css.
+*/
+
+.main {
+  padding-block: var(--space-7) 0;
+}
+
+#results {
+  min-height: 4rem;
+  transition: opacity var(--duration-fast) var(--ease-out);
+  padding-bottom: var(--space-8);
+}
+
+#results.is-swapping {
+  opacity: 0;
+}
+
+.results-prompt {
+  color: var(--ink-soft);
+  font-size: var(--text-md);
+  max-width: var(--measure);
+}
+
+.result-view {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+}
+
+/* ---------------------------------------------------------------
+   Transient states — loading / error / empty
+   --------------------------------------------------------------- */
+
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  max-width: 46ch;
+  padding: var(--space-6) 0;
+}
+
+.state-title {
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-variation-settings: "opsz" 24, "SOFT" 0, "WONK" 0;
+  font-size: var(--text-lg);
+  color: var(--ink);
+}
+
+.state p {
+  color: var(--ink-soft);
+}
+
+.loading-motif {
+  color: var(--green);
+}
+
+.loading-motif path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 30;
+  animation: loading-grow 1.6s var(--ease-out) infinite;
+}
+
+@keyframes loading-grow {
+  0% {
+    stroke-dashoffset: 30;
+    opacity: 0.35;
+  }
+  55% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.35;
+  }
+}
+
+.state-error {
+  border-left: 3px solid var(--rust);
+  padding-left: var(--space-5);
+}
+
+.state-error .state-title {
+  color: var(--rust);
+}
+
+.state-command {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  background: var(--ink);
+  color: var(--paper-raised);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  overflow-x: auto;
+}
+
+.retry-button {
+  min-height: 44px;
+  padding-inline: var(--space-5);
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.retry-button:hover {
+  background: var(--green-deep);
+}
+
+.state-empty {
+  border-left: 3px solid var(--paper-deep);
+  padding-left: var(--space-5);
+}
+
+/* ---------------------------------------------------------------
+   EXPLORATION
+   --------------------------------------------------------------- */
+
+.exploration {
+  padding-top: var(--space-1);
+}
+
+.selection {
+  max-width: 70ch;
+}
+
+.notice-ambiguous {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  max-width: 60ch;
+  margin-bottom: var(--space-6);
+  padding: var(--space-4) var(--space-5);
+  background: var(--paper-raised);
+  border-left: 3px solid var(--green);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.notice-ambiguous-mark {
+  flex-shrink: 0;
+  color: var(--green);
+  margin-top: 0.2em;
+}
+
+.notice-ambiguous p {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+.notice-ambiguous strong {
+  color: var(--ink);
+}
+
+.selection-heading {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: var(--space-3);
+}
+
+.selection-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.selection-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-4);
+  text-align: left;
+  background: var(--paper-raised);
+  border: var(--border-hair-strong);
+  border-radius: var(--radius-md);
+  transition: border-color var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
+}
+
+.selection-card:hover {
+  border-color: var(--green);
+}
+
+.selection-card[aria-pressed="true"] {
+  background: var(--green-pale);
+  border-color: var(--green);
+}
+
+.selection-card-name {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.selection-card-sci {
+  font-style: italic;
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+.selection-card-reason {
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+}
+
+/* ---------------------------------------------------------------
+   LINEAGE — section chrome; the diagram itself is tree.css
+   --------------------------------------------------------------- */
+
+.lineage-section {
+  max-width: 70ch;
+}
+
+
+
+
+
+/* ---------------------------------------------------------------
+   ORGANISM — the record plate
+   --------------------------------------------------------------- */
+
+.organism-section {
+  max-width: 70ch;
+}
+
+.plate-head {
+  margin-bottom: var(--space-6);
+}
+
+.plate-kingdom {
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--green-deep);
+  margin: 0 0 var(--space-2);
+}
+
+.plate-name {
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-variation-settings: "opsz" 48, "SOFT" 2, "WONK" 0;
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
+  color: var(--ink);
+  margin: 0 0 var(--space-2);
+}
+
+.plate-name--sci {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--text-xl);
+}
+
+.plate-sciname {
+  font-style: italic;
+  font-size: var(--text-md);
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-5);
+}
+
+.plate-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: var(--space-4) var(--space-6);
+  margin: 0;
+  padding-top: var(--space-4);
+  border-top: var(--border-hair);
+}
+
+.fact {
+  min-width: 0;
+}
+
+.fact dt {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: var(--space-1);
+}
+
+.fact dd {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--ink);
+  word-break: break-word;
+}
+
+.fact dd.is-blank {
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.fact .source-note {
+  color: var(--ink-faint);
+  font-size: var(--text-xs);
+}
+
+/* ---------------------------------------------------------------
+   Molecular evidence
+   --------------------------------------------------------------- */
+
+.evidence {
+  max-width: 70ch;
+  margin-top: var(--space-6);
+  border-top: var(--border-hair);
+  padding-top: var(--space-5);
+}
+
+.evidence-heading {
+  font-weight: normal;
+}
+
+.evidence-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 44px;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--ink);
+}
+
+.evidence-toggle-mark {
+  position: relative;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.evidence-toggle-mark::before,
+.evidence-toggle-mark::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--green);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.evidence-toggle-mark::before {
+  width: 12px;
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.evidence-toggle-mark::after {
+  width: 2px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+}
+
+.evidence-toggle[aria-expanded="true"] .evidence-toggle-mark::after {
+  transform: translate(-50%, -50%) rotate(90deg) scaleY(0);
+}
+
+.evidence-panel {
+  padding: var(--space-4) 0 0 var(--space-7);
+}
+
+.evidence-intro {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin-bottom: var(--space-4);
+}
+
+.evidence-loading,
+.evidence-empty {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+.sequence-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sequence-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-3) 0;
+  border-top: var(--border-hair);
+  font-size: var(--text-sm);
+}
+
+.sequence-item:first-child {
+  border-top: 0;
+}
+
+.sequence-accession {
+  color: var(--green-deep);
+  font-size: var(--text-xs);
+}
+
+.sequence-title {
+  color: var(--ink);
+  min-width: 0;
+}
+
+.sequence-length {
+  color: var(--ink-soft);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+
+.sequence-completeness {
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0.2em 0.55em;
+  border-radius: 999px;
+  border: 1px solid var(--ink-faint);
+  color: var(--ink-soft);
+}
+
+.sequence-completeness.is-complete {
+  color: var(--green-deep);
+  border-color: var(--green);
+}
+
+.evidence-count {
+  margin-top: var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+}
+
+@media (max-width: 520px) {
+  .sequence-item {
+    grid-template-columns: 1fr auto;
+  }
+
+  .sequence-title {
+    grid-column: 1 / -1;
+    order: 3;
+  }
+
+  .evidence-panel {
+    padding-left: var(--space-4);
+  }
+}
+
+/* ---------------------------------------------------------------
+   SCIENCE
+   --------------------------------------------------------------- */
+
+.science {
+  padding-block: var(--space-9);
+  border-top: var(--border-hair-strong);
+}
+
+.science-inner {
+  max-width: 62ch;
+}
+
+.science-eyebrow {
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin: 0 0 var(--space-3);
+}
+
+.science-heading {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 460;
+  font-variation-settings: "opsz" 40, "SOFT" 10, "WONK" 0;
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
+  color: var(--ink);
+  margin: 0 0 var(--space-5);
+  max-width: 20ch;
+}
+
+.science-body {
+  font-size: var(--text-md);
+  color: var(--ink-soft);
+  max-width: var(--measure);
+}
+
+/* ---------------------------------------------------------------
+   Responsive
+   --------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .result-view {
+    gap: var(--space-8);
+  }
+
+  .science {
+    padding-block: var(--space-8);
+  }
+}
+
+/* ---------------------------------------------------------------
+   Composition on wide screens
+
+   Every section holds a reading measure, which is right for the text
+   but leaves the whole page hugging the left edge of a 1280px
+   container with dead space beside it. Centring the blocks puts the
+   content back under the hero it came from; the text inside stays
+   ranged left.
+   --------------------------------------------------------------- */
+
+.result-view > section,
+.results-prompt,
+.state {
+  margin-inline: auto;
+  width: 100%;
+}
+
+/* The lineage is the signature element, so it is allowed more room
+   than a reading measure and sits centred in it. */
+.lineage-section {
+  max-width: 76ch;
+}
+
+@media (min-width: 1100px) {
+  /* An editorial two-column setting: the label and the claim on the
+     left, the argument on the right. Reads as a deliberate grid
+     rather than a column that happened to stop early. */
+  .science-inner {
+    max-width: var(--content-max);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 22rem) minmax(0, 36rem);
+    column-gap: var(--space-8);
+    /* Named areas rather than auto-placement: the claim has to sit at the
+       top of the left column, level with the argument it introduces, and
+       auto-placement drops it to whichever row happens to be free. */
+    grid-template-areas:
+      "eyebrow argument"
+      "claim   argument"
+      ".       aside";
+    align-items: start;
+  }
+
+  .science-eyebrow {
+    grid-area: eyebrow;
+  }
+
+  .science-heading {
+    grid-area: claim;
+    align-self: start;
+    margin-bottom: 0;
+  }
+
+  /* Sibling selectors, not :nth-of-type — the eyebrow is a <p> too, so
+     counting by type picks the wrong paragraphs. */
+  .science-body {
+    grid-area: argument;
+  }
+
+  .science-body + .science-body {
+    grid-area: aside;
+    margin-top: var(--space-5);
+  }
+}
+
+
+/* ---------------------------------------------------------------
+   Landing vs exploring
+
+   The introduction belongs to the landing state. Once a search has run the
+   reader is looking at a record, and repeating the explanation under every
+   result turns the page into a brochure.
+   --------------------------------------------------------------- */
+
+body[data-view="exploring"] #science {
+  display: none;
+}
+
+/* ---------------------------------------------------------------
+   Section headings — one label per section, no eyebrow restating it
+   --------------------------------------------------------------- */
+
+.section-heading {
+  margin: 0 0 var(--space-5);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--green-deep);
+}
+
+.science-data-section {
+  max-width: 70ch;
+}

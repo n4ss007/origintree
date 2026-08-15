@@ -1,0 +1,83 @@
+/*
+  The 8-base barcode motif: a quiet strip of real letters sitting under the
+  organism's record, not a feature in its own right. It never grows past
+  eight characters because the record behind it never does either.
+*/
+
+.barcode {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: var(--border-hair);
+  max-width: 32rem;
+  min-height: 1.4em;
+}
+
+.barcode.is-loading {
+  opacity: 0.5;
+}
+
+.barcode-label {
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 var(--space-3);
+}
+
+.barcode-strip {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--space-2);
+}
+
+.barcode-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9em;
+  height: 2.1em;
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--green-deep);
+  background: var(--paper-raised);
+  border: 1px solid var(--paper-deep);
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--duration-medium) var(--ease-out),
+    transform var(--duration-medium) var(--ease-out);
+}
+
+.barcode-base.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.barcode-credit {
+  margin: 0;
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--ink-faint);
+}
+
+.barcode-empty {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .barcode-base {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .barcode-base {
+    width: 1.6em;
+    height: 1.9em;
+    font-size: var(--text-sm);
+  }
+}

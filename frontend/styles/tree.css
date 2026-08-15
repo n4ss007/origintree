@@ -1,0 +1,213 @@
+/*
+  The lineage tree. The path from the root of the record to the organism
+  bends at every step rather than running straight with stubs pinned to
+  it, so the cascade itself carries the branching. Major branch points also
+  carry a short, unlabelled stub — this is one path excerpted from a much
+  larger tree, and the stub says so without inventing what's on the other
+  end of it.
+
+  Node/branch geometry (x, y, path lengths) is computed in tree.js and
+  applied as inline attributes and styles, because it depends on the
+  container's measured width and the number of steps in a given lineage.
+  This file owns colour, type and the transition rules those inline values
+  animate through.
+*/
+
+.tree-wrap {
+  /* Wide enough for the branch points to read as a cascade rather than a
+     wobble, centred so the diagram sits under its own heading instead of
+     drifting to one side of the section. */
+  max-width: min(100%, 52rem);
+  margin-inline: auto;
+}
+
+/* No scroll container. The whole lineage is drawn at full height and the
+   page scrolls to it — a diagram boxed inside its own scrollbar hides most
+   of itself and makes the reader hunt for the rest. The SVG scales to the
+   width available, so nothing overflows sideways either. */
+.tree-canvas {
+  width: 100%;
+}
+
+.tree-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.tree-svg.is-swapping {
+  opacity: 0;
+}
+
+/* ---------------------------------------------------------------
+   Path & stubs
+   --------------------------------------------------------------- */
+
+.lineage-seg {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition: stroke-dashoffset var(--duration-medium) var(--ease-grow);
+}
+
+.lineage-seg.is-minor {
+  stroke: var(--ink-faint);
+  stroke-width: 1.4;
+  opacity: 0.85;
+}
+
+.lineage-stub {
+  fill: none;
+  stroke: var(--ink-faint);
+  stroke-width: 1;
+  stroke-linecap: round;
+  opacity: 0.4;
+}
+
+/* ---------------------------------------------------------------
+   Nodes
+   --------------------------------------------------------------- */
+
+.lineage-node-pos {
+  cursor: default;
+}
+
+.lineage-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  transform: scale(0.82);
+  transition: opacity var(--duration-medium) var(--ease-out),
+    transform var(--duration-medium) var(--ease-out);
+}
+
+.lineage-node.is-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.lineage-node:focus-visible {
+  outline: 2px solid var(--focus-ring-light);
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+.lineage-node:hover .lineage-mark,
+.lineage-node:focus-visible .lineage-mark,
+.lineage-node:hover .lineage-dot,
+.lineage-node:focus-visible .lineage-dot {
+  color: var(--gold-deep);
+}
+
+.lineage-dot {
+  fill: currentColor;
+  color: var(--ink-faint);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.lineage-mark {
+  color: var(--green-deep);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.lineage-mark.is-terminal {
+  color: var(--ink);
+}
+
+.lineage-mark line {
+  stroke: currentColor;
+}
+
+.lineage-tag-ring {
+  fill: var(--paper-raised);
+  stroke: var(--gold);
+  stroke-width: 2;
+}
+
+.lineage-node-name {
+  font-family: var(--font-body);
+  font-size: 13px;
+  fill: var(--ink);
+}
+
+.lineage-node-name.is-terminal {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 560;
+  font-variation-settings: "opsz" 18, "SOFT" 0, "WONK" 0;
+  font-size: 16px;
+}
+
+.lineage-node-rank {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.03em;
+  fill: var(--ink-faint);
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------------
+   Inspector — the restrained hover/focus readout
+   --------------------------------------------------------------- */
+
+.tree-inspector {
+  margin: var(--space-3) 0 0;
+  min-height: 1.4em;
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+  border-left: 2px solid var(--paper-deep);
+  padding-left: var(--space-3);
+  transition: color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.tree-inspector.is-active {
+  color: var(--ink);
+  border-color: var(--gold);
+}
+
+/* ---------------------------------------------------------------
+   Controls
+   --------------------------------------------------------------- */
+
+.tree-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding-inline: var(--space-4);
+  margin-top: var(--space-4);
+  border: 1px solid var(--ink-faint);
+  border-radius: 999px;
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  background: transparent;
+  transition: border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.tree-toggle:hover {
+  border-color: var(--green);
+  color: var(--green-deep);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lineage-node {
+    transform: none;
+  }
+}
+
+
+/* Minor steps carry their names too, once the full lineage is open — the
+   reader opened it to read them. Set smaller and lighter so the ranks
+   people are taught still lead through a long run of unnamed clades. */
+.lineage-node-name.is-minor {
+  font-size: 10.5px;
+  fill: var(--ink-soft);
+}
+
+.lineage-node-rank.is-minor {
+  font-size: 8px;
+  fill: var(--ink-faint);
+}
