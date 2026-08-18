@@ -1,8 +1,29 @@
-# Deployment configuration only. The project is not packaged or installed,
-# so there is deliberately no [project] or [build-system] section here.
+[project]
+name = "origintree"
+version = "0.1.0"
+description = "Search an organism and see where it sits in the tree of life."
+requires-python = ">=3.11"
+
+# The direct imports of the web application, pinned to the versions in
+# requirements.txt, which stays the source of truth. The remaining entries in
+# that file — starlette, anyio, h11, numpy, certifi and so on — are pulled in
+# by these four and are resolved rather than restated here.
+dependencies = [
+    "biopython==1.88",
+    "fastapi==0.141.1",
+    "pydantic==2.13.4",
+    "uvicorn==0.52.3",
+]
+
+[tool.uv]
+# This repository is an application, not a distributable library: there is no
+# importable `origintree` package to build. Without this, `uv lock` tries to
+# build one, and setuptools finds several top-level directories (backend,
+# frontend, config, data, examples) and cannot decide which is the package.
+package = false
 
 [tool.vercel]
 # The ASGI application lives at backend/main.py as `app`. Without this,
-# Vercel looks in its default locations, finds nothing, and fails with
+# Vercel searches its default locations, finds nothing, and fails with
 # "No FastAPI entrypoint found in default locations".
 entrypoint = "backend.main:app"
