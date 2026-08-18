@@ -10,11 +10,22 @@ unsynchronised "when did I last call?" global lets all of them read the same
 timestamp and fire together.
 """
 
+import os
+import socket
 import threading
 import time
 
 # Three per second is the documented ceiling; leave a little headroom.
 MIN_REQUEST_INTERVAL = 0.36
+
+# Biopython's Entrez helpers take no timeout, so an unanswered connection
+# blocks until the platform kills the whole request — which is a 502 with no
+# explanation rather than a handled error. A default socket timeout gives
+# every outbound call a ceiling, so a stalled NCBI fails as an exception the
+# API can turn into a real message.
+NCBI_TIMEOUT_SECONDS = float(os.environ.get("ORIGINTREE_NCBI_TIMEOUT", "15"))
+
+socket.setdefaulttimeout(NCBI_TIMEOUT_SECONDS)
 
 _lock = threading.Lock()
 _last_request = 0.0

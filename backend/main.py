@@ -12,6 +12,7 @@ Configuration, all optional:
     ORIGINTREE_FRONTEND_DIR      path to the site, default ../frontend
 """
 
+import logging
 import os
 import sys
 from pathlib import Path
@@ -43,6 +44,12 @@ from taxonomy import get_species, search
 # useful for a research project, so they stay on by default. Set
 # ORIGINTREE_DOCS=off to withdraw them from a deployment.
 _docs_enabled = os.environ.get("ORIGINTREE_DOCS", "on").lower() not in ("off", "0", "false")
+
+# Every handler below turns an upstream failure into a clean message for the
+# caller. Without logging it first the cause vanishes entirely — a deployed
+# 502 with an empty function log and nothing to go on. The message the caller
+# sees stays generic; the traceback goes to the platform log.
+log = logging.getLogger("origintree")
 
 app = FastAPI(
     title="OriginTree",
@@ -87,6 +94,7 @@ def search_taxa(
     try:
         return search(term, limit=limit)
     except Exception:
+        log.exception("search failed for %r", term)
         raise HTTPException(
             status_code=502,
             detail="NCBI did not answer. Try again in a moment.",
@@ -107,6 +115,7 @@ def species_detail(taxid: str):
     except LookupError:
         raise HTTPException(status_code=404, detail=f"No record for TaxID {taxid}.")
     except Exception:
+        log.exception("species lookup failed for taxid %s", taxid)
         raise HTTPException(status_code=502, detail="NCBI did not answer. Try again in a moment.")
 
 
@@ -127,6 +136,7 @@ def species_sequences(
     try:
         return fetch_sequence_summaries(taxid, gene=gene, max_records=limit)
     except Exception:
+        log.exception("sequence lookup failed for taxid %s gene %s", taxid, gene)
         raise HTTPException(status_code=502, detail="NCBI did not answer. Try again in a moment.")
 
 
@@ -143,6 +153,7 @@ def species_barcode(taxid: str, gene: str = Query("COX1", description="Gene symb
     try:
         return fetch_barcode_window(taxid, gene=gene)
     except Exception:
+        log.exception("barcode read failed for taxid %s gene %s", taxid, gene)
         raise HTTPException(status_code=502, detail="NCBI did not answer. Try again in a moment.")
 
 
@@ -190,6 +201,7 @@ def compare_organisms(
     try:
         result = compare(taxon_a, taxon_b)
     except Exception:
+        log.exception("comparison failed")
         raise HTTPException(status_code=500, detail="Those records could not be compared.")
 
     return {
@@ -226,6 +238,7 @@ def compare_barcode(
     try:
         return compare_barcodes(a, b, gene=gene)
     except Exception:
+        log.exception("barcode comparison failed for %s vs %s", a, b)
         raise HTTPException(status_code=502, detail="NCBI did not answer. Try again in a moment.")
 
 

@@ -71,11 +71,9 @@ def _quoted(term: str) -> str:
 def build_queries(term: str, resolved_names: list) -> list:
     """The ladder of NCBI queries to try, most precise first.
 
-    Each rung is (query, vernacular_hint). The hint travels with the query
-    rather than being matched back by name afterwards: NCBI often answers a
-    GBIF-supplied name with a record spelled slightly differently — an
-    authority suffix, or the subfamily for a genus — and re-matching on the
-    name would throw away the very hint that found the record.
+    Each rung is (query, vernacular_hint). Rungs are grouped by whether they
+    carry a hint and asked as two combined queries, so a record still knows
+    whether GBIF is why it is here without one request per rung.
     """
 
     queries = []
@@ -236,6 +234,44 @@ def build_result(record, query: str, vernacular_hint: str = "", source: str = "n
     }
 
 
+def _vernacular_for(record, resolved: list) -> str:
+    """The everyday name GBIF gave for this record, if any.
+
+    Asking the whole ladder as one query means a taxid no longer arrives
+    tagged with the rung that found it, so the tie is made here instead —
+    and made on the name rather than on which query ran, which is more
+    robust: NCBI often answers a GBIF-supplied name with a record spelled
+    slightly differently, or returns the genus for a species query.
+    """
+
+    if not resolved:
+        return ""
+
+    scientific = normalize(record.get("ScientificName", ""))
+
+    if not scientific:
+        return ""
+
+    for match in resolved:
+        candidate = normalize(match["scientific_name"])
+
+        if not candidate:
+            continue
+
+        # exact, or one contains the other as a whole leading name
+        if scientific == candidate:
+            return match["vernacular"]
+
+        if scientific.startswith(candidate + " ") or candidate.startswith(scientific + " "):
+            return match["vernacular"]
+
+    # Reached only for a record NCBI files under a name GBIF does not use.
+    # It still arrived because GBIF pointed at it, and every vernacular here
+    # scored against the same search term, so the strongest one is the right
+    # label rather than no label at all.
+    return resolved[0]["vernacular"] if resolved else ""
+
+
 def search(term: str, limit: int = 6) -> dict:
     """Search NCBI Taxonomy and return results in a defensible order."""
 
@@ -249,21 +285,36 @@ def search(term: str, limit: int = 6) -> dict:
     # shape, and guessing wrong silently loses every vernacular match.
     resolved = resolve_vernacular(term)
 
-    taxids = []
-    hint_by_taxid = {}
+    # The ladder is asked as two queries rather than one request per rung.
+    # Entrez ORs the clauses itself and returns the same union, and each round
+    # trip costs a second or more: eight rungs took a search past twenty
+    # seconds, which a serverless platform kills before it can answer.
+    #
+    # Two rather than one, because which query found a taxid is information
+    # that has to survive. NCBI often files a GBIF-supplied name under a
+    # different one — GBIF calls the fish Corydoras panda, NCBI calls it
+    # Hoplisoma panda — so the tie cannot be remade afterwards by comparing
+    # names. Splitting the ladder keeps it without paying for eight requests.
+    queries = build_queries(term, resolved)
 
-    for query, hint in build_queries(term, resolved):
-        for taxid in _esearch(query):
+    plain = [query for query, hint in queries if not hint]
+    hinted = [query for query, hint in queries if hint]
+
+    taxids = []
+    from_gbif = set()
+
+    def collect(found, gbif_sourced):
+        for taxid in found:
             if taxid not in taxids:
                 taxids.append(taxid)
+            if gbif_sourced:
+                from_gbif.add(taxid)
 
-            # First query to surface a taxid explains why it is here.
-            if hint and taxid not in hint_by_taxid:
-                hint_by_taxid[taxid] = hint
+    if plain:
+        collect(_esearch(" OR ".join(plain), retmax=MAX_CANDIDATES), False)
 
-        # Enough precise matches; no need to keep widening.
-        if len(taxids) >= MAX_CANDIDATES:
-            break
+    if hinted and len(taxids) < MAX_CANDIDATES:
+        collect(_esearch(" OR ".join(hinted), retmax=MAX_CANDIDATES), True)
 
     # Last resort only. A leading wildcard is what drags in Pandanus and
     # Seahorsevirus, so it runs only when nothing precise matched, and its
@@ -279,7 +330,11 @@ def search(term: str, limit: int = 6) -> dict:
     candidates = []
 
     for record in records:
-        hint = hint_by_taxid.get(str(record.get("TaxId", "")), "")
+        hint = (
+            _vernacular_for(record, resolved)
+            if str(record.get("TaxId", "")) in from_gbif
+            else ""
+        )
 
         candidates.append(
             build_result(

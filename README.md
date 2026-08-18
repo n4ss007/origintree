@@ -76,6 +76,7 @@ Set these before exposing the server to the internet:
 | `ORIGINTREE_ALLOWED_ORIGINS` | Your domain. Defaults to localhost only |
 | `ORIGINTREE_HTTPS=1` | Sends HSTS. Only set this once you actually serve HTTPS |
 | `ORIGINTREE_RATE_LIMIT` | API requests per client per minute (default 60) |
+| `ORIGINTREE_NCBI_TIMEOUT` | Seconds before an outbound NCBI call gives up (default 15) |
 | `ORIGINTREE_DOCS=off` | Optional — withdraws `/docs` and `/openapi.json` |
 
 Run without `--reload` in production, add `--no-server-header` so the server
