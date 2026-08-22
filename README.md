@@ -61,6 +61,9 @@ with everything else on the platform:
 set NCBI_API_KEY=your-key        # never commit this
 ```
 
+Every setting the project reads is listed in `.env.example`; copy it to `.env`
+and fill in what you need.
+
 `GET /api/health` reports whether each is configured — presence only, never
 the values. `GET /api/health?check=upstream` additionally tries one real NCBI
 lookup and reports what came back, which is how to tell a misconfigured
