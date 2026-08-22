@@ -46,11 +46,25 @@ uvicorn main:app --reload --app-dir backend
 Then open <http://127.0.0.1:8000>. The server serves the site as well as the
 API, so that one command runs the whole thing.
 
-NCBI asks callers to identify themselves, so set a contact address first:
+NCBI asks callers to identify themselves, so set a contact address first —
+without it the API returns a clear configuration error rather than guessing:
 
 ```bash
 set NCBI_EMAIL=you@example.com   # macOS/Linux: export NCBI_EMAIL=...
 ```
+
+A free [NCBI API key](https://account.ncbi.nlm.nih.gov/settings/) is optional
+locally and worth having in production, where the outbound address is shared
+with everything else on the platform:
+
+```bash
+set NCBI_API_KEY=your-key        # never commit this
+```
+
+`GET /api/health` reports whether each is configured — presence only, never
+the values. `GET /api/health?check=upstream` additionally tries one real NCBI
+lookup and reports what came back, which is how to tell a misconfigured
+deployment from an unreachable one.
 
 Tests:
 
@@ -72,7 +86,8 @@ Set these before exposing the server to the internet:
 
 | Variable | Why |
 | --- | --- |
-| `NCBI_EMAIL` | NCBI requires a contact address and blocks callers without one |
+| `NCBI_EMAIL` | **Required.** NCBI needs a contact address; the API refuses to start a lookup without one |
+| `NCBI_API_KEY` | Strongly recommended in production. Raises NCBI's limit from 3 to 10 requests a second, counted against the key rather than the shared server address |
 | `ORIGINTREE_ALLOWED_ORIGINS` | Your domain. Defaults to localhost only |
 | `ORIGINTREE_HTTPS=1` | Sends HSTS. Only set this once you actually serve HTTPS |
 | `ORIGINTREE_RATE_LIMIT` | API requests per client per minute (default 60) |

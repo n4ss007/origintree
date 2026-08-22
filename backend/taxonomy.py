@@ -16,7 +16,7 @@ import rate_limit
 from Bio import Entrez
 
 from name_resolver import resolve_vernacular
-import ncbi_test  # noqa: F401  — importing this configures Entrez.email and .tool
+import ncbi_client
 from ranking import (
     MAJOR_RANKS,
     best_match,

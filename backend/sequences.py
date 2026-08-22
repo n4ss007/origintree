@@ -12,7 +12,7 @@ web request. Here we ask for summaries only: no full sequences, no files.
 import rate_limit
 from Bio import Entrez
 
-import ncbi_test  # noqa: F401  — importing this configures Entrez.email and .tool
+import ncbi_client
 
 DEFAULT_GENE = "COX1"
 

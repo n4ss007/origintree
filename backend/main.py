@@ -31,6 +31,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
+import ncbi_client
 import validation
 from barcode_compare import compare_barcodes
 from comparison import compare, summarize
@@ -79,6 +80,45 @@ app.add_middleware(
 )
 
 
+
+def _upstream_detail(error: Exception) -> str:
+    """A short, non-sensitive description of an upstream failure, for logs.
+
+    Names the exception and, for an HTTP error, the status NCBI returned —
+    which is the difference between "we are being throttled" and "we are
+    being refused". Never includes the request URL, which carries the email
+    and API key as query parameters.
+    """
+
+    status = getattr(error, "code", None) or getattr(error, "status", None)
+    reason = getattr(error, "reason", "")
+
+    if status:
+        return f"{type(error).__name__} status={status} reason={reason}"
+
+    return f"{type(error).__name__}: {reason or error}"
+
+
+def _upstream_failure(operation: str, error: Exception, **context) -> HTTPException:
+    """Log an upstream failure and produce the response the caller sees."""
+
+    fields = " ".join(f"{k}={v!r}" for k, v in context.items())
+    log.error("%s failed: %s %s", operation, _upstream_detail(error), fields)
+
+    # A missing contact address is our misconfiguration, not NCBI being down,
+    # and saying so is the difference between a five minute fix and a hunt.
+    if isinstance(error, ncbi_client.ConfigurationError):
+        return HTTPException(
+            status_code=503,
+            detail="This deployment is not configured for NCBI access.",
+        )
+
+    return HTTPException(
+        status_code=502,
+        detail="NCBI did not answer. Try again in a moment.",
+    )
+
+
 @app.get("/api/search", response_model=SearchResponse)
 def search_taxa(
     animal: str = Query(..., min_length=1, description="Common or scientific name"),
@@ -93,12 +133,8 @@ def search_taxa(
 
     try:
         return search(term, limit=limit)
-    except Exception:
-        log.exception("search failed for %r", term)
-        raise HTTPException(
-            status_code=502,
-            detail="NCBI did not answer. Try again in a moment.",
-        )
+    except Exception as error:
+        raise _upstream_failure("search", error, query=term)
 
 
 @app.get("/api/species/{taxid}", response_model=Taxon)
@@ -114,9 +150,8 @@ def species_detail(taxid: str):
         return get_species(taxid)
     except LookupError:
         raise HTTPException(status_code=404, detail=f"No record for TaxID {taxid}.")
-    except Exception:
-        log.exception("species lookup failed for taxid %s", taxid)
-        raise HTTPException(status_code=502, detail="NCBI did not answer. Try again in a moment.")
+    except Exception as error:
+        raise _upstream_failure("species lookup", error, taxid=taxid)
 
 
 @app.get("/api/species/{taxid}/sequences", response_model=SequenceResponse)
@@ -135,9 +170,8 @@ def species_sequences(
 
     try:
         return fetch_sequence_summaries(taxid, gene=gene, max_records=limit)
-    except Exception:
-        log.exception("sequence lookup failed for taxid %s gene %s", taxid, gene)
-        raise HTTPException(status_code=502, detail="NCBI did not answer. Try again in a moment.")
+    except Exception as error:
+        raise _upstream_failure("sequence lookup", error, taxid=taxid, gene=gene)
 
 
 @app.get("/api/species/{taxid}/barcode", response_model=BarcodeWindow)
@@ -152,9 +186,8 @@ def species_barcode(taxid: str, gene: str = Query("COX1", description="Gene symb
 
     try:
         return fetch_barcode_window(taxid, gene=gene)
-    except Exception:
-        log.exception("barcode read failed for taxid %s gene %s", taxid, gene)
-        raise HTTPException(status_code=502, detail="NCBI did not answer. Try again in a moment.")
+    except Exception as error:
+        raise _upstream_failure("barcode read", error, taxid=taxid, gene=gene)
 
 
 def _resolve(term: str) -> dict:
@@ -200,8 +233,8 @@ def compare_organisms(
 
     try:
         result = compare(taxon_a, taxon_b)
-    except Exception:
-        log.exception("comparison failed")
+    except Exception as error:
+        log.error("comparison failed: %s", _upstream_detail(error))
         raise HTTPException(status_code=500, detail="Those records could not be compared.")
 
     return {
@@ -237,14 +270,36 @@ def compare_barcode(
 
     try:
         return compare_barcodes(a, b, gene=gene)
-    except Exception:
-        log.exception("barcode comparison failed for %s vs %s", a, b)
-        raise HTTPException(status_code=502, detail="NCBI did not answer. Try again in a moment.")
+    except Exception as error:
+        raise _upstream_failure("barcode comparison", error, a=a, b=b)
 
 
 @app.get("/api/health")
-def health():
-    return {"status": "ok"}
+def health(check: str = Query("", description="Set to 'upstream' to test NCBI reachability")):
+    """Liveness, and whether this deployment is configured to reach NCBI.
+
+    Reports only whether each setting is present — never its value, so the
+    contact address and API key stay out of responses and logs.
+
+    `?check=upstream` additionally makes one small NCBI request and reports
+    what came back. That is the difference between diagnosing a deployment
+    from the outside and guessing at it.
+    """
+
+    report = {"status": "ok", **ncbi_client.status()}
+
+    if check != "upstream":
+        return report
+
+    try:
+        get_species("9606")
+        report["upstream"] = {"reachable": True, "detail": ""}
+    except Exception as error:
+        log.error("upstream check failed: %s", _upstream_detail(error))
+        report["status"] = "degraded"
+        report["upstream"] = {"reachable": False, "detail": _upstream_detail(error)}
+
+    return report
 
 
 # Serve the site itself, so one command runs the whole project. Registered
